@@ -1,0 +1,43 @@
+{
+  "common": {
+    "navigation": {
+      "home": "home",
+      "thisIsMe": "This is Phỏn"
+    },
+    "drawer": {
+      "home": "home"
+    },
+    "headerMobile": {
+      "title": "Hoài Phong Space",
+      "description": "My stories"
+    },
+    "headerMd": {
+      "about": "About Me"
+    },
+    "social": {
+      "fb": "Follow me on Facebook",
+      "github": "This is my Github",
+      "linkedin": "I also have LinkedIn"
+    }
+  },
+  "page": {
+    "home": {
+      "title": "WEBSITE DEVELOPER",
+      "summary": "Passionate about building scalable, high-performance web applications. Specialize in transforming complex problems into efficient and maintainable solutions.",
+      "projects": "Notable Projects & Case Studies",
+      "experience": "Career Experience, Expertise & Responsibilities"
+    }
+  },
+  "metadata": {
+    "home": {
+      "title": "My Corner - Hoai Phong",
+      "description": "This is where I share my random stories, programming blogs, interview experiences, bla bla...",
+      "og": {
+        "title": "Hi, I'm Hoai Phong",
+        "description": "This is where I share my random stories..."
+      },
+      "keywords": "Pham Hoang Son,Son's Corner,Hoang Son space"
+    }
+  }
+
+}

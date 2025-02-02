@@ -1,0 +1,43 @@
+{
+  "common": {
+    "navigation": {
+      "home": "trang chủ",
+      "thisIsMe": "Đây is Phỏn"
+    },
+    "drawer": {
+      "home": "trang chủ",
+      "about": "về mình"
+    },
+    "headerMobile": {
+      "title": "Góc của Phong",
+      "description": "những chuyện 'linh tinh'"
+    },
+    "headerMd": {
+      "about": "Về mình"
+    },
+    "social": {
+      "fb": "Theo dõi mình trên Facebook",
+      "github": "Còn đây là Github của mình",
+      "linkedin": "Ngoài ra mình còn có LinkedIn"
+    }
+  },
+  "page": {
+    "home": {
+      "title": "WEBSITE DEVELOPER",
+      "summary": "Đam mê xây dựng các ứng dụng web hiệu suất cao, mở rộng và dễ duy trì. Chuyên biến các vấn đề phức tạp thành những giải pháp hiệu quả và tối ưu.",
+      "projects": "Dự an nổi bật & Nghiên cứu",
+      "experience": "Kinh nghiệm, Chuyên môn & Trách nhiệm"
+    }
+  },
+  "metadata": {
+    "home": {
+      "title": "Góc của mình - Hoài Phong",
+      "description": "Đây là nơi mà mình chia sẻ những câu chuyện linh tinh của mình, những blogs về lập trình, những kinh nghiệm phỏng vấn, bla bla...",
+      "og": {
+        "title": "Hí, mình là Hoài Phong",
+        "description": "Đây là nơi mình chia sẻ mấy chuyện linh tinh..."
+      },
+      "keywords": "Phạm Hoài Phong,Góc của Sơn,Hoài Phong space"
+    }
+  }
+}
