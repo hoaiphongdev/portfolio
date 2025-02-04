@@ -2,7 +2,8 @@
   "common": {
     "navigation": {
       "home": "home",
-      "thisIsMe": "This is Phỏn"
+      "thisIsMe": "This is Phỏn",
+      "aboutMe": "About Me"
     },
     "drawer": {
       "home": "home"
@@ -11,14 +12,12 @@
       "title": "Hoài Phong Space",
       "description": "My stories"
     },
-    "headerMd": {
-      "about": "About Me"
-    },
     "social": {
       "fb": "Follow me on Facebook",
       "github": "This is my Github",
       "linkedin": "I also have LinkedIn"
-    }
+    },
+    "breadcrumbs": "You watching"
   },
   "page": {
     "home": {
@@ -26,6 +25,18 @@
       "summary": "Passionate about building scalable, high-performance web applications. Specialize in transforming complex problems into efficient and maintainable solutions.",
       "projects": "Notable Projects & Case Studies",
       "experience": "Career Experience, Expertise & Responsibilities"
+    },
+    "about": {
+      "title": "Who am I?",
+      "introduction": "Hi, I'm Hoài Phong",
+      "position1": "Website Developer",
+      "position2": "Software Developer",
+      "description1": "Currently, I am a",
+      "description2": ", and I am also striving to become a",
+      "description3": "I am a student at HCMUNRE, a university that is not particularly strong in IT, so most of my programming knowledge comes from self-learning and practice.",
+      "description4": "I always strive to learn and improve myself through each project to develop more refined applications.",
+      "description5": "My colleagues appreciate me for my teamwork skills, as I can balance humor with productivity while always ensuring that I complete my assigned tasks on time.",
+      "description6": "I also enjoy sharing new technologies with my friends so we can learn together and improve our products to better align with current market trends."
     }
   },
   "metadata": {
@@ -36,8 +47,22 @@
         "title": "Hi, I'm Hoai Phong",
         "description": "This is where I share my random stories..."
       },
-      "keywords": "Pham Hoang Son,Son's Corner,Hoang Son space"
+      "keywords": "Pham Hoai Phong,Phong's Corner,Hoai Phong space"
+    },
+    "about": {
+      "title": "About Me - Hoai Phong",
+      "description": "Learn more about me, my journey and my experiences. I hope it will help you know me a little more.",
+      "og": {
+        "title": "Who is Hoai Phong?",
+        "description": "Ask me anything here."
+      },
+      "keywords": "Pham Hoai Phong,Phong's Corner,Hoai Phong space"
+    }
+  },
+  "breadcrumbs": {
+    "about": {
+      "home": "Home",
+      "about": "About me"
     }
   }
-
 }

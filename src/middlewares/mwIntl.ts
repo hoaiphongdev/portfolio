@@ -1,4 +1,4 @@
-import type { NextRequest, NextResponse } from 'next/server';
+import type { NextRequest } from 'next/server';
 import createMiddleware from 'next-intl/middleware';
 
 import { routing } from '@/i18n/routing';
@@ -6,11 +6,9 @@ import { routing } from '@/i18n/routing';
 import type { MiddlewareType } from './types';
 
 export const mwIntl = (): MiddlewareType => {
-  const intlMiddleware = createMiddleware(routing);
+  return async (request: NextRequest) => {
+    const intlMiddleware = createMiddleware(routing);
 
-  return (
-    request: NextRequest,
-  ) => {
-    return intlMiddleware(request) as NextResponse;
+    return intlMiddleware(request);
   };
 };
