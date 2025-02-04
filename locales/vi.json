@@ -2,7 +2,8 @@
   "common": {
     "navigation": {
       "home": "trang chủ",
-      "thisIsMe": "Đây is Phỏn"
+      "thisIsMe": "Đây is Phỏn",
+      "aboutMe": "Về mình"
     },
     "drawer": {
       "home": "trang chủ",
@@ -12,14 +13,12 @@
       "title": "Góc của Phong",
       "description": "những chuyện 'linh tinh'"
     },
-    "headerMd": {
-      "about": "Về mình"
-    },
     "social": {
       "fb": "Theo dõi mình trên Facebook",
       "github": "Còn đây là Github của mình",
       "linkedin": "Ngoài ra mình còn có LinkedIn"
-    }
+    },
+    "breadcrumbs": "Bạn đang xem"
   },
   "page": {
     "home": {
@@ -27,6 +26,18 @@
       "summary": "Đam mê xây dựng các ứng dụng web hiệu suất cao, mở rộng và dễ duy trì. Chuyên biến các vấn đề phức tạp thành những giải pháp hiệu quả và tối ưu.",
       "projects": "Dự an nổi bật & Nghiên cứu",
       "experience": "Kinh nghiệm, Chuyên môn & Trách nhiệm"
+    },
+    "about": {
+      "title": "Mình là ai?",
+      "introduction": "Hí, mình là Hoài Phong",
+      "position1": "Website Developer",
+      "position2": "Sofware Developer",
+      "description1": "Hiện tại mình đang là một",
+      "description2": ", và cũng đang tập tành để trở thành một",
+      "description3": "Mình là sinh viên trường HCMUNRE, một trường không quá mạnh về IT, vì vậy đa số kiến thức lập trình mình đều tự học hỏi và rèn luyện.",
+      "description4": "Mình luôn cố gắng học hỏi và hoàn thiện bản thân qua từng project để phát triển các ứng dụng ngày càng chỉnh chu hơn.",
+      "description5": "Mọi người trong team đều yêu thích và đánh giá cao mình nhờ khả năng làm việc nhóm tốt, biết pha trò để tạo không khí vui vẻ nhưng vẫn luôn đảm bảo hoàn thành task được giao đúng tiến độ.",
+      "description6": "Mình cũng rất thích chia sẻ công nghệ mới với bạn bè để cùng nhau học hỏi và cải thiện sản phẩm, giúp nó phù hợp hơn với thị hiếu hiện tại."
     }
   },
   "metadata": {
@@ -38,6 +49,21 @@
         "description": "Đây là nơi mình chia sẻ mấy chuyện linh tinh..."
       },
       "keywords": "Phạm Hoài Phong,Góc của Sơn,Hoài Phong space"
+    },
+    "about": {
+      "title": "Về mình - Hoài Phong",
+      "description": "Tìm hiểu thêm về mình, hành trình và kinh nghiệm của mình. Hi vọng sẽ giúp mọi người biết thêm một chút `gì đó` về mình.",
+      "og": {
+        "title": "Hoài Phong là ai ?",
+        "description": "Thắc mắc gì ở mình thì xem ở đây nhé."
+      },
+      "keywords": "Phạm Hoài Phong,Giới thiệu Hoài Phong,Thông tin cá nhân Hoài Phong,Hành trình của Hoài Phong,Kinh nghiệm của Hoài Phong,Sự nghiệp Hoài Phong,Hoài Phong Developer,Hoài Phong Frontend Developer,Hoài Phong Frontend Engineer,Hoài Phong Software Engineer"
+    }
+  },
+  "breadcrumbs": {
+    "about": {
+      "home": "Trang chủ",
+      "about": "Về mình"
     }
   }
 }

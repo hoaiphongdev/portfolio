@@ -23,13 +23,15 @@ export default function Header() {
   const locale = useCurrentLocale();
 
   const headerLinks: LinkType[] = [
+    {
+      label: t('common.navigation.aboutMe'),
+      url: getBasePathWithPresetLocale(STATIC_PAGE_ORIGIN_URL.ABOUT_ME, locale),
+    },
   ];
 
   const { scrollY } = useScroll();
 
-  const [isOver, setIsOver] = useState(
-    (scrollY as any)?.current > 100,
-  );
+  const [isOver, setIsOver] = useState((scrollY as any)?.current > 100);
 
   useMotionValueEvent(scrollY, 'change', (latest) => {
     if (latest >= 100 && !isOver) {
@@ -46,10 +48,7 @@ export default function Header() {
       const localizedUrl = item.url;
 
       return (
-        <li
-          key={`${item.label}_${index}`}
-          className="md:hidden lg:block"
-        >
+        <li key={`${item.label}_${index}`} className="md:hidden lg:block">
           <Link
             href={localizedUrl}
             title={item.label}
@@ -86,7 +85,14 @@ export default function Header() {
             'container mx-auto flex items-center justify-between gap-x-10 py-3',
           )}
         >
-          <Link href={getBasePathWithPresetLocale(STATIC_PAGE_ORIGIN_URL.HOME, locale)} title="home" className="flex">
+          <Link
+            href={getBasePathWithPresetLocale(
+              STATIC_PAGE_ORIGIN_URL.HOME,
+              locale,
+            )}
+            title="home"
+            className="flex"
+          >
             <div className="relative h-[70px] w-[70px] rounded-full bg-white">
               <Image
                 src="/favicon/icon.png"
@@ -110,7 +116,6 @@ export default function Header() {
             <li className="md:hidden lg:block">
               <SwitchLanguage />
             </li>
-
             <li className="flex w-[50px] items-center justify-center md:block lg:hidden">
               <NavigationDrawer />
             </li>
