@@ -8,6 +8,10 @@ export const TRANSLATED_URL = {
     [LANGUAGE_CODE.en]: '/about-me',
     [LANGUAGE_CODE.vi]: '/ve-toi',
   },
+  [STATIC_PAGE_ORIGIN_URL.EXPERIENCES]: {
+    [LANGUAGE_CODE.en]: '/experiences',
+    [LANGUAGE_CODE.vi]: '/kinh-nghiem',
+  },
 };
 
 export const PATHNAMES = {

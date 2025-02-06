@@ -1,8 +1,8 @@
 // Simple Icons https://simpleicons.org | SimpleIcons.org
 
-import type { ComponentProps } from 'react';
+import type { SVGProps } from 'react';
 
-const Facebook = (props: ComponentProps<'svg'>) => {
+function Vite(props: SVGProps<SVGSVGElement>) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -14,12 +14,12 @@ const Facebook = (props: ComponentProps<'svg'>) => {
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
-      className="lucide lucide-facebook"
+      className="lucide lucide-menu"
       {...props}
     >
-      <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+      <path d="M19.206 1.045l-7.217 13.186L4.817 1.045H0l11.904 21.91L24 1.045h-4.794z" />
     </svg>
   );
-};
+}
 
-export default Facebook;
+export default Vite;

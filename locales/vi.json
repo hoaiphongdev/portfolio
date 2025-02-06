@@ -3,11 +3,14 @@
     "navigation": {
       "home": "trang chủ",
       "thisIsMe": "Đây is Phỏn",
-      "aboutMe": "Về mình"
+      "aboutMe": "Về mình",
+      "experiences": "Kinh nghiệm",
+      "resume": "Hồ sơ"
     },
     "drawer": {
       "home": "trang chủ",
-      "about": "về mình"
+      "about": "về mình",
+      "experiences": "Kinh nghiệm"
     },
     "headerMobile": {
       "title": "Góc của Phong",
@@ -38,6 +41,60 @@
       "description4": "Mình luôn cố gắng học hỏi và hoàn thiện bản thân qua từng project để phát triển các ứng dụng ngày càng chỉnh chu hơn.",
       "description5": "Mọi người trong team đều yêu thích và đánh giá cao mình nhờ khả năng làm việc nhóm tốt, biết pha trò để tạo không khí vui vẻ nhưng vẫn luôn đảm bảo hoàn thành task được giao đúng tiến độ.",
       "description6": "Mình cũng rất thích chia sẻ công nghệ mới với bạn bè để cùng nhau học hỏi và cải thiện sản phẩm, giúp nó phù hợp hơn với thị hiếu hiện tại."
+    },
+    "experiences": {
+      "title1": "Kinh nghiệm làm việc",
+      "resume": "Đây là CV của mình",
+      "description1": "Những gì tui đã học và làm, đều được tóm tắt ở đây !",
+      "description2": "Mọi người có thể xem chi tiết ở phía bên dưới nhé.",
+      "list": {
+        "overview": {
+          "title": "Kinh nghiệm/Kiến thức",
+          "description1": "Mình có hơn 4 năm kinh nghiệm về xây dựng và phát triển Websites hoặc Web based applications.",
+          "description2": "Mình có kinh nghiệm, làm việc và sử dụng những công nghệ/ngôn ngữ như ReactJS, NextJS, Gatsby, Material UI, Tailwinds, Antd, HTML5, SCSS, Typescript, v.v",
+          "description3": "Mình có kinh nghiệm trong việc xử lí bố cục websites, responsive và cross-browser sử dụng các tools như Figma, v.v",
+          "description4": "Ngoài ra, mình cũng đã từng sử dụng và làm việc với các công nghệ/ngôn ngữ Backend như NestJS, NodeJS.",
+          "description5": "Mình có kiến thức cơ bản về các loại cơ sở dữ liệu như MySQL, PostgreSQL, MongoDB và Redis cache.",
+          "description6": "Mình có kinh nghiệm sử dụng Git và các công cụ Atlassian như Jira, Confluence, và Bitbucket.",
+          "description7": "Mình có kỹ năng làm tài liệu và thuyết trình tốt. Về ngoại ngữ, mình có thể sử dụng tiếng Anh trong quá trình làm việc, đọc hiểu tài liệu và giao tiếp bằng tiếng Anh."
+        },
+        "edu": {
+          "title": "Học Vấn",
+          "experiences": {
+            "title": "CÔNG NGHỆ THÔNG TIN",
+            "subTitle": "Đại học Tài nguyên và Môi trường HCM",
+            "description": "- Chuyên ngành Công nghệ thông tin với trọng tâm về phát triển ứng dụng web và thiết kế hệ thống.\n- Học tập và nghiên cứu về nguyên lý phân tích, thiết kế hệ thống website và ứng dụng.\n- Tiếp cận và thực hành các kiến thức cơ bản về phát triển game với Unity.\n- Hoàn thành thực tập tại ba công ty khác nhau trong thời kỳ đại dịch COVID-19, tích lũy được nhiều kinh nghiệm đa dạng trong ngành.\n- Áp dụng kiến thức lý thuyết vào các dự án thực tế và ứng dụng thực tiễn.",
+            "time": "2018 - 2022"
+          }
+        },
+        "work": {
+          "title": "Kinh Nghiệm Làm Việc",
+          "dsv": {
+            "title": "Designveloper - Software Development Company",
+            "subTitle": "FULL STACK DEVELOPER",
+            "description": "- Hợp tác với khách hàng từ New Zealand trong lĩnh vực công cụ PDF, tối ưu hóa hiệu suất web và cải thiện chiến lược thu hút người dùng.\n- Phát triển và duy trì các trang landing page hiệu suất cao sử dụng Gatsby, Next.js và React để tối đa hóa SEO và tương tác người dùng.\n- Dẫn dắt quá trình chuyển đổi từ Next.js Page Router sang App Router, tận dụng Server Components để cải thiện SEO và hiệu suất.\n- Chuyển đổi backend từ Next.js sang NestJS để tăng khả năng mở rộng và bảo trì tốt hơn.\n- Tích hợp và tối ưu hóa các nền tảng CMS như Prismic, HubSpot và Strapi để cho phép đội marketing tự tạo và triển khai các trang tĩnh.\n- Trao quyền cho khách hàng với phương pháp no-code, cho phép triển khai nhanh chóng các chiến dịch marketing và landing page mà không cần sự can thiệp của developer.\n- Tối ưu hóa UX và hiệu suất cho các trang công cụ chức năng (ví dụ: Merge, Split, Compress, Annotate PDF) và trang tĩnh, góp phần đạt được hơn 100K+ đăng ký trong một tháng.\n- Phát triển các mẫu PDF có thứ hạng cao, đảm bảo vị trí trong top 10 kết quả tìm kiếm Google.\n- Đóng góp vào cột mốc đạt +100 triệu người dùng của công ty bằng cách cải thiện các tính năng thúc đẩy lưu lượng truy cập chính, bao gồm bản địa hóa, trang công cụ tĩnh và tích hợp CMS đa năng.\n- Chuyển đổi Google Tag Manager sang thiết lập phía máy chủ, giảm tải JavaScript phía client và tăng hiệu suất landing page lên 2-4%.\n- Đạt giải thưởng \"Sharing Spark Award\" cho việc chia sẻ kiến thức xuất sắc và tổ chức workshop.",
+            "time": "02/2024 - Hiện tại"
+          },
+          "saigonMio": {
+            "title": "Saigon MIO Technology JSC",
+            "subTitle": "FULL STACK DEVELOPER",
+            "description": "- Đóng vai trò quan trọng trong việc phát triển toàn diện các hệ thống nội bộ cấp doanh nghiệp, đảm bảo khả năng mở rộng và bảo trì.\n- Làm việc chuyên sâu với kiến trúc MVC đồng thời tích hợp React để nâng cao phát triển UI theo hướng component-based.\n- Thiết kế và cấu trúc cơ sở dữ liệu phù hợp với logic nghiệp vụ sử dụng MySQL, tối ưu hóa hiệu suất và tính toàn vẹn dữ liệu.\n- Tích hợp và đồng bộ hóa các cổng thanh toán của bên thứ ba như MoMo, ZaloPay, VNPAY, ChargeBee và Xendit để tạo điều kiện giao dịch liền mạch.\n- Dẫn dắt các buổi chia sẻ kiến thức về Next.js và đóng góp vào việc triển khai trong các dự án frontend tương lai.\n- Tích cực tham gia vào đội R&D, nghiên cứu và tích hợp các công nghệ mới nổi, bao gồm các tính năng dựa trên AI, vào hệ thống nội bộ để nâng cao tự động hóa và hiệu quả.",
+            "time": "04/2022 - 02/2024"
+          },
+          "bessfu": {
+            "title": "BESSFU Solution Technology Company Limited",
+            "subTitle": "FRONTEND DEVELOPER",
+            "description": "- Phát triển và triển khai các thành phần UI thân thiện với người dùng dựa trên thiết kế Figma sử dụng Next.js, React.js và MUI Material.\n- Đóng góp vào việc phát triển frontend cho nền tảng e-learning của hệ thống học tiếng Anh VUS, đảm bảo trải nghiệm người dùng mượt mà và khả năng responsive.\n- Thiết kế và xây dựng các mini-game học tiếng Anh tương tác bằng JavaScript và JQuery, nâng cao sự tham gia của học viên.\n- Phát triển nhiều trò chơi giáo dục đa dạng, bao gồm thử thách toán học, trò chơi ghép thẻ trí nhớ, liên kết từ và chọn hình ảnh dựa trên phát âm.\n- Tối ưu hóa hiệu suất ứng dụng và khả năng responsive của UI để mang lại trải nghiệm học tập hấp dẫn trên mọi thiết bị.",
+            "time": "04/2022 - 09/2023"
+          },
+          "snp": {
+            "title": "Saigon Newport Corporation (SNP)",
+            "subTitle": "THỰC TẬP SINH NGHIÊN CỨU & PHÁT TRIỂN",
+            "description": "- Tìm hiểu sâu sắc về văn hóa công ty, khung hoạt động và hệ sinh thái logistics.\n- Thực hiện nghiên cứu và phân tích để giải quyết các thách thức kinh doanh thực tế, triển khai các giải pháp thực tiễn thông qua công nghệ.\n- Dẫn dắt nhóm thực tập sinh phát triển hệ thống quản lý container trên nền web sử dụng ReactJS, tích hợp liền mạch với API nội bộ của công ty.\n- Thiết kế và tối ưu hóa quy trình ứng dụng để nâng cao hiệu quả hoạt động và quản lý dữ liệu.\n- Tạo các báo cáo chi tiết và tài liệu toàn diện cho việc triển khai hệ thống và cải tiến quy trình.",
+            "time": "04/2022 - 05/2023"
+          }
+        }
+      }
     }
   },
   "metadata": {
@@ -58,12 +115,25 @@
         "description": "Thắc mắc gì ở mình thì xem ở đây nhé."
       },
       "keywords": "Phạm Hoài Phong,Giới thiệu Hoài Phong,Thông tin cá nhân Hoài Phong,Hành trình của Hoài Phong,Kinh nghiệm của Hoài Phong,Sự nghiệp Hoài Phong,Hoài Phong Developer,Hoài Phong Frontend Developer,Hoài Phong Frontend Engineer,Hoài Phong Software Engineer"
+    },
+    "experiences": {
+      "title": "Kinh nghiệm làm việc - Hoài Phong",
+      "description": "Bản tóm tắt về quá trình làm việc của tui.",
+      "og": {
+        "title": "Kinh nghiệm làm việc của Sơn",
+        "description": "Kinh nghiệm tích luỹ được tui sẽ để ở đây nhé."
+      },
+      "keywords": "Kinh nghiệm Phạm Hoài Phong,Kinh nghiệm làm việc Hoài Phong,Dự án Hoài Phong đã thực hiện,Kỹ năng chuyên môn Hoài Phong,Thành tựu nghề nghiệp Hoài Phong,Hoài Phong Developer,Hoài Phong Frontend Developer,Hoài Phong Projects,Frontend Developer,Hoài Phong Frontend Engineer,Frontend Engineer"
     }
   },
   "breadcrumbs": {
     "about": {
       "home": "Trang chủ",
       "about": "Về mình"
+    },
+    "experiences": {
+      "home": "Trang chủ",
+      "experiences": "Kinh nghiệm làm việc"
     }
   }
 }
