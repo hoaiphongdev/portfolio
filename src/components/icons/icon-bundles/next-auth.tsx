@@ -1,8 +1,8 @@
 // Simple Icons https://simpleicons.org | SimpleIcons.org
 
-import type { ComponentProps } from 'react';
+import type { SVGProps } from 'react';
 
-const Linkedin = (props: ComponentProps<'svg'>) => {
+function NextAuth(props: SVGProps<SVGSVGElement>) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -17,11 +17,9 @@ const Linkedin = (props: ComponentProps<'svg'>) => {
       className="lucide lucide-menu"
       {...props}
     >
-      <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
-      <rect width="4" height="12" x="2" y="9" />
-      <circle cx="4" cy="4" r="2" />
+      <path d="M21.98 7.448L19.62 0H4.347L2.02 7.448c-1.352 4.312.03 9.206 3.815 12.015L12.007 24l6.157-4.552c3.755-2.81 5.182-7.688 3.815-12.015l-6.16 4.58 2.343 7.45-6.157-4.597-6.158 4.58 2.358-7.433-6.188-4.55 7.63-.045L12.008 0l2.356 7.404 7.615.044z" />
     </svg>
   );
-};
+}
 
-export default Linkedin;
+export default NextAuth;

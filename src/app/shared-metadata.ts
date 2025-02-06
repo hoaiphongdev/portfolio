@@ -3,7 +3,7 @@ import { LANGUAGE_CODE } from '@/constants/languages';
 export function getOpenGraphMetadata(locale: string) {
   const baseMetadata: any = {
     type: 'website',
-    siteName: 'Phạm Hoàng Sơn',
+    siteName: 'Nguyễn Hoài Phong',
   };
 
   const localeMetadata: any = {
@@ -25,7 +25,10 @@ export function getOpenGraphMetadata(locale: string) {
   };
 }
 
-export function getAlternatesMetadata(locale: keyof typeof LANGUAGE_CODE, url?: string) {
+export function getAlternatesMetadata(
+  locale: keyof typeof LANGUAGE_CODE,
+  url?: string,
+) {
   const baseMetadata: any = {
     canonical: url ?? '/',
   };

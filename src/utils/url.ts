@@ -13,7 +13,8 @@ import { isClientSide } from './common';
  * isDefaultLocale('en') // returns true if 'en' is DEFAULT_LANGUAGE
  * isDefaultLocale('es') // returns false if 'en' is DEFAULT_LANGUAGE
  */
-export const isDefaultLocale = (lang: string): boolean => lang === DEFAULT_LANGUAGE;
+export const isDefaultLocale = (lang: string): boolean =>
+  lang === DEFAULT_LANGUAGE;
 
 /**
  * Extracts the language code from a URL path
@@ -53,17 +54,26 @@ export const getLanguageFromBrowser = (): string => {
  * getBasePathWithPresetLocale('/about', 'es') // returns '/es/sobre'
  * getBasePathWithPresetLocale('/about', 'en') // returns '/about'
  */
-export const getBasePathWithPresetLocale = (path: string, locale: keyof typeof LANGUAGE_CODE): string => {
+export const getBasePathWithPresetLocale = (
+  path: string,
+  locale: keyof typeof LANGUAGE_CODE,
+  isHomePage = false,
+): string => {
+  // If default language, return the original path
   if (locale === DEFAULT_LANGUAGE) {
     return path;
   }
 
-  const translateUrl = TRANSLATED_URL[path];
-  if (translateUrl) {
-    return `/${locale}${translateUrl[locale]}`;
+  // Check if there's a translated URL for the given path
+  const translatedPath = TRANSLATED_URL[path]?.[locale];
+
+  // Construct the path based on different scenarios
+  if (translatedPath) {
+    return isHomePage ? `${translatedPath}` : `/${locale}${translatedPath}`;
   }
 
-  return `/${locale}${path}`;
+  // If no translated path, use the original path
+  return isHomePage ? `/${path}` : `/${locale}${path}`;
 };
 
 /**
@@ -125,5 +135,7 @@ export const getIsActivePath = (
   const itemPathWithoutLocale = getDefaultLocaleUrl(itemPath);
 
   const isHomePage = itemPathWithoutLocale === STATIC_PAGE_ORIGIN_URL.HOME;
-  return isHomePage || currentPathWithoutLocale.startsWith(itemPathWithoutLocale);
+  return (
+    isHomePage || currentPathWithoutLocale.startsWith(itemPathWithoutLocale)
+  );
 };

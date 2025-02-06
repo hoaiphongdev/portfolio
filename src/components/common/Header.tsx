@@ -7,11 +7,12 @@ import { useTranslations } from 'next-intl';
 import { useState } from 'react';
 
 import { STATIC_PAGE_ORIGIN_URL } from '@/constants/paths';
+import { PROFILE_URL } from '@/constants/url';
 import { useCurrentLocale } from '@/hooks/useCurrentLocale';
 import { usePathname } from '@/i18n/routing';
 import cn from '@/lib/cn';
 import type { LinkType } from '@/types/common';
-import { getBasePathWithPresetLocale } from '@/utils/url';
+import { getBasePathWithPresetLocale, getIsActivePath } from '@/utils/url';
 
 import { Icon } from '../icons/icon';
 import NavigationDrawer from './Navigation/Drawer';
@@ -23,6 +24,13 @@ export default function Header() {
   const locale = useCurrentLocale();
 
   const headerLinks: LinkType[] = [
+    {
+      label: t('common.navigation.experiences'),
+      url: getBasePathWithPresetLocale(
+        STATIC_PAGE_ORIGIN_URL.EXPERIENCES,
+        locale,
+      ),
+    },
     {
       label: t('common.navigation.aboutMe'),
       url: getBasePathWithPresetLocale(STATIC_PAGE_ORIGIN_URL.ABOUT_ME, locale),
@@ -44,7 +52,7 @@ export default function Header() {
 
   const renderHeaderLink = () => {
     return headerLinks.map((item, index) => {
-      const isActive = item.url && pathname.startsWith(item.url);
+      const isActive = item.url && getIsActivePath(pathname, item.url);
       const localizedUrl = item.url;
 
       return (
@@ -59,7 +67,7 @@ export default function Header() {
             <h1
               className={cn(
                 'text-sm font-medium capitalize text-title xl:text-lg',
-                isActive && 'text-primary',
+                isActive && 'text-primary font-semibold',
               )}
             >
               {item.label}
@@ -72,7 +80,7 @@ export default function Header() {
   };
 
   return (
-    <header className={cn('relative z-[1000] h-20 w-full')}>
+    <header className="relative z-[1000] h-20 w-full select-none">
       <div
         className={cn(
           isOver
@@ -113,6 +121,27 @@ export default function Header() {
 
           <ul className="flex list-none items-center gap-x-10 transition-all">
             {renderHeaderLink()}
+            <li
+              key="resume-link"
+              className="wavy-underline py-1 rounded-xl md:hidden lg:block"
+            >
+              <Link
+                href={PROFILE_URL}
+                title="Nguyen Hoai Phong Resume"
+                className={cn(
+                  'relative flex items-center justify-center gap-x-2 transition-all after:w-0',
+                )}
+              >
+                <h1 className="text-sm font-medium capitalize bg-gradient-to-r from-blue-500 to-purple-500 bg-clip-text text-transparent xl:text-lg">
+                  {t('common.navigation.resume')}
+                </h1>
+                <Icon
+                  name="docs"
+                  className="text-purple-500 w-5 h-5"
+                  color="white"
+                />
+              </Link>
+            </li>
             <li className="md:hidden lg:block">
               <SwitchLanguage />
             </li>
