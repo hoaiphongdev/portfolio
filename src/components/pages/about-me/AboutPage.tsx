@@ -21,7 +21,7 @@ export default async function AboutPageComponents() {
     },
     {
       label: t('breadcrumbs.about.about'),
-      url: getBasePathWithPresetLocale(STATIC_PAGE_ORIGIN_URL.HOME, locale),
+      url: getBasePathWithPresetLocale(STATIC_PAGE_ORIGIN_URL.ABOUT_ME, locale),
     },
   ];
 
