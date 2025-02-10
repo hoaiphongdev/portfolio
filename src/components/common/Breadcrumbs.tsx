@@ -10,12 +10,12 @@ import {
 } from '@/components/ui/breadcrumb';
 import { Link } from '@/i18n/routing';
 import cn from '@/lib/cn';
-import type { BreadcrumbType } from '@/types/common';
+import type { IBreadcrumbType } from '@/types/common';
 
 import Typography from './Typography';
 
 interface Props {
-  breadcrumbs: BreadcrumbType[];
+  breadcrumbs: IBreadcrumbType[];
   containerClassName?: string;
 }
 

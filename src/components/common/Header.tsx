@@ -11,7 +11,7 @@ import { PROFILE_URL } from '@/constants/url';
 import { useCurrentLocale } from '@/hooks/useCurrentLocale';
 import { usePathname } from '@/i18n/routing';
 import cn from '@/lib/cn';
-import type { LinkType } from '@/types/common';
+import type { ILinkType } from '@/types/common';
 import { getBasePathWithPresetLocale, getIsActivePath } from '@/utils/url';
 
 import { Icon } from '../icons/icon';
@@ -23,7 +23,7 @@ export default function Header() {
   const pathname = usePathname() as string;
   const locale = useCurrentLocale();
 
-  const headerLinks: LinkType[] = [
+  const headerLinks: ILinkType[] = [
     {
       label: t('common.navigation.experiences'),
       url: getBasePathWithPresetLocale(
@@ -72,7 +72,6 @@ export default function Header() {
             >
               {item.label}
             </h1>
-            {item.icon && <item.icon width={20} height={20} />}
           </Link>
         </li>
       );

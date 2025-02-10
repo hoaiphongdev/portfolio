@@ -1,61 +1,12 @@
 import { getTranslations } from 'next-intl/server';
 
 import Typography from '@/components/common/Typography';
+import { EXPERIENCES_DATA } from '@/constants/data/experiences';
 
 import WorkExperienceComponentItem from './WorkExperienceComponentItem';
 
 export default async function WorkExperienceComponent() {
   const t = await getTranslations('page.experiences.list');
-
-  const EXPERIENCES: any[] = [
-    {
-      title: t('work.title'),
-      experiences: [
-        {
-          title: t('work.dsv.title'),
-          subTitle: t('work.dsv.subTitle'),
-          description: t.raw('work.dsv.description'),
-          time: t('work.dsv.time'),
-          previewLink: 'https://www.designveloper.com/',
-        },
-        {
-          title: t('work.saigonMio.title'),
-          subTitle: t('work.saigonMio.subTitle'),
-          description: t('work.saigonMio.description'),
-          time: t('work.saigonMio.time'),
-          previewLink: 'https://saigonmio.com/',
-        },
-        {
-          title: t('work.bessfu.title'),
-          subTitle: t('work.bessfu.subTitle'),
-          description: t('work.bessfu.description'),
-          time: t('work.bessfu.time'),
-          previewLink: 'https://bessfu.com/',
-        },
-        {
-          title: t('work.snp.title'),
-          subTitle: t('work.snp.subTitle'),
-          description: t('work.snp.description'),
-          time: t('work.snp.time'),
-          previewLink: 'https://saigonnewport.com.vn/',
-        },
-      ],
-    },
-    {
-      title: t('edu.title'),
-      experiences: [
-        {
-          title: t('edu.experiences.title'),
-          subTitle: t('edu.experiences.subTitle'),
-          description: t('edu.experiences.description'),
-          time: t('edu.experiences.time'),
-          projects: [],
-          logo: '/images/hcmunre.png',
-          previewLink: 'https://hcmunre.edu.vn/',
-        },
-      ],
-    },
-  ];
 
   return (
     <div className="mt-8 w-full md:mt-12 md:max-w-2xl lg:max-w-4xl">
@@ -92,12 +43,12 @@ export default async function WorkExperienceComponent() {
             </li>
           </ul>
         </div>
-        {EXPERIENCES.map((item, index) => {
+        {EXPERIENCES_DATA.map((item, index) => {
           return (
-            <div key={item.title + index}>
+            <div key={t(item.title) + index}>
               <WorkExperienceComponentItem
-                title={item.title}
-                workingExperiences={item.experiences}
+                title={t(item.title)}
+                workingExperiences={item.items}
               />
             </div>
           );

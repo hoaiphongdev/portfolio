@@ -11,12 +11,12 @@ import {
 } from '@/components/ui/tooltip';
 import { MY_SOCIAL_LINK } from '@/constants/common';
 import cn from '@/lib/cn';
-import type { LinkType } from '@/types/common';
+import type { ILinkType } from '@/types/common';
 
 export default function SocialSideBar() {
   const t = useTranslations('common.social');
 
-  const SOCIAL_LINKS: LinkType[] = [
+  const socialLinks: ILinkType[] = [
     {
       label: t('fb'),
       url: MY_SOCIAL_LINK.FB,
@@ -59,8 +59,7 @@ export default function SocialSideBar() {
         <br />
         ...
       </p>
-
-      {SOCIAL_LINKS.map((item, index) => (
+      {socialLinks.map((item, index) => (
         <TooltipProvider key={`${item.url}_${index}`} delayDuration={300}>
           <Tooltip>
             <TooltipTrigger asChild>
@@ -74,12 +73,7 @@ export default function SocialSideBar() {
                   index === 0 && 'bg-primary',
                 )}
               >
-                <item.icon
-                  fill="white"
-                  stroke="#75787e"
-                  className="group-hover:fill-white group-hover:stroke-title md:h-4 md:w-4 xl:h-5 xl:w-5"
-                />
-
+                {item.icon()}
                 <span className="sr-only">
                   Go to
                   {item.label}
@@ -87,9 +81,7 @@ export default function SocialSideBar() {
               </a>
             </TooltipTrigger>
             <TooltipContent>
-              <p className="text-base lg:text-lg">
-                {item.label}
-              </p>
+              <p className="text-base lg:text-lg">{item.label}</p>
             </TooltipContent>
           </Tooltip>
         </TooltipProvider>
