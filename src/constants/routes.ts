@@ -12,6 +12,10 @@ export const TRANSLATED_URL = {
     [LANGUAGE_CODE.en]: '/experiences',
     [LANGUAGE_CODE.vi]: '/kinh-nghiem',
   },
+  [STATIC_PAGE_ORIGIN_URL.PROJECTS]: {
+    [LANGUAGE_CODE.en]: '/projects',
+    [LANGUAGE_CODE.vi]: '/du-an',
+  },
 };
 
 export const PATHNAMES = {

@@ -32,6 +32,10 @@ export default function Header() {
       ),
     },
     {
+      label: t('common.navigation.projects'),
+      url: getBasePathWithPresetLocale(STATIC_PAGE_ORIGIN_URL.PROJECTS, locale),
+    },
+    {
       label: t('common.navigation.aboutMe'),
       url: getBasePathWithPresetLocale(STATIC_PAGE_ORIGIN_URL.ABOUT_ME, locale),
     },
