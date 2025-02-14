@@ -1,5 +1,3 @@
-import type { Metadata } from 'next';
-
 import { ProjectDetailComponent } from '@/components/pages/project-detail/ProjectDetailComponent';
 import { DEFAULT_LANGUAGE } from '@/constants/languages';
 import { getProjectContent, getProjectPaths } from '@/utils/markdow';
@@ -11,16 +9,16 @@ interface ProjectPageProps {
   };
 }
 
-export async function generateMetadata({
-  params,
-}: ProjectPageProps): Promise<Metadata> {
-  const { frontmatter } = await getProjectContent(params.slug, params.locales);
+// export async function generateMetadata({
+//   params,
+// }: ProjectPageProps): Promise<Metadata> {
+//   const { frontmatter } = await getProjectContent(params.slug, params.locales);
 
-  return {
-    title: frontmatter.title,
-    description: frontmatter.description,
-  };
-}
+//   return {
+//     title: frontmatter.title,
+//     description: frontmatter.description,
+//   };
+// }
 
 export async function generateStaticParams() {
   const paths = await getProjectPaths();
