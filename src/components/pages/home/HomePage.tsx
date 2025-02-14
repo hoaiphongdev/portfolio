@@ -2,12 +2,29 @@
 
 import { useTranslations } from 'next-intl';
 
+import type { LANGUAGE_CODE } from '@/constants/languages';
+import { STATIC_PAGE_ORIGIN_URL } from '@/constants/paths';
+import { useCurrentLocale } from '@/hooks/useCurrentLocale';
 import Image from '@/lib/next/image';
+import { getBasePathWithPresetLocale } from '@/utils/url';
 
 import InfoCard from './InfoCard';
 
 export default function HomePage() {
   const t = useTranslations('page.home');
+  const locale = useCurrentLocale() as keyof typeof LANGUAGE_CODE;
+
+  const experiencesPath = getBasePathWithPresetLocale({
+    path: STATIC_PAGE_ORIGIN_URL.EXPERIENCES,
+    locale,
+    isHomePage: true,
+  });
+
+  const projectsPath = getBasePathWithPresetLocale({
+    path: STATIC_PAGE_ORIGIN_URL.PROJECTS,
+    locale,
+    isHomePage: true,
+  });
 
   return (
     <main className="min-h-[70vh] flex flex-col items-center justify-center container mx-auto px-4 sm:px-6 lg:px-8">
@@ -29,10 +46,12 @@ export default function HomePage() {
             </div> */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
               <InfoCard
+                path={projectsPath}
                 title={t('projects')}
                 bgColor="bg-red-dark"
               />
               <InfoCard
+                path={experiencesPath}
                 title={t('experience')}
                 bgColor="bg-green-dark"
               />

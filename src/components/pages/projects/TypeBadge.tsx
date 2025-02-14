@@ -1,4 +1,4 @@
-import type { IProject } from '@/constants/data/projects';
+import type { IProject } from '@/types/project';
 
 export default function TypeBadge({ type }: { type: IProject['type'] }) {
   const typeStyles = {

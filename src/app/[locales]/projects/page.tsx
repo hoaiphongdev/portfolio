@@ -8,6 +8,7 @@ import {
 import ProjectPageComponent from '@/components/pages/projects/ProjectPage';
 import type { LANGUAGE_CODE } from '@/constants/languages';
 import { ROOT_SITE_URL } from '@/constants/url';
+import { getAllProjects } from '@/utils/projects';
 
 export async function generateMetadata({
   params: { locale },
@@ -44,6 +45,12 @@ export async function generateMetadata({
   } as Metadata;
 }
 
-export default async function ProjectsPage() {
-  return <ProjectPageComponent />;
+export default async function ProjectsPage({
+  params: { locales },
+}: {
+  params: { locales: string };
+}) {
+  const projects = await getAllProjects(locales);
+
+  return <ProjectPageComponent projects={projects} />;
 }

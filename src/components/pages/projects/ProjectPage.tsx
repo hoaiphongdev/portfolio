@@ -5,22 +5,34 @@ import Breadcrumbs from '@/components/common/Breadcrumbs';
 import type { LANGUAGE_CODE } from '@/constants/languages';
 import { STATIC_PAGE_ORIGIN_URL } from '@/constants/paths';
 import type { IBreadcrumbType } from '@/types/common';
+import type { IProject } from '@/types/project';
 import { getBasePathWithPresetLocale } from '@/utils/url';
 
 import { ProjectList } from './ProjectList';
 
-export default async function ProjectPageComponent() {
+interface ProjectPageProps {
+  projects: IProject[];
+}
+export default async function ProjectPageComponent({
+  projects,
+}: ProjectPageProps) {
   const t = await getTranslations('');
   const locale = (await getLocale()) as keyof typeof LANGUAGE_CODE;
 
   const breadcrumbs: IBreadcrumbType[] = [
     {
       label: t('breadcrumbs.projects.home'),
-      url: getBasePathWithPresetLocale(STATIC_PAGE_ORIGIN_URL.HOME, locale),
+      url: getBasePathWithPresetLocale({
+        path: STATIC_PAGE_ORIGIN_URL.HOME,
+        locale,
+      }),
     },
     {
       label: t('breadcrumbs.projects.projects'),
-      url: getBasePathWithPresetLocale(STATIC_PAGE_ORIGIN_URL.PROJECTS, locale),
+      url: getBasePathWithPresetLocale({
+        path: STATIC_PAGE_ORIGIN_URL.PROJECTS,
+        locale,
+      }),
     },
   ];
 
@@ -41,7 +53,7 @@ export default async function ProjectPageComponent() {
               }))}
           />
         </div>
-        <ProjectList />
+        <ProjectList projects={projects} />
       </div>
     </section>
   );

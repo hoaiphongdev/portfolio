@@ -4,3 +4,7 @@ export const STATIC_PAGE_ORIGIN_URL = {
   EXPERIENCES: '/experiences',
   PROJECTS: '/projects',
 };
+
+export const DYNAMIC_PAGE_ORIGIN_URL = {
+  PROJECT_DETAIL: '/projects/[slug]',
+};

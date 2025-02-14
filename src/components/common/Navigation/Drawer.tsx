@@ -35,7 +35,31 @@ export default function NavigationDrawer() {
     return [
       {
         label: t('home'),
-        url: getBasePathWithPresetLocale(STATIC_PAGE_ORIGIN_URL.HOME, locale),
+        url: getBasePathWithPresetLocale({
+          path: STATIC_PAGE_ORIGIN_URL.HOME,
+          locale,
+        }),
+      },
+      {
+        label: t('experiences'),
+        url: getBasePathWithPresetLocale({
+          path: STATIC_PAGE_ORIGIN_URL.EXPERIENCES,
+          locale,
+        }),
+      },
+      {
+        label: t('projects'),
+        url: getBasePathWithPresetLocale({
+          path: STATIC_PAGE_ORIGIN_URL.PROJECTS,
+          locale,
+        }),
+      },
+      {
+        label: t('about'),
+        url: getBasePathWithPresetLocale({
+          path: STATIC_PAGE_ORIGIN_URL.ABOUT_ME,
+          locale,
+        }),
       },
     ];
   }, [t, locale]);

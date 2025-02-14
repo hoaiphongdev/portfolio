@@ -21,7 +21,10 @@ export default function BottomNavigation() {
   const mobileLink: ILinkType[] = [
     {
       label: t('home'),
-      url: getBasePathWithPresetLocale(STATIC_PAGE_ORIGIN_URL.HOME, locale),
+      url: getBasePathWithPresetLocale({
+        path: STATIC_PAGE_ORIGIN_URL.HOME,
+        locale,
+      }),
       icon: DoorOpen,
     },
   ];

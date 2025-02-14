@@ -1,5 +1,5 @@
 import { LANGUAGE_CODE } from './languages';
-import { STATIC_PAGE_ORIGIN_URL } from './paths';
+import { DYNAMIC_PAGE_ORIGIN_URL, STATIC_PAGE_ORIGIN_URL } from './paths';
 
 export const NON_TRANSLATED_URL = {} as const;
 
@@ -15,6 +15,10 @@ export const TRANSLATED_URL = {
   [STATIC_PAGE_ORIGIN_URL.PROJECTS]: {
     [LANGUAGE_CODE.en]: '/projects',
     [LANGUAGE_CODE.vi]: '/du-an',
+  },
+  [DYNAMIC_PAGE_ORIGIN_URL.PROJECT_DETAIL]: {
+    [LANGUAGE_CODE.en]: '/projects/[slug]',
+    [LANGUAGE_CODE.vi]: '/du-an/[slug]',
   },
 };
 

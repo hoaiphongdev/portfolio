@@ -26,18 +26,24 @@ export default function Header() {
   const headerLinks: ILinkType[] = [
     {
       label: t('common.navigation.experiences'),
-      url: getBasePathWithPresetLocale(
-        STATIC_PAGE_ORIGIN_URL.EXPERIENCES,
+      url: getBasePathWithPresetLocale({
+        path: STATIC_PAGE_ORIGIN_URL.EXPERIENCES,
         locale,
-      ),
+      }),
     },
     {
       label: t('common.navigation.projects'),
-      url: getBasePathWithPresetLocale(STATIC_PAGE_ORIGIN_URL.PROJECTS, locale),
+      url: getBasePathWithPresetLocale({
+        path: STATIC_PAGE_ORIGIN_URL.PROJECTS,
+        locale,
+      }),
     },
     {
       label: t('common.navigation.aboutMe'),
-      url: getBasePathWithPresetLocale(STATIC_PAGE_ORIGIN_URL.ABOUT_ME, locale),
+      url: getBasePathWithPresetLocale({
+        path: STATIC_PAGE_ORIGIN_URL.ABOUT_ME,
+        locale,
+      }),
     },
   ];
 
@@ -97,10 +103,10 @@ export default function Header() {
           )}
         >
           <Link
-            href={getBasePathWithPresetLocale(
-              STATIC_PAGE_ORIGIN_URL.HOME,
+            href={getBasePathWithPresetLocale({
+              path: STATIC_PAGE_ORIGIN_URL.HOME,
               locale,
-            )}
+            })}
             title="home"
             className="flex"
           >

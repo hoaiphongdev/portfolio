@@ -16,14 +16,17 @@ export default async function ExperiencesPage() {
   const breadcrumbs: IBreadcrumbType[] = [
     {
       label: t('breadcrumbs.experiences.home'),
-      url: getBasePathWithPresetLocale(STATIC_PAGE_ORIGIN_URL.HOME, locale),
+      url: getBasePathWithPresetLocale({
+        path: STATIC_PAGE_ORIGIN_URL.HOME,
+        locale,
+      }),
     },
     {
       label: t('breadcrumbs.experiences.experiences'),
-      url: getBasePathWithPresetLocale(
-        STATIC_PAGE_ORIGIN_URL.EXPERIENCES,
+      url: getBasePathWithPresetLocale({
+        path: STATIC_PAGE_ORIGIN_URL.EXPERIENCES,
         locale,
-      ),
+      }),
     },
   ];
 

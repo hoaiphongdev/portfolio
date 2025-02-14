@@ -1,5 +1,6 @@
 'use client';
 
+import { useParams } from 'next/navigation';
 import { useLocale } from 'next-intl';
 
 import { Separator } from '@/components/ui/separator';
@@ -11,9 +12,16 @@ export default function SwitchLanguage() {
   const locale = useLocale();
   const router = useRouter();
   const pathname = usePathname();
+  const params = useParams() ?? {};
 
   const handleLanguageChange = (newLocale: string) => {
-    router.replace(pathname, { locale: newLocale });
+    // Rebuild path with current params
+    let path = pathname;
+    Object.entries(params).forEach(([key, value]) => {
+      path = path.replace(`[${key}]`, value as string);
+    });
+
+    router.replace(path, { locale: newLocale });
   };
 
   return (

@@ -47,18 +47,20 @@ export const getLanguageFromBrowser = (): string => {
 
 /**
  * Generates a localized path with the given locale
- * @param {string} path - The original path
- * @param {keyof typeof LANGUAGE_CODE} locale - The target locale
  * @returns {string} Localized path with prefix if non-default language
  * @example
  * getBasePathWithPresetLocale('/about', 'es') // returns '/es/sobre'
  * getBasePathWithPresetLocale('/about', 'en') // returns '/about'
  */
-export const getBasePathWithPresetLocale = (
-  path: string,
-  locale: keyof typeof LANGUAGE_CODE,
+export const getBasePathWithPresetLocale = ({
+  path,
+  locale,
   isHomePage = false,
-): string => {
+}: {
+  path: string;
+  locale: keyof typeof LANGUAGE_CODE;
+  isHomePage?: boolean;
+}): string => {
   // If default language, return the original path
   if (locale === DEFAULT_LANGUAGE) {
     return path;

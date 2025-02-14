@@ -1,48 +1,70 @@
+import { ArrowUpRight } from 'lucide-react';
+import { memo } from 'react';
+
 import { LinkPreview } from '@/components/animations/LinkPreview';
-import type { IProject } from '@/constants/data/projects';
+import { Link } from '@/i18n/routing';
+import type { IProject } from '@/types/project';
 
 import TechChip from './TechChip';
 import TypeBadge from './TypeBadge';
 
-export default function ProjectCard({ project }: { project: IProject }) {
+const ProjectCard = memo(({ project }: { project: IProject }) => {
+  const {
+    date,
+    title,
+    slug,
+    description,
+    type,
+    tech,
+    tools,
+    previewLink,
+    imageSrc,
+  } = project;
+
   return (
-    <div className="group relative p-6 rounded-2xl border border-gray-500 transition-all duration-300 bg-card shadow-sm h-fit">
-      <div className="absolute inset-0 rounded-lg bg-gradient-to-r from-blue-100/20 to-purple-100/20 opacity-0 transition-opacity duration-300" />
-      <div className="relative space-y-4 h-full flex flex-col">
+    <article className="group p-6 rounded-2xl border border-gray-500 transition-all duration-300 bg-card shadow-sm h-full">
+      <div className="space-y-4 h-full flex flex-col">
         <div className="flex items-center justify-between">
-          <span className="text-sm text-gray-600 font-medium">
-            {project.date}
-          </span>
+          <span className="text-sm text-gray-600 font-medium">{date}</span>
           <div className="flex gap-2">
-            <TypeBadge type={project.type} />
+            <TypeBadge type={type} />
           </div>
         </div>
         <LinkPreview
           isStatic
-          imageSrc={project.imageSrc}
-          url={project.previewLink}
+          imageSrc={imageSrc}
+          url={previewLink}
+          target="_blank"
         >
-          <h3 className="text-xl font-bold text-primary">{project.title}</h3>
+          <h3 className="text-xl font-bold text-primary">{title}</h3>
         </LinkPreview>
-        <p className="text-gray-700 leading-relaxed flex-1">
-          {project.description}
-        </p>
+        <p className="text-gray-700 leading-relaxed flex-1">{description}</p>
         <div className="flex flex-wrap gap-2">
-          {project.tech.map(tech => (
+          {tech.map(tech => (
             <TechChip key={tech} tech={tech} />
           ))}
         </div>
-        {project.tools && (
+        {tools && (
           <div className="pt-4 border-t border-gray-100">
             <h4 className="text-sm font-medium mb-2 text-gray-500">Tools</h4>
             <div className="flex flex-wrap gap-2">
-              {project.tools.map(tool => (
+              {tools.map(tool => (
                 <TechChip key={tool} tech={tool} variant="tool" />
               ))}
             </div>
           </div>
         )}
+        <Link
+          href={`/projects/${slug}`}
+          scroll
+          className="inline-flex items-center gap-2 text-sm font-medium text-primary hover:text-primary/80 transition-colors mt-4"
+        >
+          View Detail
+          <ArrowUpRight className="w-4 h-4" />
+        </Link>
       </div>
-    </div>
+    </article>
   );
-}
+});
+
+export default ProjectCard;

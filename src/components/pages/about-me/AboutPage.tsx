@@ -17,11 +17,17 @@ export default async function AboutPageComponents() {
   const breadcrumbs: IBreadcrumbType[] = [
     {
       label: t('breadcrumbs.about.home'),
-      url: getBasePathWithPresetLocale(STATIC_PAGE_ORIGIN_URL.HOME, locale),
+      url: getBasePathWithPresetLocale({
+        path: STATIC_PAGE_ORIGIN_URL.HOME,
+        locale,
+      }),
     },
     {
       label: t('breadcrumbs.about.about'),
-      url: getBasePathWithPresetLocale(STATIC_PAGE_ORIGIN_URL.ABOUT_ME, locale),
+      url: getBasePathWithPresetLocale({
+        path: STATIC_PAGE_ORIGIN_URL.ABOUT_ME,
+        locale,
+      }),
     },
   ];
 
