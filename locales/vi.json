@@ -5,12 +5,14 @@
       "thisIsMe": "Đây is Phỏn",
       "aboutMe": "Về mình",
       "experiences": "Kinh nghiệm",
+      "projects": "Dự án",
       "resume": "Hồ sơ"
     },
     "drawer": {
       "home": "trang chủ",
       "about": "về mình",
-      "experiences": "Kinh nghiệm"
+      "experiences": "Kinh nghiệm",
+      "projects": "Dự án"
     },
     "headerMobile": {
       "title": "Góc của Phong",
@@ -95,6 +97,9 @@
           }
         }
       }
+    },
+    "projects": {
+      "title": "Từ Ý tưởng đến Code: Hành trình dự án của mình"
     }
   },
   "metadata": {
@@ -124,6 +129,15 @@
         "description": "Kinh nghiệm tích luỹ được tui sẽ để ở đây nhé."
       },
       "keywords": "Kinh nghiệm Nguyễn Hoài Phong,Kinh nghiệm làm việc Hoài Phong,Dự án Hoài Phong đã thực hiện,Kỹ năng chuyên môn Hoài Phong,Thành tựu nghề nghiệp Hoài Phong,Hoài Phong Developer,Hoài Phong Frontend Developer,Hoài Phong Projects,Frontend Developer,Hoài Phong Frontend Engineer,Frontend Engineer"
+    },
+    "projects": {
+      "title": "Portfolio dự án - Hoài Phong",
+      "description": "Một bức tranh về những dự án nổi bật và thành tựu kỹ thuật của tui.",
+      "og": {
+        "title": "Portfolio dự án của Phong",
+        "description": "Khám phá các dự án của tui và các triển khai kỹ thuật."
+      },
+      "keywords": "Dự án Nguyễn Hoài Phong,Portfolio dự án Hoài Phong,Phát triển web Hoài Phong,Phát triển frontend Hoài Phong,Dự án Full Stack Hoài Phong,React Hoài Phong,Next.js Hoài Phong,Software Development Portfolio,Kỹ thuật dự án Hoài Phong,Web Applications,Hoài Phong Developer Projects,Frontend Development Portfolio"
     }
   },
   "breadcrumbs": {
@@ -134,6 +148,10 @@
     "experiences": {
       "home": "Trang chủ",
       "experiences": "Kinh nghiệm làm việc"
+    },
+    "projects": {
+      "home": "Trang chủ",
+      "projects": "Dự án"
     }
   }
 }

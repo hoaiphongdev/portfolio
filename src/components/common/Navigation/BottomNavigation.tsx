@@ -7,7 +7,7 @@ import { STATIC_PAGE_ORIGIN_URL } from '@/constants/paths';
 import { useCurrentLocale } from '@/hooks/useCurrentLocale';
 import { Link, usePathname } from '@/i18n/routing';
 import cn from '@/lib/cn';
-import type { LinkType } from '@/types/common';
+import type { ILinkType } from '@/types/common';
 import { getBasePathWithPresetLocale, getIsActivePath } from '@/utils/url';
 
 import NavigationDrawer from './Drawer';
@@ -18,10 +18,13 @@ export default function BottomNavigation() {
 
   const pathname = usePathname() as string;
 
-  const mobileLink: LinkType[] = [
+  const mobileLink: ILinkType[] = [
     {
       label: t('home'),
-      url: getBasePathWithPresetLocale(STATIC_PAGE_ORIGIN_URL.HOME, locale),
+      url: getBasePathWithPresetLocale({
+        path: STATIC_PAGE_ORIGIN_URL.HOME,
+        locale,
+      }),
       icon: DoorOpen,
     },
   ];

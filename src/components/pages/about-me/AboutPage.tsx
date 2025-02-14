@@ -7,21 +7,27 @@ import Breadcrumbs from '@/components/common/Breadcrumbs';
 import IntroductionFrame from '@/components/common/IntroductionFrame';
 import type { LANGUAGE_CODE } from '@/constants/languages';
 import { STATIC_PAGE_ORIGIN_URL } from '@/constants/paths';
-import type { BreadcrumbType } from '@/types/common';
+import type { IBreadcrumbType } from '@/types/common';
 import { getBasePathWithPresetLocale } from '@/utils/url';
 
 export default async function AboutPageComponents() {
   const t = await getTranslations('');
   const locale = (await getLocale()) as keyof typeof LANGUAGE_CODE;
 
-  const BREAD_CRUMBS: BreadcrumbType[] = [
+  const breadcrumbs: IBreadcrumbType[] = [
     {
       label: t('breadcrumbs.about.home'),
-      url: getBasePathWithPresetLocale(STATIC_PAGE_ORIGIN_URL.HOME, locale),
+      url: getBasePathWithPresetLocale({
+        path: STATIC_PAGE_ORIGIN_URL.HOME,
+        locale,
+      }),
     },
     {
       label: t('breadcrumbs.about.about'),
-      url: getBasePathWithPresetLocale(STATIC_PAGE_ORIGIN_URL.HOME, locale),
+      url: getBasePathWithPresetLocale({
+        path: STATIC_PAGE_ORIGIN_URL.ABOUT_ME,
+        locale,
+      }),
     },
   ];
 
@@ -29,7 +35,7 @@ export default async function AboutPageComponents() {
     <section className="relative mt-4 lg:mt-8">
       <div className="grid grid-cols-1 lg:grid-cols-2 lg:gap-x-12 xl:gap-x-20">
         <Breadcrumbs
-          breadcrumbs={BREAD_CRUMBS}
+          breadcrumbs={breadcrumbs}
           containerClassName="pb-28 md:pb-0 md:mb-10 lg:col-span-2 lg:mb-40"
         />
         <div className="relative">
@@ -55,7 +61,7 @@ export default async function AboutPageComponents() {
                 className: 'text-2xl sm:text-3xl md:text-4xl',
               }))}
           />
-          <ul className="my-6 flex list-disc flex-col gap-y-4 px-4 font-medium text-secondary sm:gap-y-8 md:my-12 md:px-0 md:px-14 md:text-lg">
+          <ul className="my-6 flex list-disc flex-col gap-y-4 px-4 font-medium text-secondary sm:gap-y-8 md:my-12 md:px-14 md:text-lg">
             <li className="leading-8">
               <p>
                 {t('page.about.description1')}

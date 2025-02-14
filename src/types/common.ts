@@ -1,19 +1,11 @@
-export interface LinkType {
+export interface ILinkType {
   url: string;
   label: string;
   icon?: any;
 }
 
-export interface BreadcrumbType {
+export interface IBreadcrumbType {
   label: string;
   url: string;
   icon?: any;
 }
-
-export interface OptionType {
-  label: string;
-  value: string;
-  icon?: any;
-}
-
-export type LocaleType = 'vi' | 'en';

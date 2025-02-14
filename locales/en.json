@@ -5,12 +5,14 @@
       "thisIsMe": "This is Phỏn",
       "aboutMe": "About Me",
       "experiences": "Experiences",
+      "projects": "Projects",
       "resume": "Resume"
     },
     "drawer": {
       "home": "home",
       "about": "about me",
-      "experiences": "experiences"
+      "experiences": "experiences",
+      "projects": "projects"
     },
     "headerMobile": {
       "title": "Hoài Phong Space",
@@ -95,6 +97,9 @@
           }
         }
       }
+    },
+    "projects": {
+      "title": "From Concept to Code: My Project Journey"
     }
   },
   "metadata": {
@@ -124,6 +129,15 @@
         "description": "The experience I've accumulated will be shared here."
       },
       "keywords": "Nguyen Hoai Phong's Experience,Hoai Phong's Work Experience,Projects Hoai Phong Has Worked On,Hoai Phong's Professional Skills,Hoai Phong's Career Achievements,Hoai Phong Developer,Hoai Phong Frontend Developer,Hoai Phong Projects,Frontend Developer,Hoai Phong Frontend Engineer,Frontend Engineer"
+    },
+    "projects": {
+      "title": "Projects Portfolio - Hoai Phong",
+      "description": "A showcase of my notable projects and technical achievements",
+      "og": {
+        "title": "Phong's Project Portfolio",
+        "description": "Explore my projects and technical implementations."
+      },
+      "keywords": "Nguyen Hoai Phong's Projects,Hoai Phong's Portfolio,Web Development Projects,Frontend Projects,Full Stack Projects,React Projects,Next.js Projects,Software Development Portfolio,Technical Projects,Web Applications,Hoai Phong Developer Projects,Frontend Development Portfolio"
     }
   },
   "breadcrumbs": {
@@ -134,6 +148,10 @@
     "experiences": {
       "home": "Home",
       "experiences": "My experience"
+    },
+    "projects": {
+      "home": "Home",
+      "projects": "My projects"
     }
   }
 }

@@ -11,7 +11,7 @@ import { PROFILE_URL } from '@/constants/url';
 import { useCurrentLocale } from '@/hooks/useCurrentLocale';
 import { usePathname } from '@/i18n/routing';
 import cn from '@/lib/cn';
-import type { LinkType } from '@/types/common';
+import type { ILinkType } from '@/types/common';
 import { getBasePathWithPresetLocale, getIsActivePath } from '@/utils/url';
 
 import { Icon } from '../icons/icon';
@@ -23,17 +23,27 @@ export default function Header() {
   const pathname = usePathname() as string;
   const locale = useCurrentLocale();
 
-  const headerLinks: LinkType[] = [
+  const headerLinks: ILinkType[] = [
     {
       label: t('common.navigation.experiences'),
-      url: getBasePathWithPresetLocale(
-        STATIC_PAGE_ORIGIN_URL.EXPERIENCES,
+      url: getBasePathWithPresetLocale({
+        path: STATIC_PAGE_ORIGIN_URL.EXPERIENCES,
         locale,
-      ),
+      }),
+    },
+    {
+      label: t('common.navigation.projects'),
+      url: getBasePathWithPresetLocale({
+        path: STATIC_PAGE_ORIGIN_URL.PROJECTS,
+        locale,
+      }),
     },
     {
       label: t('common.navigation.aboutMe'),
-      url: getBasePathWithPresetLocale(STATIC_PAGE_ORIGIN_URL.ABOUT_ME, locale),
+      url: getBasePathWithPresetLocale({
+        path: STATIC_PAGE_ORIGIN_URL.ABOUT_ME,
+        locale,
+      }),
     },
   ];
 
@@ -72,7 +82,6 @@ export default function Header() {
             >
               {item.label}
             </h1>
-            {item.icon && <item.icon width={20} height={20} />}
           </Link>
         </li>
       );
@@ -94,10 +103,10 @@ export default function Header() {
           )}
         >
           <Link
-            href={getBasePathWithPresetLocale(
-              STATIC_PAGE_ORIGIN_URL.HOME,
+            href={getBasePathWithPresetLocale({
+              path: STATIC_PAGE_ORIGIN_URL.HOME,
               locale,
-            )}
+            })}
             title="home"
             className="flex"
           >

@@ -1,27 +1,17 @@
 import { ArrowRight } from 'lucide-react';
 
-import type { LANGUAGE_CODE } from '@/constants/languages';
-import { STATIC_PAGE_ORIGIN_URL } from '@/constants/paths';
-import { useCurrentLocale } from '@/hooks/useCurrentLocale';
 import { Link } from '@/i18n/routing';
-import { getBasePathWithPresetLocale } from '@/utils/url';
 
 interface InfoCardProps {
   title: string;
   bgColor: string;
+  path: string;
 }
 
-export default function InfoCard({ title, bgColor }: InfoCardProps) {
-  const locale = useCurrentLocale() as keyof typeof LANGUAGE_CODE;
-  const experiencesPath = getBasePathWithPresetLocale(
-    STATIC_PAGE_ORIGIN_URL.EXPERIENCES,
-    locale,
-    true,
-  );
-
+export default function InfoCard({ title, bgColor, path }: InfoCardProps) {
   return (
     <Link
-      href={experiencesPath}
+      href={path}
       className={`${bgColor} rounded-xl p-6 relative overflow-hidden transition-transform hover:scale-105`}
     >
       <div className="flex flex-col h-full">

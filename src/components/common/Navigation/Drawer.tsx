@@ -17,7 +17,7 @@ import { STATIC_PAGE_ORIGIN_URL } from '@/constants/paths';
 import { useCurrentLocale } from '@/hooks/useCurrentLocale';
 import { Link, usePathname } from '@/i18n/routing';
 import cn from '@/lib/cn';
-import type { LinkType } from '@/types/common';
+import type { ILinkType } from '@/types/common';
 import { getBasePathWithPresetLocale, getIsActivePath } from '@/utils/url';
 
 import SwitchLanguage from './SwitchLanguage';
@@ -31,17 +31,41 @@ export default function NavigationDrawer() {
 
   const [openDrawer, setOpenDrawer] = useState(false);
 
-  const DRAWER_LINK: LinkType[] = useMemo(() => {
+  const drawerLink: ILinkType[] = useMemo(() => {
     return [
       {
         label: t('home'),
-        url: getBasePathWithPresetLocale(STATIC_PAGE_ORIGIN_URL.HOME, locale),
+        url: getBasePathWithPresetLocale({
+          path: STATIC_PAGE_ORIGIN_URL.HOME,
+          locale,
+        }),
+      },
+      {
+        label: t('experiences'),
+        url: getBasePathWithPresetLocale({
+          path: STATIC_PAGE_ORIGIN_URL.EXPERIENCES,
+          locale,
+        }),
+      },
+      {
+        label: t('projects'),
+        url: getBasePathWithPresetLocale({
+          path: STATIC_PAGE_ORIGIN_URL.PROJECTS,
+          locale,
+        }),
+      },
+      {
+        label: t('about'),
+        url: getBasePathWithPresetLocale({
+          path: STATIC_PAGE_ORIGIN_URL.ABOUT_ME,
+          locale,
+        }),
       },
     ];
   }, [t, locale]);
 
   const renderDrawerLink = useCallback(() => {
-    return DRAWER_LINK.map((item, index) => {
+    return drawerLink.map((item, index) => {
       const isActive = getIsActivePath(pathname, item.url);
 
       return (
@@ -59,12 +83,11 @@ export default function NavigationDrawer() {
             >
               {item.label}
             </h3>
-            {item.icon && <item.icon />}
           </Link>
         </li>
       );
     });
-  }, [DRAWER_LINK, pathname, setOpenDrawer]); // Add dependencies
+  }, [drawerLink, pathname, setOpenDrawer]); // Add dependencies
 
   return (
     <Drawer
@@ -81,9 +104,7 @@ export default function NavigationDrawer() {
       </DrawerTrigger>
       <DrawerContent className="z-[1000] h-full w-full">
         <VisuallyHidden>
-          <DrawerDescription>
-            Description Settings
-          </DrawerDescription>
+          <DrawerDescription>Description Settings</DrawerDescription>
         </VisuallyHidden>
         <nav className="relative mx-auto flex h-full w-full max-w-sm">
           <DrawerClose asChild className="absolute right-0 top-0">
