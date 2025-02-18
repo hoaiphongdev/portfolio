@@ -5,10 +5,6 @@ import localFont from 'next/font/local';
 import { NextIntlClientProvider } from 'next-intl';
 import { getMessages, setRequestLocale } from 'next-intl/server';
 
-import {
-  getAlternatesMetadata,
-  getOpenGraphMetadata,
-} from '@/app/shared-metadata';
 import FluidMotionCursor from '@/components/animations/FluidCursorMotion';
 import DefaultLayout from '@/components/layouts/DefaultLayout';
 import { ThemeProvider } from '@/components/providers/theme';
@@ -47,9 +43,7 @@ export const metadata: Metadata = {
     template: '%s - Hoai Phong',
     default: 'Frontend Developer',
   },
-  description: 'This site is my personal space',
-  openGraph: getOpenGraphMetadata('vi'),
-  alternates: getAlternatesMetadata('vi'),
+  description: 'Frontend Developer Portfolio',
   icons: {
     icon: [
       { url: '/favicon/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
@@ -89,7 +83,6 @@ export default async function LocaleLayout({
   params: { locale: string };
 }) {
   setRequestLocale(locale);
-
   const messages = await getMessages();
 
   return (

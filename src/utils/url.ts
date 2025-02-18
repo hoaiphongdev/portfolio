@@ -1,42 +1,23 @@
 import type { LANGUAGE_CODE } from '@/constants/languages';
 import { DEFAULT_LANGUAGE } from '@/constants/languages';
-import { STATIC_PAGE_ORIGIN_URL } from '@/constants/paths';
+import type { Route } from '@/constants/paths';
+import {
+  DYNAMIC_ROUTE_MAPPING,
+  STATIC_PAGE_ORIGIN_URL,
+} from '@/constants/paths';
 import { TRANSLATED_URL } from '@/constants/routes';
 
 import { isClientSide } from './common';
 
-/**
- * Checks if the given language code is the default language
- * @param {string} lang - The language code to check (e.g., 'en', 'es')
- * @returns {boolean} True if the language is the default language, false otherwise
- * @example
- * isDefaultLocale('en') // returns true if 'en' is DEFAULT_LANGUAGE
- * isDefaultLocale('es') // returns false if 'en' is DEFAULT_LANGUAGE
- */
 export const isDefaultLocale = (lang: string): boolean =>
   lang === DEFAULT_LANGUAGE;
 
-/**
- * Extracts the language code from a URL path
- * @param {string} path - The URL path to extract language from
- * @returns {string} The two-letter language code if found, empty string otherwise
- * @example
- * getLanguageFromPath('/es/about') // returns 'es'
- * getLanguageFromPath('/about') // returns ''
- */
 export const getLanguageFromPath = (path: string): string => {
   const languageRegex = /^\/([a-z]{2})(\/).*$/;
   const result = path.match(languageRegex);
   return result ? result[1] : '';
 };
 
-/**
- * Gets the user's browser language
- * @returns {string} Two-letter language code from browser, empty string if server-side
- * @example
- * // If browser language is English
- * getLanguageFromBrowser() // returns 'en'
- */
 export const getLanguageFromBrowser = (): string => {
   if (!isClientSide) {
     return '';
@@ -45,19 +26,12 @@ export const getLanguageFromBrowser = (): string => {
   return window.navigator.language.slice(0, 2);
 };
 
-/**
- * Generates a localized path with the given locale
- * @returns {string} Localized path with prefix if non-default language
- * @example
- * getBasePathWithPresetLocale('/about', 'es') // returns '/es/sobre'
- * getBasePathWithPresetLocale('/about', 'en') // returns '/about'
- */
 export const getBasePathWithPresetLocale = ({
   path,
   locale,
   isHomePage = false,
 }: {
-  path: string;
+  path: Route;
   locale: keyof typeof LANGUAGE_CODE;
   isHomePage?: boolean;
 }): string => {
@@ -66,40 +40,20 @@ export const getBasePathWithPresetLocale = ({
     return path;
   }
 
-  // Check if there's a translated URL for the given path
   const translatedPath = TRANSLATED_URL[path]?.[locale];
 
-  // Construct the path based on different scenarios
   if (translatedPath) {
     return isHomePage ? `${translatedPath}` : `/${locale}${translatedPath}`;
   }
 
-  // If no translated path, use the original path
   return isHomePage ? `/${path}` : `/${locale}${path}`;
 };
 
-/**
- * Removes the language prefix from a URL path
- * @param {string} pathname - The full pathname with possible language prefix
- * @returns {string} Path without language prefix
- * @example
- * getUrlWithoutLanguage('/es/about') // returns '/about'
- * getUrlWithoutLanguage('/about') // returns '/about'
- */
 export const getUrlWithoutLanguage = (pathname: string): string => {
   const language = getLanguageFromPath(pathname);
   return language ? pathname.substring(3) : pathname;
 };
 
-/**
- * Converts a localized URL to its default language equivalent
- * @param {string} pathname - The current pathname
- * @returns {string} The URL in default language
- * @example
- * // If TRANSLATED_URL maps '/about' to '/sobre' for Spanish
- * getDefaultLocaleUrl('/es/sobre') // returns '/about'
- * getDefaultLocaleUrl('/about') // returns '/about'
- */
 export const getDefaultLocaleUrl = (pathname: string): string => {
   const language = getLanguageFromPath(pathname);
   const pathWithoutLanguage = language ? pathname.substring(3) : pathname;
@@ -119,25 +73,55 @@ export const getDefaultLocaleUrl = (pathname: string): string => {
   return pathWithoutLanguage;
 };
 
-/**
- * Determines if a given URL path is active based on the current pathname
- * @param {string} currentPath - The current pathname
- * @param {string} itemPath - The path to check against
- * @returns {boolean} True if the path is active, false otherwise
- * @example
- * getIsActivePath('/es/about', '/es/about', '/') // returns true
- * getIsActivePath('/es/about/1', '/es/about', '/') // returns true
- * getIsActivePath('/es/blog', '/es/about', '/') // returns false
- */
-export const getIsActivePath = (
-  currentPath: string,
-  itemPath: string,
-): boolean => {
-  const currentPathWithoutLocale = getDefaultLocaleUrl(currentPath);
-  const itemPathWithoutLocale = getDefaultLocaleUrl(itemPath);
+export const getIsActivePath = (pathname?: string, url?: string): boolean => {
+  if (!pathname || !url) {
+    return false;
+  }
 
-  const isHomePage = itemPathWithoutLocale === STATIC_PAGE_ORIGIN_URL.HOME;
-  return (
-    isHomePage || currentPathWithoutLocale.startsWith(itemPathWithoutLocale)
-  );
+  const cleanPathname = pathname.replace(/\/$/, '');
+  const cleanUrl = url.replace(/\/$/, '');
+
+  return cleanPathname === cleanUrl || cleanPathname.startsWith(cleanUrl);
+};
+
+interface GetCanonicalParams {
+  locale: keyof typeof LANGUAGE_CODE;
+  pathname: Route;
+  slug?: string;
+}
+
+export const getCanonical = ({
+  locale,
+  pathname,
+  slug,
+}: GetCanonicalParams): string => {
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, '') || '';
+
+  if (pathname in DYNAMIC_ROUTE_MAPPING && slug) {
+    const baseStaticPath
+      = DYNAMIC_ROUTE_MAPPING[pathname as keyof typeof DYNAMIC_ROUTE_MAPPING];
+
+    const baseLocalizedPath = getBasePathWithPresetLocale({
+      path: baseStaticPath,
+      locale,
+      isHomePage: false,
+    });
+
+    return `${baseUrl}${baseLocalizedPath}/${slug}`.replace(
+      /([^:]\/)\/+/g,
+      '$1',
+    );
+  }
+
+  const localizedPath = getBasePathWithPresetLocale({
+    path: pathname,
+    locale,
+    isHomePage: pathname === STATIC_PAGE_ORIGIN_URL.HOME,
+  });
+
+  if (pathname === STATIC_PAGE_ORIGIN_URL.HOME && locale === DEFAULT_LANGUAGE) {
+    return baseUrl;
+  }
+
+  return `${baseUrl}${localizedPath}`.replace(/([^:]\/)\/+/g, '$1');
 };

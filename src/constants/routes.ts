@@ -1,7 +1,7 @@
 import { LANGUAGE_CODE } from './languages';
 import { DYNAMIC_PAGE_ORIGIN_URL, STATIC_PAGE_ORIGIN_URL } from './paths';
 
-export const NON_TRANSLATED_URL = {} as const;
+export const NON_TRANSLATED_URL = {};
 
 export const TRANSLATED_URL = {
   [STATIC_PAGE_ORIGIN_URL.ABOUT_ME]: {
@@ -32,4 +32,4 @@ export const PATHNAMES = {
       paths,
     ]),
   ),
-} as const;
+};

@@ -15,7 +15,7 @@ export async function getAllProjects(
     const files = fs.readdirSync(path.join(PROJECTS_PATH, locale));
 
     const projects = files
-      .filter(filename => filename.endsWith('.md'))
+      .filter(filename => filename?.endsWith('.md'))
       .map((filename) => {
         const filePath = path.join(PROJECTS_PATH, locale, filename);
         const fileContent = fs.readFileSync(filePath, 'utf8');

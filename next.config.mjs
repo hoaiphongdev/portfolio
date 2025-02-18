@@ -20,6 +20,12 @@ const nextConfig = {
     });
     return config;
   },
+  rewrites: async () => [
+    {
+      source: '/sitemap.xml',
+      destination: '/dynamic-sitemap',
+    },
+  ],
 };
 
 export default withNextIntl(nextConfig);
