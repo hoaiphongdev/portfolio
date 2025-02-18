@@ -1,56 +1,37 @@
 import type { Metadata } from 'next';
 import { getTranslations } from 'next-intl/server';
 
-import {
-  getAlternatesMetadata,
-  getOpenGraphMetadata,
-} from '@/app/shared-metadata';
 import ProjectPageComponent from '@/components/pages/projects/ProjectPage';
 import type { LANGUAGE_CODE } from '@/constants/languages';
-import { ROOT_SITE_URL } from '@/constants/url';
+import { STATIC_PAGE_ORIGIN_URL } from '@/constants/paths';
 import { getAllProjects } from '@/utils/projects';
+import { generateSEOMetadata } from '@/utils/seo';
 
 export async function generateMetadata({
   params: { locale },
 }: {
   params: { locale: string };
-}) {
+}): Promise<Metadata> {
   const t = await getTranslations({
     locale,
     namespace: 'metadata.projects',
   });
 
-  const url = `${ROOT_SITE_URL}/${locale}/projects`;
-
   const safeLocale = locale as keyof typeof LANGUAGE_CODE;
 
-  return {
+  return generateSEOMetadata({
     title: t('title'),
     description: t('description'),
-    icons: [{ rel: 'icon', url: '/logo.png' }],
-    keywords: t('keywords').split(','),
-    openGraph: {
-      ...getOpenGraphMetadata(locale),
-      title: t('title'),
-      description: t('description'),
-      url,
-      images: [
-        {
-          url: `/api/og?title=${t('title')}&description=${t('description')}`,
-        },
-      ],
-    },
-    canonical: url,
-    alternates: getAlternatesMetadata(safeLocale, url),
-  } as Metadata;
+    locale: safeLocale,
+    pathname: STATIC_PAGE_ORIGIN_URL.PROJECTS,
+  });
 }
 
 export default async function ProjectsPage({
-  params: { locales },
+  params: { locale },
 }: {
-  params: { locales: string };
+  params: { locale: string };
 }) {
-  const projects = await getAllProjects(locales);
-
+  const projects = await getAllProjects(locale);
   return <ProjectPageComponent projects={projects} />;
 }

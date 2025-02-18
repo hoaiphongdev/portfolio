@@ -20,7 +20,7 @@ import SwitchLanguage from './Navigation/SwitchLanguage';
 
 export default function Header() {
   const t = useTranslations();
-  const pathname = usePathname() as string;
+  const currentPathname = usePathname();
   const locale = useCurrentLocale();
 
   const headerLinks: ILinkType[] = [
@@ -48,40 +48,28 @@ export default function Header() {
   ];
 
   const { scrollY } = useScroll();
-
-  const [isOver, setIsOver] = useState((scrollY as any)?.current > 100);
+  const [isOver, setIsOver] = useState(false);
 
   useMotionValueEvent(scrollY, 'change', (latest) => {
-    if (latest >= 100 && !isOver) {
-      setIsOver(true);
-    }
-    if (latest <= 0 && isOver) {
-      setIsOver(false);
-    }
+    setIsOver(latest > 100);
   });
 
   const renderHeaderLink = () => {
     return headerLinks.map((item, index) => {
-      const isActive = item.url && getIsActivePath(pathname, item.url);
-      const localizedUrl = item.url;
+      const isActive = getIsActivePath(currentPathname, item.url);
 
       return (
         <li key={`${item.label}_${index}`} className="md:hidden lg:block">
           <Link
-            href={localizedUrl}
+            href={item.url}
             title={item.label}
             className={cn(
               'relative flex items-center justify-center gap-x-2 transition-all after:w-0',
+              'text-sm font-medium capitalize text-title xl:text-lg',
+              isActive && 'text-primary font-semibold',
             )}
           >
-            <h1
-              className={cn(
-                'text-sm font-medium capitalize text-title xl:text-lg',
-                isActive && 'text-primary font-semibold',
-              )}
-            >
-              {item.label}
-            </h1>
+            {item.label}
           </Link>
         </li>
       );
@@ -139,11 +127,10 @@ export default function Header() {
                 title="Nguyen Hoai Phong Resume"
                 className={cn(
                   'relative flex items-center justify-center gap-x-2 transition-all after:w-0',
+                  'text-sm font-medium capitalize bg-gradient-to-r from-blue-500 to-purple-500 bg-clip-text text-transparent xl:text-lg',
                 )}
               >
-                <h1 className="text-sm font-medium capitalize bg-gradient-to-r from-blue-500 to-purple-500 bg-clip-text text-transparent xl:text-lg">
-                  {t('common.navigation.resume')}
-                </h1>
+                {t('common.navigation.resume')}
                 <Icon
                   name="docs"
                   className="text-purple-500 w-5 h-5"

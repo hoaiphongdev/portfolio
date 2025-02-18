@@ -9,4 +9,5 @@ export interface IProject {
   tech: string[];
   tools?: string[];
   ranking: number;
+  keywords?: string;
 }
