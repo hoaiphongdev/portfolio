@@ -12,7 +12,7 @@ export async function getAllProjects(
   locale: string = DEFAULT_LANGUAGE,
 ): Promise<IProject[]> {
   try {
-    const files = fs.readdirSync(path.join(PROJECTS_PATH, locale));
+    const files = fs.readdirSync(path.join(PROJECTS_PATH, locale)) ?? [];
 
     const projects = files
       .filter(filename => filename?.endsWith('.md'))
@@ -26,7 +26,8 @@ export async function getAllProjects(
       .sort((a, b) => b.ranking - a.ranking);
 
     return projects;
-  } catch {
+  } catch (error) {
+    console.error('Error reading projects:', error);
     return [];
   }
 }
