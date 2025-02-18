@@ -20,7 +20,7 @@ import SwitchLanguage from './Navigation/SwitchLanguage';
 
 export default function Header() {
   const t = useTranslations();
-  const currentPathname = usePathname();
+  const currentPathname = usePathname() ?? '/';
   const locale = useCurrentLocale();
 
   const headerLinks: ILinkType[] = [
@@ -56,7 +56,7 @@ export default function Header() {
 
   const renderHeaderLink = () => {
     return headerLinks.map((item, index) => {
-      const isActive = getIsActivePath(currentPathname, item.url);
+      const isActive = getIsActivePath(currentPathname, item.url ?? '/');
 
       return (
         <li key={`${item.label}_${index}`} className="md:hidden lg:block">
