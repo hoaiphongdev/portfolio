@@ -54,13 +54,20 @@
         "overview": {
           "title": "TECHNICAL PROFILE",
           "items": [
-            "I have over 4+ years of experience in building and developing Websites or Web-based applications.",
-            "I have experience working with technologies/languages such as ReactJS, NextJS, Gatsby, Material UI, Tailwinds, Antd, HTML5, SCSS, Typescript, etc.",
-            "I have experience in responsive layouts, cross-browser and design layout using Figma, etc.",
-            "I have also used and worked with Backend technologies/languages such as NestJS, NodeJS.",
-            "I have fundamental understanding of databases like MySQL, PostgreSQL, MongoDB, and Redis cache.",
-            "I have experience using Git and Atlassian tools like Jira, Confluence, and Bitbucket.",
-            "I have excellent documentation and presentation skills. In terms of foreign languages, I can use English in the workplace, understand documents and communicate in English."
+            "4+ years architecting and delivering full-cycle web applications and platforms from concept through high-availability production deployments.",
+            "Deep expertise across modern frontend ecosystems: React, Next.js, Gatsby, TypeScript, Tailwind CSS, Material UI, Ant Design, SCSS — consistently deliver performant, maintainable UIs adaptable to evolving project and design requirements.",
+            "Architected micro-frontend architectures using Webpack Module Federation — enabled independent team deployments, shared dependencies to reduce bundle size, dynamic module loading at runtime, and seamless composition of remote applications into cohesive experiences.",
+            "Craft pixel-perfect, responsive, cross-browser interfaces that faithfully translate complex Figma designs into production-grade code.",
+            "Architect scalable backend systems with Node.js and NestJS: design modular, clean-architecture APIs (REST/GraphQL), enforce TypeScript patterns (DI, decorators, guards, interceptors), and ensure long-term maintainability and extensibility.",
+            "Designed and implemented event-driven microservices architectures — leveraged RabbitMQ for reliable message queuing, pub/sub patterns, asynchronous processing, and decoupled communication across services in high-throughput systems.",
+            "Model and optimize data layers using PostgreSQL, MySQL, MongoDB, and Redis — implement efficient caching strategies, session management, and query performance tuning for high-traffic scenarios.",
+            "Manage Git-based development workflows in collaborative teams, leveraging Jira, Confluence, and Bitbucket for planning, code reviews, branching strategies, and continuous integration; experienced with git submodules for managing shared libraries and monorepo-like structures in distributed codebases.",
+            "Develop automation and infrastructure-as-code solutions: author shell scripts, YAML configs for CI/CD pipelines, Docker Compose, GitHub Actions, and routine operational tooling.",
+            "Orchestrate headless CMS integrations and customizations (Prismic, Strapi) — architect complete content pipelines, build bespoke plugins, extensions, scripts, and webhook-driven flows tightly aligned with business logic and scalability needs.",
+            "Design and implement CRM & scheduling platform integrations (Chilipiper, Intercom, HubSpot) — establish reliable data synchronization, event-driven webhooks, and automated business workflows that support operational efficiency.",
+            "Lead secure payment gateway integrations for Southeast Asian providers (Xendit, MoMo, VNPay) — engineer robust checkout experiences, real-time webhook handling, idempotent processing, and compliance-focused transaction logic.",
+            "Proactively optimize personal and team productivity through workflow innovation — engineer customized terminal environments (tmux/Zellij) with tailored keybindings, persistent multi-pane layouts, and session management to accelerate development velocity and multitasking.",
+            "Author high-quality technical documentation, architecture diagrams, READMEs, and stakeholder presentations that drive alignment, reduce onboarding time, and support long-term maintainability."
           ]
         },
         "sections": [

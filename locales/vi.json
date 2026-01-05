@@ -54,13 +54,20 @@
         "overview": {
           "title": "Kinh nghiệm/Kiến thức",
           "items": [
-            "Mình có hơn 4 năm kinh nghiệm về xây dựng và phát triển Websites hoặc Web based applications.",
-            "Mình có kinh nghiệm, làm việc và sử dụng những công nghệ/ngôn ngữ như ReactJS, NextJS, Gatsby, Material UI, Tailwinds, Antd, HTML5, SCSS, Typescript, v.v",
-            "Mình có kinh nghiệm trong việc xử lí bố cục websites, responsive và cross-browser sử dụng các tools như Figma, v.v",
-            "Ngoài ra, mình cũng đã từng sử dụng và làm việc với các công nghệ/ngôn ngữ Backend như NestJS, NodeJS.",
-            "Mình có kiến thức cơ bản về các loại cơ sở dữ liệu như MySQL, PostgreSQL, MongoDB và Redis cache.",
-            "Mình có kinh nghiệm sử dụng Git và các công cụ Atlassian như Jira, Confluence, và Bitbucket.",
-            "Mình có kỹ năng làm tài liệu và thuyết trình tốt. Về ngoại ngữ, mình có thể sử dụng tiếng Anh trong quá trình làm việc, đọc hiểu tài liệu và giao tiếp bằng tiếng Anh."
+            "Hơn 4 năm kiến trúc và triển khai toàn bộ vòng đời web application & platform từ ý tưởng đến production với độ sẵn sàng cao.",
+            "Chuyên sâu về hệ sinh thái frontend hiện đại: React, Next.js, Gatsby, TypeScript, Tailwind CSS, Material UI, Ant Design, SCSS — luôn đảm bảo giao diện performant, dễ bảo trì và linh hoạt theo yêu cầu dự án & thiết kế.",
+            "Kiến trúc micro-frontend bằng Webpack Module Federation — cho phép các team deploy độc lập, chia sẻ dependencies để giảm kích thước bundle, load module động runtime và ghép các ứng dụng remote thành trải nghiệm liền mạch.",
+            "Xây dựng giao diện responsive, pixel-perfect, tương thích đa trình duyệt, chuyển đổi chính xác từ thiết kế Figma phức tạp sang code production-grade.",
+            "Thiết kế backend scalable với Node.js và NestJS: áp dụng clean architecture, modular design cho API REST/GraphQL, tận dụng TypeScript patterns (DI, decorators, guards, interceptors) để đảm bảo tính maintainable và dễ mở rộng dài hạn.",
+            "Thiết kế và triển khai kiến trúc microservices event-driven — sử dụng RabbitMQ cho message queuing đáng tin cậy, pub/sub pattern, xử lý asynchronous và tách biệt giao tiếp giữa các service trong hệ thống high-throughput.",
+            "Mô hình hóa và tối ưu layer dữ liệu với PostgreSQL, MySQL, MongoDB, Redis — triển khai caching hiệu quả, quản lý session và tuning query performance cho các kịch bản traffic cao.",
+            "Quản lý workflow Git trong môi trường team lớn, kết hợp Jira, Confluence, Bitbucket cho planning, code review, branching strategy và continuous integration; thành thạo git submodules để quản lý shared libraries và cấu trúc codebase phân tán.",
+            "Phát triển giải pháp automation và infrastructure-as-code: viết shell script, config YAML cho CI/CD pipeline, Docker Compose, GitHub Actions và các tooling vận hành hàng ngày.",
+            "Điều phối tích hợp và tùy chỉnh headless CMS (Prismic, Strapi) — kiến trúc toàn bộ content pipeline, xây dựng custom plugin, extension, script, webhook-driven flow phù hợp chặt chẽ với logic kinh doanh và nhu cầu scale.",
+            "Thiết kế và triển khai tích hợp CRM & scheduling platform (Chilipiper, Intercom, HubSpot) — xây dựng đồng bộ dữ liệu đáng tin cậy, webhook event-driven và tự động hóa quy trình kinh doanh hỗ trợ hiệu quả vận hành.",
+            "Lead tích hợp cổng thanh toán khu vực Đông Nam Á (Xendit, MoMo, VNPay) — kỹ thuật checkout experience robust, xử lý webhook real-time, idempotent processing và logic transaction tuân thủ quy định.",
+            "Chủ động tối ưu hóa workflow cá nhân & team để tăng tốc độ phát triển — tùy chỉnh môi trường terminal (tmux/Zellij) với keybinding, layout multi-pane persistent, session management nhằm multitask nhanh và hiệu quả hơn.",
+            "Soạn thảo tài liệu kỹ thuật chất lượng cao, sơ đồ kiến trúc, README, presentation cho stakeholder — giúp align team, rút ngắn onboarding và hỗ trợ maintainability dài hạn."
           ]
         },
         "sections": [
