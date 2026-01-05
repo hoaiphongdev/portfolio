@@ -62,10 +62,27 @@
 @layer base {
   * {
     @apply border-border;
+    cursor:
+      url("/images/cursor.svg") 16 16,
+      auto;
   }
 
   body {
     @apply m-0 flex h-screen flex-col bg-background text-title;
+    cursor:
+      url("/images/cursor.svg") 16 16,
+      auto;
+  }
+
+  a,
+  button,
+  [role="button"],
+  input[type="submit"],
+  input[type="button"],
+  .cursor-pointer {
+    cursor:
+      url("/images/cursor.svg") 16 16,
+      pointer;
   }
 
   @keyframes fadeInDown {

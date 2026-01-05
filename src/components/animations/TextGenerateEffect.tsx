@@ -1,4 +1,5 @@
 'use client';
+
 import { motion, stagger, useAnimate } from 'framer-motion';
 import { useEffect } from 'react';
 
@@ -35,10 +36,7 @@ export const TextGenerateEffect = ({
       <motion.div ref={scope}>
         {wordsArray.map((word, idx) => {
           return (
-            <motion.span
-              key={word + idx}
-              className="text-secondary opacity-0 dark:text-white"
-            >
+            <motion.span key={word + idx} className="text-secondary opacity-0">
               {word}
               {' '}
             </motion.span>
@@ -53,7 +51,7 @@ export const TextGenerateEffect = ({
       <div className="mt-4">
         <div
           className={cn(
-            'text-2xl leading-snug tracking-wide text-black dark:text-white',
+            'text-2xl leading-snug tracking-wide text-black',
             wordClassName,
           )}
         >
