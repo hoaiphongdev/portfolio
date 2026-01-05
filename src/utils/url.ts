@@ -6,6 +6,7 @@ import {
   STATIC_PAGE_ORIGIN_URL,
 } from '@/constants/paths';
 import { TRANSLATED_URL } from '@/constants/routes';
+import { ROOT_SITE_URL } from '@/constants/url';
 
 import { isClientSide } from './common';
 
@@ -95,7 +96,7 @@ export const getCanonical = ({
   pathname,
   slug,
 }: GetCanonicalParams): string => {
-  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, '') || '';
+  const baseUrl = ROOT_SITE_URL.replace(/\/$/, '');
 
   if (pathname in DYNAMIC_ROUTE_MAPPING && slug) {
     const baseStaticPath

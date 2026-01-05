@@ -38,25 +38,27 @@ const DEFAULT_PRIORITY = {
   DYNAMIC: 0.7,
 } as const;
 
-// Helper Functions
-function getLocalizedUrl(path: string, locale: string): string {
-  return `${ROOT_SITE_URL}${locale === DEFAULT_LANGUAGE ? '' : `/${locale}`}${path}`;
+function getLocalizedUrl(
+  path: string,
+  locale: string,
+  baseUrl: string,
+): string {
+  return `${baseUrl}${locale === DEFAULT_LANGUAGE ? '' : `/${locale}`}${path}`;
 }
 
 function getTranslatedPath(originalPath: string, locale: string): string {
   return TRANSLATED_URL[originalPath]?.[locale] || originalPath;
 }
 
-// Main Functions
-function getHomeUrls(): SitemapURL[] {
+function getHomeUrls(baseUrl: string): SitemapURL[] {
   return Object.keys(LANGUAGE_CODE).map(locale => ({
-    loc: getLocalizedUrl('', locale),
+    loc: getLocalizedUrl('', locale, baseUrl),
     changefreq: DEFAULT_CHANGEFREQ.HOME,
     priority: DEFAULT_PRIORITY.HOME,
   }));
 }
 
-function getStaticUrls(): SitemapURL[] {
+function getStaticUrls(baseUrl: string): SitemapURL[] {
   const urls: SitemapURL[] = [];
   const locales = Object.keys(LANGUAGE_CODE);
 
@@ -68,7 +70,7 @@ function getStaticUrls(): SitemapURL[] {
     locales.forEach((locale) => {
       const translatedPath = getTranslatedPath(path, locale);
       urls.push({
-        loc: getLocalizedUrl(translatedPath, locale),
+        loc: getLocalizedUrl(translatedPath, locale, baseUrl),
         changefreq: DEFAULT_CHANGEFREQ.STATIC,
         priority: DEFAULT_PRIORITY.STATIC,
       });
@@ -78,7 +80,7 @@ function getStaticUrls(): SitemapURL[] {
   return urls;
 }
 
-function getProjectUrls(): SitemapURL[] {
+function getProjectUrls(baseUrl: string): SitemapURL[] {
   const urls: SitemapURL[] = [];
   const locales = Object.keys(LANGUAGE_CODE);
 
@@ -94,14 +96,13 @@ function getProjectUrls(): SitemapURL[] {
       const filePath = path.join(langPath, file);
       const stats = fs.statSync(filePath);
 
-      // Get project base path
       const projectBasePath = getTranslatedPath(
         STATIC_PAGE_ORIGIN_URL.PROJECTS,
         locale,
       );
 
       urls.push({
-        loc: getLocalizedUrl(`${projectBasePath}/${slug}`, locale),
+        loc: getLocalizedUrl(`${projectBasePath}/${slug}`, locale, baseUrl),
         lastmod: stats.mtime.toISOString(),
         changefreq: DEFAULT_CHANGEFREQ.DYNAMIC,
         priority: DEFAULT_PRIORITY.DYNAMIC,
@@ -151,9 +152,9 @@ export function buildSitemapXml(config: SitemapConfig = {}): string {
   const { excludePaths = [], additionalUrls = [] } = config;
 
   const allUrls = [
-    ...getHomeUrls(),
-    ...getStaticUrls(),
-    ...getProjectUrls(),
+    ...getHomeUrls(ROOT_SITE_URL),
+    ...getStaticUrls(ROOT_SITE_URL),
+    ...getProjectUrls(ROOT_SITE_URL),
     ...additionalUrls,
   ].filter(url => !excludePaths.some(path => url.loc.includes(path)));
 

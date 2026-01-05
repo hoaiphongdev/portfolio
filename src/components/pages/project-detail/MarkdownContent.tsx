@@ -79,11 +79,12 @@ export function MarkdownContent({ content }: { content: string }) {
           />
         ),
         img: ({ className, alt, src }) => {
+          const srcString = typeof src === 'string' ? src : '';
           const isMobileImage
             = isMobileDevice()
               || alt?.includes('Mobile')
               || className?.includes('mobile')
-              || src?.includes('mobile');
+              || srcString.includes('mobile');
 
           const imageClasses = cn(
             'object-contain mx-auto',
@@ -101,7 +102,7 @@ export function MarkdownContent({ content }: { content: string }) {
               <Image
                 className={imageClasses}
                 alt={alt ?? ''}
-                src={src ?? ''}
+                src={srcString || ''}
                 width={isMobileImage ? 275 : 1280}
                 height={isMobileImage ? 489 : 720}
                 style={{
