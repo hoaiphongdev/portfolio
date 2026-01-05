@@ -14,33 +14,11 @@ export default async function WorkExperienceComponent() {
         <div className="flex flex-col gap-y-2">
           <Typography text={t('overview.title')} className="uppercase" />
           <ul className="flex list-disc flex-col gap-y-3 px-4 text-sm font-medium text-secondary sm:gap-2 md:gap-3 md:gap-y-4 md:px-0 md:text-base lg:gap-4">
-            <li>
-              <p>{t('overview.description1')}</p>
-            </li>
-
-            <li>
-              <p>{t('overview.description2')}</p>
-            </li>
-
-            <li>
-              <p>{t('overview.description3')}</p>
-            </li>
-
-            <li>
-              <p>{t('overview.description4')}</p>
-            </li>
-
-            <li>
-              <p>{t('overview.description5')}</p>
-            </li>
-
-            <li>
-              <p>{t('overview.description6')}</p>
-            </li>
-
-            <li>
-              <p>{t('overview.description7')}</p>
-            </li>
+            {t.raw('overview.items').map((item: string, index: number) => (
+              <li key={index}>
+                <p>{item}</p>
+              </li>
+            ))}
           </ul>
         </div>
         {EXPERIENCES_DATA.map((item, index) => {

@@ -27,38 +27,45 @@
   },
   "page": {
     "home": {
-      "title": "WEBSITE DEVELOPER",
-      "summary": "Passionate about building scalable, high-performance web applications. Specialize in transforming complex problems into efficient and maintainable solutions.",
+      "title": "SOFTWARE DEVELOPER",
+      "summary": "Software Developer specializing in modern web technologies. Focused on building high-performance and user-friendly web applications.",
       "projects": "Notable Projects & Case Studies",
       "experience": "Career Experience, Expertise & Responsibilities"
     },
     "about": {
       "title": "Who am I?",
       "introduction": "Hi, I'm Hoài Phong",
-      "position1": "Website Developer",
-      "position2": "Software Developer",
-      "description1": "Currently, I am a",
-      "description2": ", and I am also striving to become a",
-      "description3": "I am a student at HCMUNRE, a university that is not particularly strong in IT, so most of my programming knowledge comes from self-learning and practice.",
-      "description4": "I always strive to learn and improve myself through each project to develop more refined applications.",
-      "description5": "My colleagues appreciate me for my teamwork skills, as I can balance humor with productivity while always ensuring that I complete my assigned tasks on time.",
-      "description6": "I also enjoy sharing new technologies with my friends so we can learn together and improve our products to better align with current market trends."
+      "intro": {
+        "prefix": "Currently, I am a",
+        "positions": ["Website Developer", "Software Developer"],
+        "connector": ", and I am also striving to become a"
+      },
+      "highlights": [
+        "I am a student at HCMUNRE, a university that is not particularly strong in IT, so most of my programming knowledge comes from self-learning and practice.",
+        "I always strive to learn and improve myself through each project to develop more refined applications.",
+        "My colleagues appreciate me for my teamwork skills, as I can balance humor with productivity while always ensuring that I complete my assigned tasks on time.",
+        "I also enjoy sharing new technologies with my friends so we can learn together and improve our products to better align with current market trends."
+      ]
     },
     "experiences": {
-      "title1": "My Experience",
+      "title": "My Experience",
       "resume": "Here is my resume",
-      "description1": "Everything I have learned and done is summarized here!",
-      "description2": "Details can be viewed below.",
+      "descriptions": [
+        "Everything I have learned and done is summarized here!",
+        "Details can be viewed below."
+      ],
       "list": {
         "overview": {
           "title": "TECHNICAL PROFILE",
-          "description1": "I have over 4+ years of experience in building and developing Websites or Web-based applications.",
-          "description2": "I have experience working with technologies/languages such as ReactJS, NextJS, Gatsby, Material UI, Tailwinds, Antd, HTML5, SCSS, Typescript, etc.",
-          "description3": "I have experience in responsive layouts, cross-browser and design layout using Figma, etc.",
-          "description4": "I have also used and worked with Backend technologies/languages such as NestJS, NodeJS.",
-          "description5": "I have fundamental understanding of databases like MySQL, PostgreSQL, MongoDB, and Redis cache.",
-          "description6": "I have experience using Git and Atlassian tools like Jira, Confluence, and Bitbucket.",
-          "description7": "I have excellent documentation and presentation skills. In terms of foreign languages, I can use English in the workplace, understand documents and communicate in English."
+          "items": [
+            "I have over 4+ years of experience in building and developing Websites or Web-based applications.",
+            "I have experience working with technologies/languages such as ReactJS, NextJS, Gatsby, Material UI, Tailwinds, Antd, HTML5, SCSS, Typescript, etc.",
+            "I have experience in responsive layouts, cross-browser and design layout using Figma, etc.",
+            "I have also used and worked with Backend technologies/languages such as NestJS, NodeJS.",
+            "I have fundamental understanding of databases like MySQL, PostgreSQL, MongoDB, and Redis cache.",
+            "I have experience using Git and Atlassian tools like Jira, Confluence, and Bitbucket.",
+            "I have excellent documentation and presentation skills. In terms of foreign languages, I can use English in the workplace, understand documents and communicate in English."
+          ]
         },
         "edu": {
           "title": "Education",

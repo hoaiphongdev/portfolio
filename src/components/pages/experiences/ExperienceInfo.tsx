@@ -29,7 +29,7 @@ export default async function ExperienceInfo() {
       <div>
         <TypewriterEffectSmooth
           className="mb:my-12 my-6 pt-6 md:mt-0 md:pt-6 lg:pt-0"
-          words={t('page.experiences.title1')
+          words={t('page.experiences.title')
             .split(' ')
             .map(x => ({
               text: x,
@@ -38,15 +38,22 @@ export default async function ExperienceInfo() {
         />
       </div>
       <ul className="flex list-none flex-col items-center justify-center gap-y-1 text-sm font-medium text-secondary sm:gap-2 md:gap-3 md:text-base lg:gap-4">
-        <li>
-          <TextGenerateEffect
-            words={t('page.experiences.description1')}
-            wordClassName="text-base text-center"
-          />
-        </li>
-        <li>
-          <p className="text-center">{t('page.experiences.description2')}</p>
-        </li>
+        {t
+          .raw('page.experiences.descriptions')
+          .map((desc: string, index: number) => (
+            <li key={index}>
+              {index === 0
+                ? (
+                    <TextGenerateEffect
+                      words={desc}
+                      wordClassName="text-base text-center"
+                    />
+                  )
+                : (
+                    <p className="text-center">{desc}</p>
+                  )}
+            </li>
+          ))}
       </ul>
     </>
   );

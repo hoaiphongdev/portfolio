@@ -64,32 +64,24 @@ export default async function AboutPageComponents() {
           <ul className="my-6 flex list-disc flex-col gap-y-4 px-4 font-medium text-secondary sm:gap-y-8 md:my-12 md:px-14 md:text-lg">
             <li className="leading-8">
               <p>
-                {t('page.about.description1')}
+                {t('page.about.intro.prefix')}
                 <TextHighlight className="mx-1">
-                  {t('page.about.position1')}
+                  {t('page.about.intro.positions.0')}
                 </TextHighlight>
-                {t('page.about.description2')}
+                {t('page.about.intro.connector')}
                 <TextHighlight className="mx-1 from-red-500 to-red-300/20">
-                  {t('page.about.position2')}
+                  {t('page.about.intro.positions.1')}
                 </TextHighlight>
               </p>
             </li>
 
-            <li>
-              <p>{t('page.about.description3')}</p>
-            </li>
-
-            <li>
-              <p>{t('page.about.description4')}</p>
-            </li>
-
-            <li>
-              <p>{t('page.about.description5')}</p>
-            </li>
-
-            <li>
-              <p>{t('page.about.description6')}</p>
-            </li>
+            {t
+              .raw('page.about.highlights')
+              .map((item: string, index: number) => (
+                <li key={index}>
+                  <p>{item}</p>
+                </li>
+              ))}
           </ul>
         </div>
       </div>
