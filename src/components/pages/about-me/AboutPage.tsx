@@ -64,14 +64,16 @@ export default async function AboutPageComponents() {
           <ul className="my-6 flex list-disc flex-col gap-y-4 px-4 font-medium text-secondary sm:gap-y-8 md:my-12 md:px-14 md:text-lg">
             <li className="leading-8">
               <p>
-                {t('page.about.intro.prefix')}
-                <TextHighlight className="mx-1">
-                  {t('page.about.intro.positions.0')}
-                </TextHighlight>
-                {t('page.about.intro.connector')}
-                <TextHighlight className="mx-1 from-red-500 to-red-300/20">
-                  {t('page.about.intro.positions.1')}
-                </TextHighlight>
+                {t.rich('page.about.intro', {
+                  current: chunks => (
+                    <TextHighlight className="mx-1">{chunks}</TextHighlight>
+                  ),
+                  aspiring: chunks => (
+                    <TextHighlight className="mx-1 from-red-500 to-red-300/20">
+                      {chunks}
+                    </TextHighlight>
+                  ),
+                })}
               </p>
             </li>
 

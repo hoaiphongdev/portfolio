@@ -35,11 +35,7 @@
     "about": {
       "title": "Who am I?",
       "introduction": "Hi, I'm Hoài Phong",
-      "intro": {
-        "prefix": "Currently, I am a",
-        "positions": ["Website Developer", "Software Developer"],
-        "connector": ", and I am also striving to become a"
-      },
+      "intro": "Currently, I am a <current>Software Developer</current> building fast, scalable web experiences driven by <aspiring>performance and purpose</aspiring>.",
       "highlights": [
         "I am a student at HCMUNRE, a university that is not particularly strong in IT, so most of my programming knowledge comes from self-learning and practice.",
         "I always strive to learn and improve myself through each project to develop more refined applications.",
@@ -67,42 +63,53 @@
             "I have excellent documentation and presentation skills. In terms of foreign languages, I can use English in the workplace, understand documents and communicate in English."
           ]
         },
-        "edu": {
-          "title": "Education",
-          "experiences": {
-            "title": "INFORMATION TECHNOLOGY",
-            "subTitle": "HCMC University of Natural Resources and Environment",
-            "description": "- Majored in Information Technology with a focus on web application development and system design.\n- Studied website and application system analysis and design principles.\n- Gained practical experience in Unity game development fundamentals.\n- Completed internships at three different companies during the COVID-19 pandemic, gaining diverse industry exposure.\n- Applied theoretical knowledge through hands-on projects and real-world applications.",
-            "time": "09/2018 - 09/2022"
+        "sections": [
+          {
+            "title": "Work Experience",
+            "items": [
+              {
+                "title": "Designveloper - Software Development Company",
+                "subTitle": "FULL STACK DEVELOPER",
+                "description": "- Collaborated with a New Zealand-based client in the PDF tools domain, optimizing web performance and enhancing user acquisition strategies.\n- Developed and maintained high-performance landing pages using Gatsby, Next.js, and React to maximize SEO and user engagement.\n- Led the migration from Next.js Page Router to App Router, leveraging Server Components for improved SEO and performance.\n- Transitioned the backend from Next.js to NestJS for better scalability and maintainability.\n- Integrated and optimized CMS platforms such as Prismic, HubSpot, and Strapi to enable marketing teams to create and launch static pages independently.\n- Empowered the client with a no-code approach, allowing rapid deployment of marketing campaigns and landing pages without developer intervention.\n- Optimized UX and performance for functional tool pages (e.g., Merge, Split, Compress, Annotate PDF) and static pages, contributing to 100K+ signups within a month.\n- Developed high-ranking PDF templates, securing a spot in the top 10 Google search results.\n- Contributed to the company's milestone of reaching +100 million users by improving key traffic-driving features, including localization, static tool pages, and universal CMS integration.\n- Migrated Google Tag Manager to a server-side setup, reducing client-side JavaScript load and boosting landing page performance by 2-4%.\n- \"Sharing Spark Award\" for outstanding knowledge sharing and workshop organization.",
+                "time": "02/2024 - Present",
+                "previewLink": "https://www.designveloper.com/"
+              },
+              {
+                "title": "Saigon MIO Technology JSC",
+                "subTitle": "FULL STACK DEVELOPER",
+                "description": "- Played a key role in the end-to-end development of enterprise-grade internal systems, ensuring scalability and maintainability.\n- Worked extensively with the MVC architecture while integrating React to enhance UI development using a component-based approach.\n- Designed and structured databases aligned with business logic using MySQL, optimizing performance and data integrity.\n- Integrated and synchronized third-party payment gateways such as MoMo, ZaloPay, VNPAY, ChargeBee, and Xendit to facilitate seamless transactions.\n- Led knowledge-sharing sessions on Next.js and contributed to its implementation in future frontend projects.\n- Actively participated in the R&D team, researching and integrating emerging technologies, including AI-driven features, into internal systems to enhance automation and efficiency.",
+                "time": "04/2022 - 02/2024",
+                "previewLink": "https://saigonmio.com/"
+              },
+              {
+                "title": "BESSFU Solution Technology Company Limited",
+                "subTitle": "FRONTEND DEVELOPER",
+                "description": "- Developed and implemented user-friendly UI components based on Figma designs using Next.js, React.js, and MUI Material.\n- Contributed to the frontend development of an e-learning platform for VUS English learning system, ensuring seamless user experience and responsiveness.\n- Designed and built interactive English-learning mini-games using JavaScript and JQuery, enhancing student engagement.\n- Developed various educational games, including math challenges, memory card matching, word association, and pronunciation-based image selection.\n- Optimized application performance and UI responsiveness to provide an engaging learning experience across devices.",
+                "time": "04/2022 - 09/2023",
+                "previewLink": "https://bessfu.com/"
+              },
+              {
+                "title": "Saigon Newport Corporation (SNP)",
+                "subTitle": "RESEARCH & DEVELOPMENT INTERN",
+                "description": "- Gained in-depth understanding of the company's culture, operational framework, and logistics ecosystem.\n- Conducted research and analysis to tackle real-world business challenges, implementing practical solutions through technology.\n- Led a team of interns to develop a web-based container management system using ReactJS, integrating seamlessly with the company's internal API.\n- Designed and optimized application workflows to enhance operational efficiency and data management.\n- Created detailed reports and comprehensive documentation for system implementations and process improvements.",
+                "time": "04/2022 - 05/2023",
+                "previewLink": "https://saigonnewport.com.vn/"
+              }
+            ]
+          },
+          {
+            "title": "Education",
+            "items": [
+              {
+                "title": "INFORMATION TECHNOLOGY",
+                "subTitle": "HCMC University of Natural Resources and Environment",
+                "description": "- Majored in Information Technology with a focus on web application development and system design.\n- Studied website and application system analysis and design principles.\n- Gained practical experience in Unity game development fundamentals.\n- Completed internships at three different companies during the COVID-19 pandemic, gaining diverse industry exposure.\n- Applied theoretical knowledge through hands-on projects and real-world applications.",
+                "time": "09/2018 - 09/2022",
+                "previewLink": "https://hcmunre.edu.vn/"
+              }
+            ]
           }
-        },
-        "work": {
-          "title": "Work Experience",
-          "dsv": {
-            "title": "Designveloper - Software Development Company",
-            "subTitle": "FULL STACK DEVELOPER",
-            "description": "- Collaborated with a New Zealand-based client in the PDF tools domain, optimizing web performance and enhancing user acquisition strategies.\n- Developed and maintained high-performance landing pages using Gatsby, Next.js, and React to maximize SEO and user engagement.\n- Led the migration from Next.js Page Router to App Router, leveraging Server Components for improved SEO and performance.\n- Transitioned the backend from Next.js to NestJS for better scalability and maintainability.\n- Integrated and optimized CMS platforms such as Prismic, HubSpot, and Strapi to enable marketing teams to create and launch static pages independently.\n- Empowered the client with a no-code approach, allowing rapid deployment of marketing campaigns and landing pages without developer intervention.\n- Optimized UX and performance for functional tool pages (e.g., Merge, Split, Compress, Annotate PDF) and static pages, contributing to 100K+ signups within a month.\n- Developed high-ranking PDF templates, securing a spot in the top 10 Google search results.\n- Contributed to the company's milestone of reaching +100 million users by improving key traffic-driving features, including localization, static tool pages, and universal CMS integration.\n- Migrated Google Tag Manager to a server-side setup, reducing client-side JavaScript load and boosting landing page performance by 2-4%.\n- \"Sharing Spark Award\" for outstanding knowledge sharing and workshop organization.",
-            "time": "02/2024 - Present"
-          },
-          "saigonMio": {
-            "title": "Saigon MIO Technology JSC",
-            "subTitle": "FULL STACK DEVELOPER",
-            "description": "- Played a key role in the end-to-end development of enterprise-grade internal systems, ensuring scalability and maintainability.\n- Worked extensively with the MVC architecture while integrating React to enhance UI development using a component-based approach.\n- Designed and structured databases aligned with business logic using MySQL, optimizing performance and data integrity.\n- Integrated and synchronized third-party payment gateways such as MoMo, ZaloPay, VNPAY, ChargeBee, and Xendit to facilitate seamless transactions.\n- Led knowledge-sharing sessions on Next.js and contributed to its implementation in future frontend projects.\n- Actively participated in the R&D team, researching and integrating emerging technologies, including AI-driven features, into internal systems to enhance automation and efficiency.",
-            "time": "04/2022 - 02/2024"
-          },
-          "bessfu": {
-            "title": "BESSFU Solution Technology Company Limited",
-            "subTitle": "FRONTEND DEVELOPER",
-            "description": "- Developed and implemented user-friendly UI components based on Figma designs using Next.js, React.js, and MUI Material.\n- Contributed to the frontend development of an e-learning platform for VUS English learning system, ensuring seamless user experience and responsiveness.\n- Designed and built interactive English-learning mini-games using JavaScript and JQuery, enhancing student engagement.\n- Developed various educational games, including math challenges, memory card matching, word association, and pronunciation-based image selection.\n- Optimized application performance and UI responsiveness to provide an engaging learning experience across devices.",
-            "time": "04/2022 - 09/2023"
-          },
-          "snp": {
-            "title": "Saigon Newport Corporation (SNP)",
-            "subTitle": "RESEARCH & DEVELOPMENT INTERN",
-            "description": "- Gained in-depth understanding of the company's culture, operational framework, and logistics ecosystem.\n- Conducted research and analysis to tackle real-world business challenges, implementing practical solutions through technology.\n- Led a team of interns to develop a web-based container management system using ReactJS, integrating seamlessly with the company's internal API.\n- Designed and optimized application workflows to enhance operational efficiency and data management.\n- Created detailed reports and comprehensive documentation for system implementations and process improvements.",
-            "time": "04/2022 - 05/2023"
-          }
-        }
+        ]
       }
     },
     "projects": {

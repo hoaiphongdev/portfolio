@@ -1,12 +1,25 @@
 import { getTranslations } from 'next-intl/server';
 
 import Typography from '@/components/common/Typography';
-import { EXPERIENCES_DATA } from '@/constants/data/experiences';
 
 import WorkExperienceComponentItem from './WorkExperienceComponentItem';
 
+export interface ExperienceItem {
+  title: string;
+  subTitle: string;
+  description: string;
+  time: string;
+  previewLink: string;
+}
+
+export interface ExperienceSection {
+  title: string;
+  items: ExperienceItem[];
+}
+
 export default async function WorkExperienceComponent() {
   const t = await getTranslations('page.experiences.list');
+  const sections = t.raw('sections') as ExperienceSection[];
 
   return (
     <div className="mt-8 w-full md:mt-12 md:max-w-2xl lg:max-w-4xl">
@@ -21,16 +34,14 @@ export default async function WorkExperienceComponent() {
             ))}
           </ul>
         </div>
-        {EXPERIENCES_DATA.map((item, index) => {
-          return (
-            <div key={t(item.title) + index}>
-              <WorkExperienceComponentItem
-                title={t(item.title)}
-                workingExperiences={item.items}
-              />
-            </div>
-          );
-        })}
+        {sections.map((section, index) => (
+          <div key={section.title + index}>
+            <WorkExperienceComponentItem
+              title={section.title}
+              items={section.items}
+            />
+          </div>
+        ))}
       </div>
     </div>
   );
