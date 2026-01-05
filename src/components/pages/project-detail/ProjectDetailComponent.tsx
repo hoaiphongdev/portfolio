@@ -5,6 +5,7 @@ import { ExternalLink } from 'lucide-react';
 import Image from 'next/image';
 
 import { Button } from '@/components/ui/button';
+import { ROOT_SITE_URL } from '@/constants/url';
 import { Link } from '@/i18n/routing';
 import type { IProject } from '@/types/project';
 
@@ -21,6 +22,8 @@ interface ProjectDetailProps {
 
 export function ProjectDetailComponent({ project }: ProjectDetailProps) {
   const { frontmatter, content } = project;
+  const previewLink
+    = frontmatter.previewLink === '/' ? ROOT_SITE_URL : frontmatter.previewLink;
 
   return (
     <motion.article
@@ -47,11 +50,7 @@ export function ProjectDetailComponent({ project }: ProjectDetailProps) {
           <TypeBadge type={frontmatter.type} />
         </div>
 
-        <Link
-          href={frontmatter.previewLink}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
+        <Link href={previewLink} target="_blank" rel="noopener noreferrer">
           <Button
             variant="outline"
             className="border-blue-dark text-blue-dark hover:bg-blue-light"

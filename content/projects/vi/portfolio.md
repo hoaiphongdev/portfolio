@@ -4,7 +4,7 @@ title: "Portfolio"
 slug: "portfolio"
 description: "Thiết kế và phát triển website portfolio cá nhân hiện đại để giới thiệu hành trình nghề nghiệp và chuyên môn kỹ thuật. Được xây dựng bằng Next.js và tích hợp các component Radix UI cho giao diện người dùng chuyên nghiệp. Có thiết kế responsive, animation mượt mà, và trình bày các dự án một cách toàn diện trong khi vẫn duy trì hiệu suất tối ưu thông qua server-side rendering."
 type: "personal"
-previewLink: "https://portfolio-5ft5.onrender.com"
+previewLink: "/"
 imageSrc: "/images/projects/hoaiphong-portfolio.png"
 ranking: 7
 tech:
@@ -41,7 +41,6 @@ tools:
 ### 🛠 Quy Trình Phát Triển
 
 - **Kiến Trúc Code**
-
   - TypeScript đảm bảo type safety
   - Component-driven development
   - Cấu trúc module rõ ràng

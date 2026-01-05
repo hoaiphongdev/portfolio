@@ -4,7 +4,7 @@ title: "Portfolio"
 slug: "portfolio"
 description: "Designed and developed a modern personal portfolio website to showcase my professional journey and technical expertise. Built with Next.js and enhanced with Radix UI components for a polished user interface. Features a responsive design, smooth animations, and comprehensive project showcases while maintaining optimal performance through server-side rendering."
 type: "personal"
-previewLink: "https://portfolio-5ft5.onrender.com"
+previewLink: "/"
 imageSrc: "/images/projects/hoaiphong-portfolio.png"
 ranking: 7
 tech:
@@ -41,7 +41,6 @@ tools:
 ### 🛠 Development Practices
 
 - **Code Architecture**
-
   - TypeScript for type safety
   - Component-driven development
   - Clear module structure

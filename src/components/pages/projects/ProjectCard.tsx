@@ -2,6 +2,7 @@ import { ArrowUpRight } from 'lucide-react';
 import { memo } from 'react';
 
 import { LinkPreview } from '@/components/animations/LinkPreview';
+import { ROOT_SITE_URL } from '@/constants/url';
 import { Link } from '@/i18n/routing';
 import type { IProject } from '@/types/project';
 
@@ -9,17 +10,10 @@ import TechChip from './TechChip';
 import TypeBadge from './TypeBadge';
 
 const ProjectCard = memo(({ project }: { project: IProject }) => {
-  const {
-    date,
-    title,
-    slug,
-    description,
-    type,
-    tech,
-    tools,
-    previewLink,
-    imageSrc,
-  } = project;
+  const { date, title, slug, description, type, tech, tools, imageSrc }
+    = project;
+  const previewLink
+    = project.previewLink === '/' ? ROOT_SITE_URL : project.previewLink;
 
   return (
     <article className="group p-6 rounded-2xl border border-gray-500 transition-all duration-300 bg-card shadow-sm h-full">
