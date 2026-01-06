@@ -11,7 +11,7 @@ tech:
   - "Swift"
   - "Astro"
 tools:
-  - "Cloudpages"
+  - "Cloudflare pages, Github"
 ---
 
 ## TÍNH NĂNG CHÍNH
