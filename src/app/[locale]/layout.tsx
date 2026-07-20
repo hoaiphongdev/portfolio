@@ -2,6 +2,7 @@ import '@/styles/globals.css';
 
 import type { Metadata } from 'next';
 import localFont from 'next/font/local';
+import { notFound } from 'next/navigation';
 import { NextIntlClientProvider } from 'next-intl';
 import { getMessages, setRequestLocale } from 'next-intl/server';
 
@@ -9,6 +10,7 @@ import FluidMotionCursor from '@/components/animations/FluidCursorMotion';
 import DefaultLayout from '@/components/layouts/DefaultLayout';
 import { ThemeProvider } from '@/components/providers/theme';
 import { ROOT_SITE_URL } from '@/constants/url';
+import { routing } from '@/i18n/routing';
 import cn from '@/lib/cn';
 
 const Mali = localFont({
@@ -82,6 +84,10 @@ export default async function LocaleLayout({
   children: React.ReactNode;
   params: { locale: string };
 }) {
+  if (!routing.locales.includes(locale as (typeof routing.locales)[number])) {
+    notFound();
+  }
+
   setRequestLocale(locale);
   const messages = await getMessages();
 

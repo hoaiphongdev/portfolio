@@ -1,11 +1,12 @@
 'use client';
 
 import { DoorOpen } from 'lucide-react';
+import Link from 'next/link';
 import { useTranslations } from 'next-intl';
 
 import { STATIC_PAGE_ORIGIN_URL } from '@/constants/paths';
 import { useCurrentLocale } from '@/hooks/useCurrentLocale';
-import { Link, usePathname } from '@/i18n/routing';
+import { usePathname } from '@/i18n/routing';
 import cn from '@/lib/cn';
 import type { ILinkType } from '@/types/common';
 import { getBasePathWithPresetLocale, getIsActivePath } from '@/utils/url';

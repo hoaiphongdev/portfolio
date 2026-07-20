@@ -1,6 +1,5 @@
 import { ArrowRight } from 'lucide-react';
-
-import { Link } from '@/i18n/routing';
+import Link from 'next/link';
 
 interface InfoCardProps {
   title: string;

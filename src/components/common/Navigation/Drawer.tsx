@@ -1,6 +1,7 @@
 'use client';
 
 import { MenuIcon, X } from 'lucide-react';
+import Link from 'next/link';
 import { useTranslations } from 'next-intl';
 import { useCallback, useMemo, useState } from 'react';
 
@@ -15,7 +16,7 @@ import {
 import { VisuallyHidden } from '@/components/ui/visually-hidden';
 import { STATIC_PAGE_ORIGIN_URL } from '@/constants/paths';
 import { useCurrentLocale } from '@/hooks/useCurrentLocale';
-import { Link, usePathname } from '@/i18n/routing';
+import { usePathname } from '@/i18n/routing';
 import cn from '@/lib/cn';
 import type { ILinkType } from '@/types/common';
 import { getBasePathWithPresetLocale, getIsActivePath } from '@/utils/url';

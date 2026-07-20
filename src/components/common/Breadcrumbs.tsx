@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { getTranslations } from 'next-intl/server';
 import { Fragment } from 'react';
 
@@ -8,7 +9,6 @@ import {
   BreadcrumbList,
   BreadcrumbSeparator,
 } from '@/components/ui/breadcrumb';
-import { Link } from '@/i18n/routing';
 import cn from '@/lib/cn';
 import type { IBreadcrumbType } from '@/types/common';
 
