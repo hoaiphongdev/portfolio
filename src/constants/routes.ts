@@ -1,8 +1,6 @@
 import { LANGUAGE_CODE } from './languages';
 import { DYNAMIC_PAGE_ORIGIN_URL, STATIC_PAGE_ORIGIN_URL } from './paths';
 
-export const NON_TRANSLATED_URL = {};
-
 export const TRANSLATED_URL = {
   [STATIC_PAGE_ORIGIN_URL.ABOUT_ME]: {
     [LANGUAGE_CODE.en]: '/about-me',
@@ -22,14 +20,27 @@ export const TRANSLATED_URL = {
   },
 };
 
-export const PATHNAMES = {
-  ...Object.fromEntries(
-    Object.values(NON_TRANSLATED_URL).map(path => [path, path]),
-  ),
-  ...Object.fromEntries(
-    Object.entries(TRANSLATED_URL).map(([originalPath, paths]) => [
-      originalPath,
-      paths,
-    ]),
-  ),
-};
+/**
+ * The same map as `TRANSLATED_URL`, widened for callers that look paths up by a
+ * plain string (SEO metadata). `TRANSLATED_URL` itself stays literal-typed
+ * because `defineRouting` derives `Link`'s href types from it.
+ */
+export const PATHNAMES: Record<string, Record<string, string>> = TRANSLATED_URL;
+
+/**
+ * Look a translated path up by its origin path.
+ *
+ * `TRANSLATED_URL` is handed to `defineRouting` verbatim so `Link`/`router`
+ * keep their literal-key type-safety; this helper is the one place allowed to
+ * index it with a plain string.
+ */
+export function lookupTranslatedPath(
+  originPath: string,
+  locale: string,
+): string | undefined {
+  const translations = (
+    TRANSLATED_URL as Record<string, Record<string, string> | undefined>
+  )[originPath];
+
+  return translations?.[locale];
+}

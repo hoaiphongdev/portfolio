@@ -3,7 +3,7 @@ import path from 'node:path';
 
 import { DEFAULT_LANGUAGE, LANGUAGE_CODE } from '@/constants/languages';
 import { STATIC_PAGE_ORIGIN_URL } from '@/constants/paths';
-import { TRANSLATED_URL } from '@/constants/routes';
+import { lookupTranslatedPath } from '@/constants/routes';
 import { ROOT_SITE_URL } from '@/constants/url';
 
 interface SitemapURL {
@@ -47,7 +47,7 @@ function getLocalizedUrl(
 }
 
 function getTranslatedPath(originalPath: string, locale: string): string {
-  return TRANSLATED_URL[originalPath]?.[locale] || originalPath;
+  return lookupTranslatedPath(originalPath, locale) ?? originalPath;
 }
 
 function getHomeUrls(baseUrl: string): SitemapURL[] {
@@ -163,10 +163,3 @@ export function buildSitemapXml(config: SitemapConfig = {}): string {
   const urlElements = allUrls.map(generateUrlXml).join('');
   return withXMLTemplate(urlElements);
 }
-
-export const withIndexXmlTemplate = (content: string): string => {
-  return `<?xml version="1.0" encoding="UTF-8"?>
-    <sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-      ${content}
-    </sitemapindex>`;
-};

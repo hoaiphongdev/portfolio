@@ -3,15 +3,15 @@ export const STATIC_PAGE_ORIGIN_URL = {
   ABOUT_ME: '/about-me',
   EXPERIENCES: '/experiences',
   PROJECTS: '/projects',
-};
+} as const;
 
 export const DYNAMIC_PAGE_ORIGIN_URL = {
   PROJECT_DETAIL: '/projects/[slug]',
-};
+} as const;
 
 export const DYNAMIC_ROUTE_MAPPING = {
   [DYNAMIC_PAGE_ORIGIN_URL.PROJECT_DETAIL]: STATIC_PAGE_ORIGIN_URL.PROJECTS,
-};
+} as const;
 
 export type StaticRoute =
   (typeof STATIC_PAGE_ORIGIN_URL)[keyof typeof STATIC_PAGE_ORIGIN_URL];
