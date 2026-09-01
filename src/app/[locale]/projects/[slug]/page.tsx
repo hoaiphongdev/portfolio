@@ -4,7 +4,7 @@ import { ProjectDetailComponent } from '@/components/pages/project-detail/Projec
 import type { LANGUAGE_CODE } from '@/constants/languages';
 import { DEFAULT_LANGUAGE } from '@/constants/languages';
 import { DYNAMIC_PAGE_ORIGIN_URL } from '@/constants/paths';
-import { getProjectContent, getProjectPaths } from '@/utils/markdow';
+import { getProjectContent, getProjectPaths } from '@/utils/projects';
 import { generateSEOMetadata } from '@/utils/seo';
 
 interface ProjectPageProps {
