@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef } from 'react';
 
 const TAIL_LENGTH = 20;
 
@@ -11,21 +11,49 @@ interface CursorPosition {
 
 const FluidMotionCursor: React.FC = () => {
   const cursorRef = useRef<HTMLDivElement>(null);
-  const [mousePosition, setMousePosition] = useState<CursorPosition>({
-    x: 0,
-    y: 0,
-  });
+  // The pointer position is animation state, not render state: keeping it in a
+  // ref means a mousemove no longer re-renders the 20 trail nodes, and the
+  // rAF loop below can be started once instead of being torn down per event.
+  const mousePositionRef = useRef<CursorPosition>({ x: 0, y: 0 });
   const cursorHistoryRef = useRef<CursorPosition[]>(
-    Array(TAIL_LENGTH).fill({ x: 0, y: 0 }),
+    Array.from({ length: TAIL_LENGTH }, () => ({ x: 0, y: 0 })),
   );
   const animationRef = useRef<number | null>(null);
 
   useEffect(() => {
     const handleMouseMove = (event: MouseEvent) => {
-      setMousePosition({ x: event.clientX, y: event.clientY });
+      mousePositionRef.current = { x: event.clientX, y: event.clientY };
+    };
+
+    const updateCursor = () => {
+      const cursorHistory = cursorHistoryRef.current;
+
+      // Shift history and add new position
+      cursorHistory.shift();
+      cursorHistory.push({ ...mousePositionRef.current });
+
+      if (cursorRef.current) {
+        const cursorCircles = cursorRef.current.children;
+
+        for (let i = 0; i < TAIL_LENGTH; i++) {
+          const current = cursorHistory[i];
+          const next = cursorHistory[i + 1] ?? cursorHistory[TAIL_LENGTH - 1];
+
+          current.x += (next.x - current.x) * 0.35;
+          current.y += (next.y - current.y) * 0.35;
+
+          const circle = cursorCircles[i] as HTMLDivElement | undefined;
+          if (circle) {
+            circle.style.transform = `translate(${current.x}px, ${current.y}px) scale(${i / TAIL_LENGTH})`;
+          }
+        }
+      }
+
+      animationRef.current = requestAnimationFrame(updateCursor);
     };
 
     document.addEventListener('mousemove', handleMouseMove);
+    animationRef.current = requestAnimationFrame(updateCursor);
 
     return () => {
       document.removeEventListener('mousemove', handleMouseMove);
@@ -34,45 +62,6 @@ const FluidMotionCursor: React.FC = () => {
       }
     };
   }, []);
-
-  useEffect(() => {
-    const updateCursor = () => {
-      const cursorHistory = cursorHistoryRef.current;
-
-      // Shift history and add new position
-      cursorHistory.shift();
-      cursorHistory.push(mousePosition);
-
-      if (cursorRef.current) {
-        const cursorCircles = cursorRef.current.children;
-
-        for (let i = 0; i < TAIL_LENGTH; i++) {
-          const current: any = cursorHistory[i];
-          const next: any
-            = cursorHistory[i + 1] ?? cursorHistory[TAIL_LENGTH - 1];
-
-          const xDiff = next.x - current.x;
-          const yDiff = next.y - current.y;
-
-          current.x += xDiff * 0.35;
-          current.y += yDiff * 0.35;
-
-          const circle = cursorCircles[i] as HTMLDivElement;
-          circle.style.transform = `translate(${current.x}px, ${current.y}px) scale(${i / TAIL_LENGTH})`;
-        }
-      }
-
-      animationRef.current = requestAnimationFrame(updateCursor);
-    };
-
-    animationRef.current = requestAnimationFrame(updateCursor);
-
-    return () => {
-      if (animationRef.current) {
-        cancelAnimationFrame(animationRef.current);
-      }
-    };
-  }, [mousePosition]);
 
   return (
     <>
@@ -99,11 +88,11 @@ const FluidMotionCursor: React.FC = () => {
       <div
         ref={cursorRef}
         id="cursor"
-        className="mix-blend-mode-difference pointer-events-none fixed left-0 top-0"
+        aria-hidden="true"
+        className="pointer-events-none fixed left-0 top-0 mix-blend-difference"
       >
-        {[...Array(TAIL_LENGTH)].map((_, index) => (
+        {Array.from({ length: TAIL_LENGTH }).map((_, index) => (
           <div
-
             key={index}
             className="cursor-circle absolute left-0 top-0 rounded-full bg-primary"
             style={{
