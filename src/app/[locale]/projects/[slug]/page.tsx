@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { setRequestLocale } from 'next-intl/server';
 
 import { ProjectDetailComponent } from '@/components/pages/project-detail/ProjectDetailComponent';
 import type { LANGUAGE_CODE } from '@/constants/languages';
@@ -37,6 +38,8 @@ export async function generateStaticParams() {
 
 export default async function ProjectPage({ params }: ProjectPageProps) {
   const { slug, locale = DEFAULT_LANGUAGE } = params;
+  setRequestLocale(locale);
+
   const project = await getProjectContent(slug, locale);
 
   return <ProjectDetailComponent project={project} />;

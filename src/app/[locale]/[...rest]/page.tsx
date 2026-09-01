@@ -1,5 +1,13 @@
 import { notFound } from 'next/navigation';
+import { setRequestLocale } from 'next-intl/server';
 
-export default function CatchAllPage() {
+export const dynamic = 'force-static';
+
+export default function CatchAllPage({
+  params: { locale },
+}: {
+  params: { locale: string };
+}) {
+  setRequestLocale(locale);
   notFound();
 }

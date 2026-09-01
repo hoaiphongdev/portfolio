@@ -5,10 +5,8 @@ import { routing } from '@/i18n/routing';
 
 import type { MiddlewareType } from './types';
 
-export const mwIntl = (): MiddlewareType => {
-  return async (request: NextRequest) => {
-    const intlMiddleware = createMiddleware(routing);
+const intlMiddleware = createMiddleware(routing);
 
-    return intlMiddleware(request);
-  };
+export const mwIntl = (): MiddlewareType => {
+  return async (request: NextRequest) => intlMiddleware(request);
 };

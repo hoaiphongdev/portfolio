@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { getTranslations } from 'next-intl/server';
+import { getTranslations, setRequestLocale } from 'next-intl/server';
 
 import HomePageComponent from '@/components/pages/home/HomePage';
 import type { LANGUAGE_CODE } from '@/constants/languages';
@@ -26,6 +26,12 @@ export async function generateMetadata({
   });
 }
 
-export default function HomePage() {
+export default function HomePage({
+  params: { locale },
+}: {
+  params: { locale: string };
+}) {
+  setRequestLocale(locale);
+
   return <HomePageComponent />;
 }

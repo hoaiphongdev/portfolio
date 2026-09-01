@@ -50,6 +50,30 @@ export default antfu(
     },
   },
   {
+    files: ['src/app/**/*.tsx', 'src/app/**/*.ts'],
+    rules: {
+      'react-refresh/only-export-components': [
+        'warn',
+        {
+          allowExportNames: [
+            'dynamic',
+            'dynamicParams',
+            'revalidate',
+            'fetchCache',
+            'runtime',
+            'preferredRegion',
+            'maxDuration',
+            'metadata',
+            'generateMetadata',
+            'generateStaticParams',
+            'viewport',
+            'generateViewport',
+          ],
+        },
+      ],
+    },
+  },
+  {
     rules: {
       'import/order': 'off',
       'sort-imports': 'off',

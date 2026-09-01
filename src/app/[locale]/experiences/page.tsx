@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { getTranslations } from 'next-intl/server';
+import { getTranslations, setRequestLocale } from 'next-intl/server';
 
 import ExperienceComponents from '@/components/pages/experiences/ExperiencePage';
 import type { LANGUAGE_CODE } from '@/constants/languages';
@@ -26,6 +26,12 @@ export async function generateMetadata({
   });
 }
 
-export default function ExperiencePage() {
+export default function ExperiencePage({
+  params: { locale },
+}: {
+  params: { locale: string };
+}) {
+  setRequestLocale(locale);
+
   return <ExperienceComponents />;
 }

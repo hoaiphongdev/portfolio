@@ -1,8 +1,7 @@
 import { chains } from './middlewares/chains';
 import { mwIntl } from './middlewares/mwIntl';
-import { mwPathname } from './middlewares/mwPathname';
 
-const mw = [mwPathname, mwIntl];
+const mw = [mwIntl];
 
 export const middleware = chains(mw);
 
