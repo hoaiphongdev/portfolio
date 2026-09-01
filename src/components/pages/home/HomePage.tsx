@@ -32,18 +32,13 @@ export default function HomePage() {
         <div className="order-2 lg:order-1">
           <div className="max-w-2xl">
             <div className="mb-12 flex flex-col gap-2">
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-800mb-4">
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-800">
                 {t('title')}
               </h1>
               <p className="text-gray-600 text-lg sm:text-xl max-w-2xl">
                 {t('summary')}
               </p>
             </div>
-            {/* <div className="grid grid-cols-3 gap-4 sm:gap-8 mb-12">
-              <StatCard number="+12" label="Years of Experience" />
-              <StatCard number="+46" label="Projects Completed" />
-              <StatCard number="+20" label="Worldwide Clients" />
-            </div> */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
               <InfoCard
                 path={projectsPath}
