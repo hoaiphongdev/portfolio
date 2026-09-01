@@ -10,7 +10,6 @@ import Image from 'next/image';
 import { encode } from 'qss';
 import React from 'react';
 
-import { Link } from '@/i18n/routing';
 import cn from '@/lib/cn';
 
 type LinkPreviewProps = {
@@ -20,7 +19,6 @@ type LinkPreviewProps = {
   width?: number;
   height?: number;
   quality?: number;
-  layout?: string;
   target?: string;
 } & (
   | { isStatic: true; imageSrc: string }
@@ -34,7 +32,6 @@ export const LinkPreview = ({
   width = 200,
   height = 125,
   quality = 50,
-  layout = 'fixed',
   isStatic = false,
   imageSrc = '',
   target = '_self',
@@ -88,8 +85,6 @@ export const LinkPreview = ({
                 width={width}
                 height={height}
                 quality={quality}
-                layout={layout}
-                priority
                 alt="hidden image"
               />
             </div>
@@ -108,6 +103,7 @@ export const LinkPreview = ({
           className={cn('text-black dark:text-white', className)}
           href={url}
           target={target}
+          rel={target === '_blank' ? 'noopener noreferrer' : undefined}
         >
           {children}
         </HoverCardPrimitive.Trigger>
@@ -138,10 +134,11 @@ export const LinkPreview = ({
                   x: translateX,
                 }}
               >
-                <Link
+                <a
                   title="preview"
                   href={url}
                   target={target}
+                  rel={target === '_blank' ? 'noopener noreferrer' : undefined}
                   className="block rounded-xl border-2 border-transparent bg-white p-1 shadow hover:border-neutral-200 dark:hover:border-neutral-800"
                   style={{ fontSize: 0 }}
                 >
@@ -151,12 +148,10 @@ export const LinkPreview = ({
                     width={width}
                     height={height}
                     quality={quality}
-                    layout={layout}
-                    priority
                     className="rounded-lg"
                     alt="preview image"
                   />
-                </Link>
+                </a>
               </motion.div>
             )}
           </AnimatePresence>

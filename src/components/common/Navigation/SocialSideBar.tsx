@@ -65,6 +65,7 @@ export default function SocialSideBar() {
             <TooltipTrigger asChild>
               <a
                 target="_blank"
+                rel="noopener noreferrer"
                 type="button"
                 href={item.url}
                 aria-label={`Go to ${item.label}`}

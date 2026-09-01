@@ -6,7 +6,6 @@ import Image from 'next/image';
 
 import { Button } from '@/components/ui/button';
 import { ROOT_SITE_URL } from '@/constants/url';
-import { Link } from '@/i18n/routing';
 import type { IProject } from '@/types/project';
 
 import TechChip from '../projects/TechChip';
@@ -50,7 +49,7 @@ export function ProjectDetailComponent({ project }: ProjectDetailProps) {
           <TypeBadge type={frontmatter.type} />
         </div>
 
-        <Link href={previewLink} target="_blank" rel="noopener noreferrer">
+        <a href={previewLink} target="_blank" rel="noopener noreferrer">
           <Button
             variant="outline"
             className="border-blue-dark text-blue-dark hover:bg-blue-light"
@@ -58,7 +57,7 @@ export function ProjectDetailComponent({ project }: ProjectDetailProps) {
             <ExternalLink className="mr-2 h-4 w-4" />
             Preview Project
           </Button>
-        </Link>
+        </a>
 
         <h1 className="mt-4 text-4xl font-bold text-title">
           {frontmatter.title}

@@ -125,6 +125,7 @@ export default function Header() {
               <Link
                 href={PROFILE_URL}
                 target="_blank"
+                rel="noopener noreferrer"
                 title="Nguyen Hoai Phong Resume"
                 className={cn(
                   'relative flex items-center justify-center gap-x-2 transition-all after:w-0',
