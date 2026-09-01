@@ -42,10 +42,6 @@ export default function HomePage() {
 
   return (
     <section className="relative flex h-[calc(100dvh_-_7.5rem)] flex-col items-center justify-center overflow-hidden md:h-[calc(100dvh_-_8.5rem)]">
-      <div
-        aria-hidden
-        className="pointer-events-none absolute inset-x-0 top-0 h-[420px] bg-[radial-gradient(ellipse_60%_50%_at_50%_0%,hsl(var(--primary)/0.08),transparent_70%)]"
-      />
       <p className="sr-only">{slogan.join(' ')}</p>
       <div className="relative">
         <CodeLaptop
