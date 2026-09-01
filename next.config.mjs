@@ -5,10 +5,12 @@ const withNextIntl = createNextIntlPlugin();
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
+    // Only the LinkPreview screenshot service is fetched remotely. A `**`
+    // hostname would let anyone drive /_next/image against arbitrary origins.
     remotePatterns: [
       {
         protocol: 'https',
-        hostname: '**',
+        hostname: 'api.microlink.io',
       },
     ],
   },
