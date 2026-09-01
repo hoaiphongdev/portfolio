@@ -2,11 +2,11 @@ import Image from 'next/image';
 import { getLocale, getTranslations } from 'next-intl/server';
 
 import { TextHighlight } from '@/components/animations/TextHighlight';
-import { TypewriterEffectSmooth } from '@/components/animations/TypeWriterEffect';
 import Breadcrumbs from '@/components/common/Breadcrumbs';
 import IntroductionFrame from '@/components/common/IntroductionFrame';
 import type { LANGUAGE_CODE } from '@/constants/languages';
 import { STATIC_PAGE_ORIGIN_URL } from '@/constants/paths';
+import cn from '@/lib/cn';
 import type { IBreadcrumbType } from '@/types/common';
 import { getBasePathWithPresetLocale } from '@/utils/url';
 
@@ -52,15 +52,14 @@ export default async function AboutPageComponents() {
           </div>
         </div>
         <div>
-          <TypewriterEffectSmooth
-            className="mb:my-12 my-6 pt-6 md:mt-0 md:pt-6 lg:pt-0"
-            words={t('page.about.title')
-              .split(' ')
-              .map(x => ({
-                text: x,
-                className: 'text-2xl sm:text-3xl md:text-4xl',
-              }))}
-          />
+          <div
+            className={cn(
+              'text-center text-xs font-bold sm:text-base md:text-xl lg:text-3xl xl:text-5xl',
+              'mb:my-12 my-6 pt-6 md:mt-0 md:pt-6 lg:pt-0',
+            )}
+          >
+            {t('page.about.title')}
+          </div>
           <ul className="my-6 flex list-disc flex-col gap-y-4 px-4 font-medium text-secondary sm:gap-y-8 md:my-12 md:px-14 md:text-lg">
             <li className="leading-8">
               <p>

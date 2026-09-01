@@ -1,8 +1,6 @@
 import Link from 'next/link';
 import { getTranslations } from 'next-intl/server';
 
-import { TextGenerateEffect } from '@/components/animations/TextGenerateEffect';
-import { TypewriterEffectSmooth } from '@/components/animations/TypeWriterEffect';
 import IntroductionFrame from '@/components/common/IntroductionFrame';
 import { PROFILE_URL } from '@/constants/url';
 
@@ -26,32 +24,15 @@ export default async function ExperienceInfo() {
           </div>
         </IntroductionFrame>
       </div>
-      <div>
-        <TypewriterEffectSmooth
-          className="mb:my-12 my-6 pt-6 md:mt-0 md:pt-6 lg:pt-0"
-          words={t('page.experiences.title')
-            .split(' ')
-            .map(x => ({
-              text: x,
-              className: 'text-2xl sm:text-3xl md:text-4xl',
-            }))}
-        />
+      <div className="mb:my-12 my-6 pt-6 text-center text-xs font-bold sm:text-base md:mt-0 md:pt-6 md:text-xl lg:pt-0 lg:text-3xl xl:text-5xl">
+        {t('page.experiences.title')}
       </div>
       <ul className="flex list-none flex-col items-center justify-center gap-y-1 text-sm font-medium text-secondary sm:gap-2 md:gap-3 md:text-base lg:gap-4">
         {t
           .raw('page.experiences.descriptions')
           .map((desc: string, index: number) => (
             <li key={index}>
-              {index === 0
-                ? (
-                    <TextGenerateEffect
-                      words={desc}
-                      wordClassName="text-base text-center"
-                    />
-                  )
-                : (
-                    <p className="text-center">{desc}</p>
-                  )}
+              <p className="text-center">{desc}</p>
             </li>
           ))}
       </ul>

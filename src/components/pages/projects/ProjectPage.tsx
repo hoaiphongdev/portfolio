@@ -1,6 +1,5 @@
 import { getLocale, getTranslations } from 'next-intl/server';
 
-import { TypewriterEffectSmooth } from '@/components/animations/TypeWriterEffect';
 import Breadcrumbs from '@/components/common/Breadcrumbs';
 import type { LANGUAGE_CODE } from '@/constants/languages';
 import { STATIC_PAGE_ORIGIN_URL } from '@/constants/paths';
@@ -43,15 +42,8 @@ export default async function ProjectPageComponent({
           breadcrumbs={breadcrumbs}
           containerClassName="pb-28 md:pb-0 md:mb-10 lg:col-span-2"
         />
-        <div>
-          <TypewriterEffectSmooth
-            words={t('page.projects.title')
-              .split(' ')
-              .map(x => ({
-                text: x,
-                className: 'text-2xl sm:text-3xl md:text-4xl',
-              }))}
-          />
+        <div className="text-center text-xs font-bold sm:text-base md:text-xl lg:text-3xl xl:text-5xl">
+          {t('page.projects.title')}
         </div>
         <ProjectList projects={projects} />
       </div>
