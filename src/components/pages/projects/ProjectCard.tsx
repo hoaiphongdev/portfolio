@@ -2,6 +2,7 @@ import { ArrowUpRight } from 'lucide-react';
 import { memo } from 'react';
 
 import { LinkPreview } from '@/components/animations/LinkPreview';
+import { DYNAMIC_PAGE_ORIGIN_URL } from '@/constants/paths';
 import { ROOT_SITE_URL } from '@/constants/url';
 import { Link } from '@/i18n/routing';
 import type { IProject } from '@/types/project';
@@ -49,7 +50,10 @@ const ProjectCard = memo(({ project }: { project: IProject }) => {
           </div>
         )}
         <Link
-          href={`/projects/${slug}`}
+          href={{
+            pathname: DYNAMIC_PAGE_ORIGIN_URL.PROJECT_DETAIL,
+            params: { slug },
+          }}
           scroll
           className="inline-flex items-center gap-2 text-sm font-medium text-primary hover:text-primary/80 transition-colors mt-4"
         >
