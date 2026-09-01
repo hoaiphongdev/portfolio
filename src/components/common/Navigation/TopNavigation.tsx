@@ -16,9 +16,10 @@ export default function TopNavigation() {
 
   const { scrollY } = useScroll();
 
-  const [isOver, setIsOver] = useState(
-    (scrollY as any)?.current > 100,
-  );
+  // Motion values must not be read during render (`.current` is not public API
+  // and means nothing on the server) - start at false and let the scroll
+  // listener below correct it on the first event.
+  const [isOver, setIsOver] = useState(false);
 
   useMotionValueEvent(scrollY, 'change', (latest) => {
     if (latest >= 100 && !isOver) {
@@ -53,9 +54,7 @@ export default function TopNavigation() {
           <p className="text-xl font-bold uppercase text-black/70">
             {t('title')}
           </p>
-          <p className="font-medium text-black/70">
-            {t('description')}
-          </p>
+          <p className="font-medium text-black/70">{t('description')}</p>
         </motion.div>
       </AnimatePresence>
     </header>
