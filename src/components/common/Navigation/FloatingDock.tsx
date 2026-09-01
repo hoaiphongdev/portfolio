@@ -15,11 +15,11 @@ import { useTranslations } from 'next-intl';
 import { useTheme } from 'next-themes';
 
 import {
-  Tooltip,
-  TooltipContent,
-  TooltipProvider,
-  TooltipTrigger,
-} from '@/components/ui/tooltip';
+  dockItemClass,
+  DockTooltip,
+} from '@/components/common/Navigation/DockItem';
+import PaletteSwitcher from '@/components/common/Navigation/PaletteSwitcher';
+import { TooltipProvider } from '@/components/ui/tooltip';
 import { LANGUAGE_CODE } from '@/constants/languages';
 import { STATIC_PAGE_ORIGIN_URL } from '@/constants/paths';
 import { PROFILE_URL } from '@/constants/url';
@@ -35,28 +35,6 @@ interface DockLink {
   icon: LucideIcon;
   exact?: boolean;
   external?: boolean;
-}
-
-const itemClass = cn(
-  'relative flex size-11 items-center justify-center rounded-full transition-colors',
-  'hover:bg-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring',
-);
-
-function DockTooltip({
-  label,
-  children,
-}: {
-  label: string;
-  children: React.ReactNode;
-}) {
-  return (
-    <Tooltip>
-      <TooltipTrigger asChild>{children}</TooltipTrigger>
-      <TooltipContent side="top" sideOffset={8}>
-        <p>{label}</p>
-      </TooltipContent>
-    </Tooltip>
-  );
 }
 
 export default function FloatingDock() {
@@ -142,7 +120,7 @@ export default function FloatingDock() {
                       ? { target: '_blank', rel: 'noopener noreferrer' }
                       : {})}
                     className={cn(
-                      itemClass,
+                      dockItemClass,
                       active
                         ? 'text-primary'
                         : 'text-muted-foreground hover:text-foreground',
@@ -159,14 +137,14 @@ export default function FloatingDock() {
           })}
           <li aria-hidden className="mx-0.5 h-6 w-px bg-border sm:mx-1" />
           <li>
-            <DockTooltip label="Toggle theme">
+            <DockTooltip label={t('toggleTheme')}>
               <button
                 type="button"
-                aria-label="Toggle theme"
+                aria-label={t('toggleTheme')}
                 onClick={() =>
                   setTheme(resolvedTheme === 'dark' ? 'light' : 'dark')}
                 className={cn(
-                  itemClass,
+                  dockItemClass,
                   'text-muted-foreground hover:text-foreground',
                 )}
               >
@@ -176,13 +154,16 @@ export default function FloatingDock() {
             </DockTooltip>
           </li>
           <li>
+            <PaletteSwitcher />
+          </li>
+          <li>
             <DockTooltip label={targetLocale.toUpperCase()}>
               <button
                 type="button"
                 aria-label={`Switch language to ${targetLocale.toUpperCase()}`}
                 onClick={() => switchLanguage(targetLocale)}
                 className={cn(
-                  itemClass,
+                  dockItemClass,
                   'font-mono text-xs font-semibold text-muted-foreground hover:text-foreground',
                 )}
               >

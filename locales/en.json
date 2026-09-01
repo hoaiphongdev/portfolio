@@ -6,7 +6,21 @@
       "aboutMe": "About Me",
       "experiences": "Experiences",
       "projects": "Projects",
-      "resume": "Resume"
+      "resume": "Resume",
+      "toggleTheme": "Toggle theme"
+    },
+    "palette": {
+      "label": "Theme color",
+      "violet": "Violet",
+      "sapphire": "Sapphire",
+      "cyan": "Cyan",
+      "emerald": "Emerald",
+      "lime": "Lime",
+      "amber": "Amber",
+      "sunset": "Sunset",
+      "rose": "Rose",
+      "orchid": "Orchid",
+      "graphite": "Graphite"
     },
     "drawer": {
       "home": "home",

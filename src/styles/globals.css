@@ -3,24 +3,35 @@
 @tailwind utilities;
 
 @layer base {
+  /*
+   * Theme tokens (shadcn convention, bare HSL triplets).
+   *
+   * Neutrals read their hue from --neutral-hue / --neutral-hue-alt so a
+   * palette can re-tint backgrounds/borders by overriding two variables.
+   * The default (violet) palette is these base blocks — no data-palette
+   * attribute is set for it.
+   */
   :root {
-    --background: 240 20% 99%;
-    --foreground: 245 30% 12%;
+    --neutral-hue: 240;
+    --neutral-hue-alt: 245;
+
+    --background: var(--neutral-hue) 20% 99%;
+    --foreground: var(--neutral-hue-alt) 30% 12%;
 
     --card: 0 0% 100%;
-    --card-foreground: 245 30% 12%;
+    --card-foreground: var(--neutral-hue-alt) 30% 12%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 245 30% 12%;
+    --popover-foreground: var(--neutral-hue-alt) 30% 12%;
 
     --primary: 262 83% 58%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 245 25% 95%;
-    --secondary-foreground: 245 30% 20%;
+    --secondary: var(--neutral-hue-alt) 25% 95%;
+    --secondary-foreground: var(--neutral-hue-alt) 30% 20%;
 
-    --muted: 240 14% 96%;
-    --muted-foreground: 240 8% 40%;
+    --muted: var(--neutral-hue) 14% 96%;
+    --muted-foreground: var(--neutral-hue) 8% 40%;
 
     --accent: 250 60% 96%;
     --accent-foreground: 262 60% 35%;
@@ -28,34 +39,31 @@
     --destructive: 0 72% 51%;
     --destructive-foreground: 0 0% 98%;
 
-    --border: 240 12% 90%;
-    --input: 240 12% 87%;
-    --ring: 262 83% 58%;
+    --border: var(--neutral-hue) 12% 90%;
+    --input: var(--neutral-hue) 12% 87%;
+    --ring: var(--primary);
 
     --radius: 0.75rem;
-
-    --gradient-from: 262 83% 58%;
-    --gradient-to: 192 91% 40%;
   }
 
   .dark {
-    --background: 245 30% 6%;
-    --foreground: 240 20% 93%;
+    --background: var(--neutral-hue-alt) 30% 6%;
+    --foreground: var(--neutral-hue) 20% 93%;
 
-    --card: 245 25% 9%;
-    --card-foreground: 240 20% 93%;
+    --card: var(--neutral-hue-alt) 25% 9%;
+    --card-foreground: var(--neutral-hue) 20% 93%;
 
-    --popover: 245 25% 8%;
-    --popover-foreground: 240 20% 93%;
+    --popover: var(--neutral-hue-alt) 25% 8%;
+    --popover-foreground: var(--neutral-hue) 20% 93%;
 
     --primary: 255 92% 76%;
     --primary-foreground: 245 30% 10%;
 
-    --secondary: 245 20% 14%;
-    --secondary-foreground: 240 15% 85%;
+    --secondary: var(--neutral-hue-alt) 20% 14%;
+    --secondary-foreground: var(--neutral-hue) 15% 85%;
 
-    --muted: 245 18% 13%;
-    --muted-foreground: 240 10% 64%;
+    --muted: var(--neutral-hue-alt) 18% 13%;
+    --muted-foreground: var(--neutral-hue) 10% 64%;
 
     --accent: 250 30% 16%;
     --accent-foreground: 255 80% 86%;
@@ -63,12 +71,196 @@
     --destructive: 0 62% 55%;
     --destructive-foreground: 0 0% 98%;
 
-    --border: 245 15% 17%;
-    --input: 245 15% 20%;
-    --ring: 255 92% 76%;
+    --border: var(--neutral-hue-alt) 15% 17%;
+    --input: var(--neutral-hue-alt) 15% 20%;
+  }
+}
 
-    --gradient-from: 255 92% 76%;
-    --gradient-to: 190 90% 55%;
+@layer base {
+  /*
+   * Color palettes — selected via data-palette="<id>" on <html>.
+   * Source of truth for ids/previews: src/constants/palettes.ts.
+   * Adding a palette: one block pair here + one PALETTES entry +
+   * common.palette.<id> in locales/en.json and locales/vi.json.
+   *
+   * INVARIANT: [data-palette='x'] (specificity 0-1-0) ties with .dark and
+   * appears later in the file, so every token set in a light palette block
+   * MUST be re-set in its .dark[data-palette='x'] block — otherwise the
+   * light value leaks into dark mode. The --neutral-hue vars are exempt
+   * (plain .dark never sets them; they apply to both modes).
+   */
+
+  /* ---- sapphire ---- */
+  [data-palette="sapphire"] {
+    --neutral-hue: 219;
+    --neutral-hue-alt: 224;
+    --primary: 221 83% 45%;
+    --primary-foreground: 0 0% 100%;
+    --accent: 221 60% 96%;
+    --accent-foreground: 221 60% 33%;
+  }
+
+  .dark[data-palette="sapphire"] {
+    --primary: 217 91% 70%;
+    --primary-foreground: 222 30% 10%;
+    --accent: 221 30% 16%;
+    --accent-foreground: 217 80% 86%;
+  }
+
+  /* ---- cyan ---- */
+  [data-palette="cyan"] {
+    --neutral-hue: 195;
+    --neutral-hue-alt: 200;
+    --primary: 192 91% 30%;
+    --primary-foreground: 0 0% 100%;
+    --accent: 192 60% 95%;
+    --accent-foreground: 192 75% 26%;
+  }
+
+  .dark[data-palette="cyan"] {
+    --primary: 190 85% 62%;
+    --primary-foreground: 195 30% 10%;
+    --accent: 192 30% 16%;
+    --accent-foreground: 190 80% 86%;
+  }
+
+  /* ---- emerald ---- */
+  [data-palette="emerald"] {
+    --neutral-hue: 158;
+    --neutral-hue-alt: 163;
+    --primary: 158 84% 28%;
+    --primary-foreground: 0 0% 100%;
+    --accent: 158 55% 95%;
+    --accent-foreground: 158 75% 23%;
+  }
+
+  .dark[data-palette="emerald"] {
+    --primary: 156 65% 60%;
+    --primary-foreground: 160 30% 10%;
+    --accent: 158 30% 15%;
+    --accent-foreground: 156 70% 85%;
+  }
+
+  /* ---- lime ---- */
+  [data-palette="lime"] {
+    --neutral-hue: 90;
+    --neutral-hue-alt: 95;
+    --primary: 84 74% 28%;
+    --primary-foreground: 0 0% 100%;
+    --accent: 84 55% 94%;
+    --accent-foreground: 84 85% 21%;
+  }
+
+  .dark[data-palette="lime"] {
+    --primary: 84 70% 62%;
+    --primary-foreground: 88 30% 10%;
+    --accent: 84 25% 15%;
+    --accent-foreground: 84 60% 82%;
+  }
+
+  /* ---- amber ---- */
+  [data-palette="amber"] {
+    --neutral-hue: 40;
+    --neutral-hue-alt: 45;
+    --primary: 38 92% 42%;
+    --primary-foreground: 30 90% 10%;
+    --accent: 40 70% 94%;
+    --accent-foreground: 33 90% 25%;
+  }
+
+  .dark[data-palette="amber"] {
+    --primary: 43 96% 62%;
+    --primary-foreground: 40 35% 10%;
+    --accent: 40 30% 15%;
+    --accent-foreground: 43 85% 82%;
+  }
+
+  /* ---- sunset ---- */
+  [data-palette="sunset"] {
+    --neutral-hue: 20;
+    --neutral-hue-alt: 25;
+    --primary: 18 88% 42%;
+    --primary-foreground: 0 0% 100%;
+    --accent: 20 75% 95%;
+    --accent-foreground: 18 85% 30%;
+  }
+
+  .dark[data-palette="sunset"] {
+    --primary: 22 95% 65%;
+    --primary-foreground: 20 30% 10%;
+    --accent: 20 35% 16%;
+    --accent-foreground: 22 90% 84%;
+  }
+
+  /* ---- rose ---- */
+  [data-palette="rose"] {
+    --neutral-hue: 345;
+    --neutral-hue-alt: 350;
+    --primary: 347 77% 47%;
+    --primary-foreground: 0 0% 100%;
+    --accent: 347 70% 96%;
+    --accent-foreground: 347 70% 33%;
+  }
+
+  .dark[data-palette="rose"] {
+    --primary: 350 90% 72%;
+    --primary-foreground: 348 30% 10%;
+    --accent: 348 30% 16%;
+    --accent-foreground: 350 85% 86%;
+  }
+
+  /* ---- orchid ---- */
+  [data-palette="orchid"] {
+    --neutral-hue: 290;
+    --neutral-hue-alt: 295;
+    --primary: 293 72% 43%;
+    --primary-foreground: 0 0% 100%;
+    --accent: 293 60% 96%;
+    --accent-foreground: 293 65% 34%;
+  }
+
+  .dark[data-palette="orchid"] {
+    --primary: 291 80% 72%;
+    --primary-foreground: 292 30% 10%;
+    --accent: 292 30% 16%;
+    --accent-foreground: 291 80% 87%;
+  }
+
+  /* ---- graphite (monochrome: overrides neutrals explicitly, both modes) ---- */
+  [data-palette="graphite"] {
+    --background: 240 5% 99%;
+    --foreground: 240 6% 12%;
+    --card-foreground: 240 6% 12%;
+    --popover-foreground: 240 6% 12%;
+    --primary: 240 6% 20%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 240 5% 95%;
+    --secondary-foreground: 240 6% 20%;
+    --muted: 240 5% 96%;
+    --muted-foreground: 240 4% 40%;
+    --accent: 240 5% 93%;
+    --accent-foreground: 240 6% 22%;
+    --border: 240 5% 89%;
+    --input: 240 5% 86%;
+  }
+
+  .dark[data-palette="graphite"] {
+    --background: 240 4% 7%;
+    --foreground: 240 5% 92%;
+    --card: 240 4% 10%;
+    --card-foreground: 240 5% 92%;
+    --popover: 240 4% 9%;
+    --popover-foreground: 240 5% 92%;
+    --primary: 240 6% 88%;
+    --primary-foreground: 240 6% 10%;
+    --secondary: 240 4% 14%;
+    --secondary-foreground: 240 5% 85%;
+    --muted: 240 4% 13%;
+    --muted-foreground: 240 4% 64%;
+    --accent: 240 4% 16%;
+    --accent-foreground: 240 5% 85%;
+    --border: 240 4% 17%;
+    --input: 240 4% 20%;
   }
 }
 

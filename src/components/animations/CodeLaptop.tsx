@@ -459,7 +459,7 @@ export default function CodeLaptop({
     });
     themeObserver.observe(document.documentElement, {
       attributes: true,
-      attributeFilter: ['class'],
+      attributeFilter: ['class', 'data-palette'],
     });
 
     const intersectionObserver = new IntersectionObserver(

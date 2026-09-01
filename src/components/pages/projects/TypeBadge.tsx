@@ -10,7 +10,7 @@ const typeBadgeVariants = cva(
       type: {
         company: 'bg-cyan-500/10 text-cyan-700 dark:text-cyan-300',
         oss: 'bg-emerald-500/10 text-emerald-700 dark:text-emerald-300',
-        personal: 'bg-violet-500/10 text-violet-700 dark:text-violet-300',
+        personal: 'bg-primary/10 text-accent-foreground',
       },
     },
   },

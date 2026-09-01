@@ -6,7 +6,21 @@
       "aboutMe": "Về mình",
       "experiences": "Kinh nghiệm",
       "projects": "Dự án",
-      "resume": "Hồ sơ"
+      "resume": "Hồ sơ",
+      "toggleTheme": "Đổi giao diện"
+    },
+    "palette": {
+      "label": "Màu chủ đề",
+      "violet": "Tím",
+      "sapphire": "Xanh dương",
+      "cyan": "Xanh biển",
+      "emerald": "Xanh lục bảo",
+      "lime": "Xanh chanh",
+      "amber": "Hổ phách",
+      "sunset": "Cam hoàng hôn",
+      "rose": "Hồng",
+      "orchid": "Tím hồng",
+      "graphite": "Xám than"
     },
     "drawer": {
       "home": "trang chủ",

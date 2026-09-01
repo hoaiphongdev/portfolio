@@ -7,7 +7,9 @@ import { NextIntlClientProvider } from 'next-intl';
 import { getMessages, setRequestLocale } from 'next-intl/server';
 
 import DefaultLayout from '@/components/layouts/DefaultLayout';
+import { PaletteProvider } from '@/components/providers/palette';
 import { ThemeProvider } from '@/components/providers/theme';
+import { DEFAULT_PALETTE, PALETTE_STORAGE_KEY } from '@/constants/palettes';
 import { ROOT_SITE_URL } from '@/constants/url';
 import { routing } from '@/i18n/routing';
 import cn from '@/lib/cn';
@@ -91,13 +93,23 @@ export default async function LocaleLayout({
         )}
       >
         <body suppressHydrationWarning>
+          {/* Pre-paint palette restore (mirrors next-themes' no-flash script):
+              the site is fully prerendered, so without this a persisted
+              non-default palette would flash the default colors on load. */}
+          <script
+            dangerouslySetInnerHTML={{
+              __html: `(function(){try{var p=localStorage.getItem('${PALETTE_STORAGE_KEY}');if(p&&p!=='${DEFAULT_PALETTE}'){document.documentElement.setAttribute('data-palette',p)}}catch(e){}})()`,
+            }}
+          />
           <ThemeProvider
             attribute="class"
             defaultTheme="system"
             enableSystem
             disableTransitionOnChange
           >
-            <DefaultLayout>{children}</DefaultLayout>
+            <PaletteProvider>
+              <DefaultLayout>{children}</DefaultLayout>
+            </PaletteProvider>
           </ThemeProvider>
         </body>
       </html>
