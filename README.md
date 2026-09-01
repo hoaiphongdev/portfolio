@@ -1,36 +1,74 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Portfolio
 
-## Getting Started
+Personal portfolio site — Next.js 14 App Router, bilingual (English / Vietnamese)
+via `next-intl`, Tailwind, with project write-ups authored as markdown.
 
-First, run the development server:
+## Requirements
+
+Toolchain versions are pinned in `mise.toml`:
+
+- Node `20.19.6`
+- pnpm `9.15.4`
+
+With [mise](https://mise.jdx.dev) installed, `mise install` picks both up.
+
+## Setup
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+pnpm install
+cp .env.example .env.dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+`.env.dev` / `.env.prod` are gitignored (`.gitignore` ignores `.env*` and keeps
+only `.env.example`).
+The single variable is `NEXT_PUBLIC_ROOT_SITE_URL`, which drives canonical URLs,
+`hreflang` alternates and the sitemap.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+## Commands
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+Recipes live in the [`justfile`](./justfile):
 
-## Learn More
+| Command        | What it does                                                    |
+| -------------- | --------------------------------------------------------------- |
+| `just run`     | Clean `.next`, copy `.env.dev` → `.env`, dev server on **3008** |
+| `just prod`    | Clean `.next`, copy `.env.prod` → `.env`, build and serve       |
+| `just install` | Remove `node_modules` and reinstall                             |
 
-To learn more about Next.js, take a look at the following resources:
+Or use pnpm directly: `pnpm dev` (port 3008), `pnpm build`, `pnpm start`,
+`pnpm lint`, `pnpm lint:fix`.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Layout
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+```
+content/projects/{en,vi}/*.md   Project write-ups; frontmatter is zod-validated
+locales/{en,vi}.json            UI copy (key sets must stay in sync)
+src/app/[locale]/               Routes; this layout owns <html>/<body>
+src/i18n/routing.ts             Locales + localized pathnames (source of truth)
+src/constants/routes.ts         TRANSLATED_URL: origin path -> per-locale path
+```
 
-## Deploy on Vercel
+### Adding a project
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Drop a markdown file into **both** `content/projects/en/` and
+`content/projects/vi/` using the same slug. Frontmatter is parsed by
+`projectFrontmatterSchema` in `src/utils/projects.ts` — the build fails loudly on
+a malformed entry. `ranking` sorts the listing (descending).
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+### Adding a route
+
+Add the origin path to `STATIC_PAGE_ORIGIN_URL` (`src/constants/paths.ts`), then
+its per-locale translations to `TRANSLATED_URL` (`src/constants/routes.ts`).
+Those literal types flow into `next-intl`, so `Link` and `router.replace` will
+reject an href that is not a known pathname template. Always link with the
+template plus params — `href={{ pathname: '/projects/[slug]', params: { slug } }}` —
+never a pre-substituted string, which bypasses localization.
+
+## Checks
+
+```bash
+pnpm exec tsc -p tsconfig.json --noEmit
+pnpm lint
+pnpm build
+```
+
+CI runs all three on every pull request (`.github/workflows/ci.yml`).
