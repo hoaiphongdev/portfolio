@@ -15,13 +15,15 @@ export default function SwitchLanguage() {
   const params = useParams() ?? {};
 
   const handleLanguageChange = (newLocale: string) => {
-    // Rebuild path with current params
-    let path = pathname;
-    Object.entries(params).forEach(([key, value]) => {
-      path = path.replace(`[${key}]`, value as string);
-    });
-
-    router.replace(path, { locale: newLocale });
+    // Pass the pathname template plus its params, never a pre-substituted
+    // string: next-intl resolves a localized path by matching the template
+    // against its `pathnames` map, and a substituted path matches nothing.
+    router.replace(
+      // @ts-expect-error -- `useParams` is untyped, so it cannot be narrowed to
+      // the param shape each pathname template expects.
+      { pathname, params },
+      { locale: newLocale },
+    );
   };
 
   return (
