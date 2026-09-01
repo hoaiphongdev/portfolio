@@ -23,7 +23,9 @@ export default antfu(
       },
       css: true,
     },
-    ignores: ['next-env.d.ts'],
+    // `public/` is generated/vendored assets (favicon manifest, browserconfig),
+    // not source - linting it produced 52 of the repo's 61 lint errors.
+    ignores: ['next-env.d.ts', 'public/**', '.next/**'],
   },
   jsxA11y.flatConfigs.recommended,
   {
