@@ -23,24 +23,40 @@
       "github": "Còn đây là Github của mình",
       "linkedin": "Ngoài ra mình còn có LinkedIn"
     },
-    "breadcrumbs": "Bạn đang xem"
+    "breadcrumbs": "Bạn đang xem",
+    "certifications": {
+      "heading": "Chứng chỉ",
+      "verifyLabel": "Xác thực chứng chỉ",
+      "aws": {
+        "name": "AWS Developer Associate",
+        "issuer": "Amazon Web Services",
+        "badgeAlt": "Huy hiệu AWS Certified Developer – Associate"
+      }
+    }
   },
   "page": {
     "home": {
-      "title": "WEBSITE DEVELOPER",
-      "summary": "Đam mê xây dựng các ứng dụng web hiệu suất cao, mở rộng và dễ duy trì. Chuyên biến các vấn đề phức tạp thành những giải pháp hiệu quả và tối ưu.",
+      "title": "FULL STACK DEVELOPER",
+      "summary": "Full Stack Developer với hơn 5 năm kinh nghiệm xây dựng và mở rộng các sản phẩm SaaS, phụ trách tính năng từ đầu đến cuối với Next.js, NestJS và AWS — luôn tập trung vào hiệu năng, khả năng mở rộng và tối ưu chi phí.",
       "projects": "Dự án nổi bật & Nghiên cứu",
-      "experience": "Kinh nghiệm, Chuyên môn & Trách nhiệm"
+      "experience": "Kinh nghiệm, Chuyên môn & Trách nhiệm",
+      "slogan": {
+        "w1": "BIẾN",
+        "w2": "Ý TƯỞNG",
+        "w3": "THÀNH",
+        "w4": "HIỆN THỰC"
+      },
+      "canvasAlt": "Laptop 3D xoay được vẽ từ các ký tự mã nguồn"
     },
     "about": {
       "title": "Mình là ai?",
       "introduction": "Hí, mình là Hoài Phong",
-      "intro": "Hiện tại, mình là một <current>Lập trình viên Phần mềm</current>, tạo nên những trải nghiệm web nhanh và ổn định, hướng đến <aspiring>hiệu suất và giá trị thực</aspiring>.",
+      "intro": "Hiện tại, mình là một <current>Full Stack Developer</current> xây dựng những trải nghiệm web nhanh và có khả năng mở rộng, hướng tới <aspiring>hiệu năng và mục tiêu rõ ràng</aspiring>.",
       "highlights": [
-        "Mình là sinh viên trường HCMUNRE, một trường không quá mạnh về IT, vì vậy đa số kiến thức lập trình mình đều tự học hỏi và rèn luyện.",
-        "Mình luôn cố gắng học hỏi và hoàn thiện bản thân qua từng project để phát triển các ứng dụng ngày càng chỉnh chu hơn.",
-        "Mọi người trong team đều yêu thích và đánh giá cao mình nhờ khả năng làm việc nhóm tốt, biết pha trò để tạo không khí vui vẻ nhưng vẫn luôn đảm bảo hoàn thành task được giao đúng tiến độ.",
-        "Mình cũng rất thích chia sẻ công nghệ mới với bạn bè để cùng nhau học hỏi và cải thiện sản phẩm, giúp nó phù hợp hơn với thị hiếu hiện tại."
+        "Mình tốt nghiệp HCMUNRE, một trường không quá mạnh về IT, nên phần lớn kiến thức lập trình đến từ việc tự học và thực hành.",
+        "Mình luôn cố gắng học hỏi và hoàn thiện qua từng dự án, quan tâm đến hiệu năng, khả năng mở rộng và tối ưu chi phí không kém gì việc hoàn thành tính năng.",
+        "Đồng nghiệp quý mình ở khả năng làm việc nhóm — mình cân bằng được sự hài hước và hiệu quả công việc, luôn hoàn thành đúng hạn. Mình tổ chức các buổi chia sẻ nội bộ và mentor cho các bạn developer junior.",
+        "Mình ứng dụng các công cụ AI vào công việc hằng ngày và quy trình của team để rút ngắn thời gian phát hành và nâng chất lượng code, đồng thời liên tục tìm cách đưa AI vào chính sản phẩm."
       ]
     },
     "experiences": {
@@ -54,20 +70,20 @@
         "overview": {
           "title": "Kinh nghiệm/Kiến thức",
           "items": [
-            "Hơn 4 năm kiến trúc và triển khai toàn bộ vòng đời web application & platform từ ý tưởng đến production với độ sẵn sàng cao.",
-            "Chuyên sâu về hệ sinh thái frontend hiện đại: React, Next.js, Gatsby, TypeScript, Tailwind CSS, Material UI, Ant Design, SCSS — luôn đảm bảo giao diện performant, dễ bảo trì và linh hoạt theo yêu cầu dự án & thiết kế.",
-            "Kiến trúc micro-frontend bằng Webpack Module Federation — cho phép các team deploy độc lập, chia sẻ dependencies để giảm kích thước bundle, load module động runtime và ghép các ứng dụng remote thành trải nghiệm liền mạch.",
-            "Xây dựng giao diện responsive, pixel-perfect, tương thích đa trình duyệt, chuyển đổi chính xác từ thiết kế Figma phức tạp sang code production-grade.",
-            "Thiết kế backend scalable với Node.js và NestJS: áp dụng clean architecture, modular design cho API REST/GraphQL, tận dụng TypeScript patterns (DI, decorators, guards, interceptors) để đảm bảo tính maintainable và dễ mở rộng dài hạn.",
-            "Thiết kế và triển khai kiến trúc microservices event-driven — sử dụng RabbitMQ cho message queuing đáng tin cậy, pub/sub pattern, xử lý asynchronous và tách biệt giao tiếp giữa các service trong hệ thống high-throughput.",
-            "Mô hình hóa và tối ưu layer dữ liệu với PostgreSQL, MySQL, MongoDB, Redis — triển khai caching hiệu quả, quản lý session và tuning query performance cho các kịch bản traffic cao.",
-            "Quản lý workflow Git trong môi trường team lớn, kết hợp Jira, Confluence, Bitbucket cho planning, code review, branching strategy và continuous integration; thành thạo git submodules để quản lý shared libraries và cấu trúc codebase phân tán.",
-            "Phát triển giải pháp automation và infrastructure-as-code: viết shell script, config YAML cho CI/CD pipeline, Docker Compose, GitHub Actions và các tooling vận hành hàng ngày.",
-            "Điều phối tích hợp và tùy chỉnh headless CMS (Prismic, Strapi) — kiến trúc toàn bộ content pipeline, xây dựng custom plugin, extension, script, webhook-driven flow phù hợp chặt chẽ với logic kinh doanh và nhu cầu scale.",
-            "Thiết kế và triển khai tích hợp CRM & scheduling platform (Chilipiper, Intercom, HubSpot) — xây dựng đồng bộ dữ liệu đáng tin cậy, webhook event-driven và tự động hóa quy trình kinh doanh hỗ trợ hiệu quả vận hành.",
-            "Lead tích hợp cổng thanh toán khu vực Đông Nam Á (Xendit, MoMo, VNPay) — kỹ thuật checkout experience robust, xử lý webhook real-time, idempotent processing và logic transaction tuân thủ quy định.",
-            "Chủ động tối ưu hóa workflow cá nhân & team để tăng tốc độ phát triển — tùy chỉnh môi trường terminal (tmux/Zellij) với keybinding, layout multi-pane persistent, session management nhằm multitask nhanh và hiệu quả hơn.",
-            "Soạn thảo tài liệu kỹ thuật chất lượng cao, sơ đồ kiến trúc, README, presentation cho stakeholder — giúp align team, rút ngắn onboarding và hỗ trợ maintainability dài hạn."
+            "Hơn 5 năm xây dựng và mở rộng các sản phẩm SaaS end-to-end — sở hữu tính năng từ ý tưởng đến vận hành production phục vụ hàng triệu người dùng.",
+            "Thành thạo các hệ sinh thái frontend hiện đại: React, Next.js (App Router, Server Components), Gatsby, TypeScript, Tailwind CSS, shadcn/ui và Material UI.",
+            "Thiết kế kiến trúc micro-frontend với Webpack Module Federation — cho phép các team triển khai độc lập ở quy mô lớn.",
+            "Xây dựng giao diện pixel-perfect, responsive, tương thích đa trình duyệt, chuyển thể chính xác các thiết kế Figma phức tạp thành code production.",
+            "Thiết kế hệ thống backend có khả năng mở rộng với NestJS, Node.js và .NET Core: API module hoá theo clean architecture trên REST, GraphQL và gRPC.",
+            "Thiết kế và triển khai kiến trúc microservice hướng sự kiện — dùng RabbitMQ cho hàng đợi tin cậy và xử lý tài liệu bất đồng bộ.",
+            "Mô hình hoá và tối ưu tầng dữ liệu với MongoDB, PostgreSQL, MySQL và Redis, áp dụng chiến lược caching phù hợp với lưu lượng đọc lớn.",
+            "Phát triển và vận hành trên AWS (Lambda, S3, SQS, Serverless) cùng Docker, theo dõi sức khoẻ hệ thống bằng Datadog.",
+            "Tối ưu hiệu năng và chi phí: Google Tag Manager phía server, giảm dung lượng bundle và cải thiện Core Web Vitals trên các trang lưu lượng cao.",
+            "Tích hợp headless CMS (Prismic, Strapi, HubSpot) — xây dựng pipeline nội dung hoàn chỉnh giúp marketing triển khai chiến dịch mà không cần developer.",
+            "Thiết kế và triển khai tích hợp CRM cùng nền tảng đặt lịch (Chili Piper, Intercom, HubSpot) với luồng dữ liệu ổn định.",
+            "Dẫn dắt việc tích hợp cổng thanh toán cho các nhà cung cấp Đông Nam Á (MoMo, ZaloPay, VNPAY, ChargeBee, Xendit) một cách an toàn.",
+            "Ứng dụng AI vào phát triển hằng ngày — AI coding agents, MCP (Model Context Protocol), agent skills, cùng các rule và prompt tuỳ chỉnh nhúng vào quy trình của team.",
+            "Tổ chức các buổi chia sẻ nội bộ và mentor cho developer junior; viết tài liệu kỹ thuật, sơ đồ kiến trúc và trình bày với các bên liên quan."
           ]
         },
         "sections": [
@@ -77,30 +93,34 @@
               {
                 "title": "Designveloper - Software Development Company",
                 "subTitle": "FULL STACK DEVELOPER",
-                "description": "- Hợp tác với khách hàng từ New Zealand trong lĩnh vực công cụ PDF, tối ưu hóa hiệu suất web và cải thiện chiến lược thu hút người dùng.\n- Phát triển và duy trì các trang landing page hiệu suất cao sử dụng Gatsby, Next.js và React để tối đa hóa SEO và tương tác người dùng.\n- Dẫn dắt quá trình chuyển đổi từ Next.js Page Router sang App Router, tận dụng Server Components để cải thiện SEO và hiệu suất.\n- Chuyển đổi backend từ Next.js sang NestJS để tăng khả năng mở rộng và bảo trì tốt hơn.\n- Tích hợp và tối ưu hóa các nền tảng CMS như Prismic, HubSpot và Strapi để cho phép đội marketing tự tạo và triển khai các trang tĩnh.\n- Trao quyền cho khách hàng với phương pháp no-code, cho phép triển khai nhanh chóng các chiến dịch marketing và landing page mà không cần sự can thiệp của developer.\n- Tối ưu hóa UX và hiệu suất cho các trang công cụ chức năng (ví dụ: Merge, Split, Compress, Annotate PDF) và trang tĩnh, góp phần đạt được hơn 100K+ đăng ký trong một tháng.\n- Phát triển các mẫu PDF có thứ hạng cao, đảm bảo vị trí trong top 10 kết quả tìm kiếm Google.\n- Đóng góp vào cột mốc đạt +100 triệu người dùng của công ty bằng cách cải thiện các tính năng thúc đẩy lưu lượng truy cập chính, bao gồm bản địa hóa, trang công cụ tĩnh và tích hợp CMS đa năng.\n- Chuyển đổi Google Tag Manager sang thiết lập phía máy chủ, giảm tải JavaScript phía client và tăng hiệu suất landing page lên 2-4%.\n- Đạt giải thưởng \"Sharing Spark Award\" cho việc chia sẻ kiến thức xuất sắc và tổ chức workshop.",
+                "description": "- Phát triển Lumin PDF cho khách hàng New Zealand — nền tảng SaaS về PDF với hơn 100 triệu người dùng — trong một team chuyên trách hơn 100 kỹ sư chia thành nhiều squad.\n- Squad In-App PDF Editor: xây dựng và duy trì các tính năng editor cốt lõi dùng hằng ngày — chú thích, ký điện tử, chỉnh sửa văn bản, OCR, gộp/xoay trang và các công cụ tài liệu ứng dụng AI — front end Next.js trên nền các service NestJS giao tiếp qua gRPC.\n- Developer phụ trách chính phần tích hợp PDF x Lumin Sign: tạo trường chữ ký trên PDF và chuyển tiếp sang Lumin Sign để ký. Định vị Lumin cạnh tranh với DocuSign và góp phần chốt nhiều hợp đồng trị giá ước tính $29,500.\n- Xây dựng lại bố cục và luồng của các thao tác PDF (gộp, xoay, sắp xếp) và tuỳ chỉnh cho một khách hàng lĩnh vực tài chính, hỗ trợ hợp đồng trị giá ~$16,000.\n- Đóng góp feature mapping và hỗ trợ migration khi chuyển từ PDF engine bên thứ ba sang PDF SDK nội bộ của Lumin — sáng kiến giúp khách hàng tiết kiệm ước tính ~5 triệu đô la.\n- Thành viên nòng cốt của \"AI Migration\", chiến dịch lớn nhất lịch sử Designveloper, hoàn thành trong 2 tuần: hợp nhất repo của từng team vào một codebase, chuyển Gatsby sang Next.js hoàn toàn, Bitbucket sang GitHub, Jira/Confluence sang Linear/Notion, và đưa công cụ AI vào quy trình làm việc. Một tính năng trước đó ước tính mất ~1 năm đã hoàn thành chỉ trong 2 tuần sau đó.\n- Squad Growth & Landing Page: xây dựng và duy trì các landing page hiệu năng cao, tối ưu SEO với Gatsby, Next.js và React; các trang công cụ (Merge, Split, Compress, Annotate) góp phần mang về hơn 100.000 lượt đăng ký chỉ trong một tháng.\n- Phát hành tính năng PDF Localization — nội dung PDF theo từng quốc gia trong thư viện — giúp lượt click tăng từ 15.9K (Tháng 1-5/2024) lên 36.8K (Tháng 5-12/2024).\n- Dẫn dắt việc chuyển từ Next.js Page Router sang App Router với Server Components, đồng thời chuyển backend từ Next.js API routes sang NestJS để mở rộng tốt hơn.\n- Tích hợp Prismic, HubSpot và Strapi để đội marketing có thể triển khai chiến dịch và trang tĩnh mà không cần developer.\n- Chuyển Google Tag Manager sang phía server, giảm JavaScript phía client và cải thiện hiệu năng landing page 2-4%.\n- Phát triển các trang PDF template lọt vào top 10 kết quả tìm kiếm Google.\n- Người tổ chức và diễn giả tại các buổi sharing, workshop và innovation nội bộ, trình bày bằng tiếng Anh với đồng nghiệp và khách hàng — nhận giải \"Sharing Spark Award\" cho đóng góp chia sẻ kiến thức nổi bật.\n- Mentor trong chương trình mentorship của công ty; trực tiếp hướng dẫn một thực tập sinh đã vượt qua kỳ thực tập và hiện làm full-time cho Lumin.",
                 "time": "02/2024 - Hiện tại",
-                "previewLink": "https://www.designveloper.com/"
+                "previewLink": "https://www.designveloper.com/",
+                "imageSrc": "/images/company/dsv.png"
               },
               {
                 "title": "Saigon MIO Technology JSC",
                 "subTitle": "FULL STACK DEVELOPER",
-                "description": "- Đóng vai trò quan trọng trong việc phát triển toàn diện các hệ thống nội bộ cấp doanh nghiệp, đảm bảo khả năng mở rộng và bảo trì.\n- Làm việc chuyên sâu với kiến trúc MVC đồng thời tích hợp React để nâng cao phát triển UI theo hướng component-based.\n- Thiết kế và cấu trúc cơ sở dữ liệu phù hợp với logic nghiệp vụ sử dụng MySQL, tối ưu hóa hiệu suất và tính toàn vẹn dữ liệu.\n- Tích hợp và đồng bộ hóa các cổng thanh toán của bên thứ ba như MoMo, ZaloPay, VNPAY, ChargeBee và Xendit để tạo điều kiện giao dịch liền mạch.\n- Dẫn dắt các buổi chia sẻ kiến thức về Next.js và đóng góp vào việc triển khai trong các dự án frontend tương lai.\n- Tích cực tham gia vào đội R&D, nghiên cứu và tích hợp các công nghệ mới nổi, bao gồm các tính năng dựa trên AI, vào hệ thống nội bộ để nâng cao tự động hóa và hiệu quả.",
+                "description": "- Làm việc full-time tại một agency nhịp độ cao chuyên bàn giao MVP và sản phẩm demo cho nhiều khách hàng.\n- Phụ trách toàn bộ khâu full-stack của nhiều MVP và demo trong thời hạn gấp — từ thiết kế schema MySQL đến front end React/Next.js trên backend MVC — giúp khách hàng có sản phẩm chạy được để kiểm chứng và giới thiệu.\n- Tích hợp và đồng bộ các cổng thanh toán: MoMo, ZaloPay, VNPAY, ChargeBee và Xendit.\n- Xây dựng giao diện chính xác từng pixel từ thiết kế Figma bằng Next.js, React và MUI.\n- Thành viên team R&D nghiên cứu và tích hợp công nghệ mới, bao gồm các tính năng ứng dụng AI, vào hệ thống nội bộ.\n- Dẫn dắt các buổi chia sẻ kiến thức về Next.js, định hình stack frontend cho các dự án sau đó.",
                 "time": "04/2022 - 02/2024",
-                "previewLink": "https://saigonmio.com/"
+                "previewLink": "https://saigonmio.com/",
+                "imageSrc": "/images/company/mio.png"
               },
               {
                 "title": "BESSFU Solution Technology Company Limited",
                 "subTitle": "FRONTEND DEVELOPER",
-                "description": "- Phát triển và triển khai các thành phần UI thân thiện với người dùng dựa trên thiết kế Figma sử dụng Next.js, React.js và MUI Material.\n- Đóng góp vào việc phát triển frontend cho nền tảng e-learning của hệ thống học tiếng Anh VUS, đảm bảo trải nghiệm người dùng mượt mà và khả năng responsive.\n- Thiết kế và xây dựng các mini-game học tiếng Anh tương tác bằng JavaScript và JQuery, nâng cao sự tham gia của học viên.\n- Phát triển nhiều trò chơi giáo dục đa dạng, bao gồm thử thách toán học, trò chơi ghép thẻ trí nhớ, liên kết từ và chọn hình ảnh dựa trên phát âm.\n- Tối ưu hóa hiệu suất ứng dụng và khả năng responsive của UI để mang lại trải nghiệm học tập hấp dẫn trên mọi thiết bị.",
+                "description": "- Phát triển frontend bán thời gian, làm việc từ xa cho nền tảng học tiếng Anh trực tuyến VUS, tập trung vào responsive và trải nghiệm đa thiết bị.\n- Thiết kế và xây dựng các mini-game học tập tương tác — thử thách toán học, lật thẻ ghi nhớ, nối từ và chọn hình theo phát âm — bằng JavaScript và jQuery.\n- Phối hợp chặt chẽ với team thiết kế để giữ trải nghiệm học tập nhất quán trên mọi thiết bị.",
                 "time": "04/2022 - 09/2023",
-                "previewLink": "https://bessfu.com/"
+                "previewLink": "https://bessfu.com/",
+                "imageSrc": "/images/company/bessfu.png"
               },
               {
                 "title": "Saigon Newport Corporation (SNP)",
                 "subTitle": "THỰC TẬP SINH NGHIÊN CỨU & PHÁT TRIỂN",
                 "description": "- Tìm hiểu sâu sắc về văn hóa công ty, khung hoạt động và hệ sinh thái logistics.\n- Thực hiện nghiên cứu và phân tích để giải quyết các thách thức kinh doanh thực tế, triển khai các giải pháp thực tiễn thông qua công nghệ.\n- Dẫn dắt nhóm thực tập sinh phát triển hệ thống quản lý container trên nền web sử dụng ReactJS, tích hợp liền mạch với API nội bộ của công ty.\n- Thiết kế và tối ưu hóa quy trình ứng dụng để nâng cao hiệu quả hoạt động và quản lý dữ liệu.\n- Tạo các báo cáo chi tiết và tài liệu toàn diện cho việc triển khai hệ thống và cải tiến quy trình.",
                 "time": "04/2022 - 05/2023",
-                "previewLink": "https://saigonnewport.com.vn/"
+                "previewLink": "https://saigonnewport.com.vn/",
+                "imageSrc": "/images/company/snp.png"
               }
             ]
           },
@@ -112,7 +132,8 @@
                 "subTitle": "Đại học Tài nguyên và Môi trường HCM",
                 "description": "- Chuyên ngành Công nghệ thông tin với trọng tâm về phát triển ứng dụng web và thiết kế hệ thống.\n- Học tập và nghiên cứu về nguyên lý phân tích, thiết kế hệ thống website và ứng dụng.\n- Tiếp cận và thực hành các kiến thức cơ bản về phát triển game với Unity.\n- Hoàn thành thực tập tại ba công ty khác nhau trong thời kỳ đại dịch COVID-19, tích lũy được nhiều kinh nghiệm đa dạng trong ngành.\n- Áp dụng kiến thức lý thuyết vào các dự án thực tế và ứng dụng thực tiễn.",
                 "time": "2018 - 2022",
-                "previewLink": "https://hcmunre.edu.vn/"
+                "previewLink": "https://hcmunre.edu.vn/",
+                "imageSrc": "/images/edu/hcmunre-website.png"
               }
             ]
           }
@@ -140,7 +161,7 @@
         "title": "Hoài Phong là ai ?",
         "description": "Thắc mắc gì ở mình thì xem ở đây nhé."
       },
-      "keywords": "Nguyễn Hoài Phong,Giới thiệu Hoài Phong,Thông tin cá nhân Hoài Phong,Hành trình của Hoài Phong,Kinh nghiệm của Hoài Phong,Sự nghiệp Hoài Phong,Hoài Phong Developer,Hoài Phong Frontend Developer,Hoài Phong Frontend Engineer,Hoài Phong Software Engineer"
+      "keywords": "Nguyễn Hoài Phong,Giới thiệu Hoài Phong,Thông tin cá nhân Hoài Phong,Hành trình của Hoài Phong,Kinh nghiệm của Hoài Phong,Sự nghiệp Hoài Phong,Hoài Phong Developer,Hoài Phong Full Stack Developer,Hoài Phong Frontend Engineer,Hoài Phong Software Engineer"
     },
     "experiences": {
       "title": "Kinh nghiệm làm việc - Hoài Phong",
@@ -149,7 +170,7 @@
         "title": "Kinh nghiệm làm việc của Phong",
         "description": "Kinh nghiệm tích luỹ được mình sẽ để ở đây nhé."
       },
-      "keywords": "Kinh nghiệm Nguyễn Hoài Phong,Kinh nghiệm làm việc Hoài Phong,Dự án Hoài Phong đã thực hiện,Kỹ năng chuyên môn Hoài Phong,Thành tựu nghề nghiệp Hoài Phong,Hoài Phong Developer,Hoài Phong Frontend Developer,Hoài Phong Projects,Frontend Developer,Hoài Phong Frontend Engineer,Frontend Engineer"
+      "keywords": "Kinh nghiệm Nguyễn Hoài Phong,Kinh nghiệm làm việc Hoài Phong,Dự án Hoài Phong đã thực hiện,Kỹ năng chuyên môn Hoài Phong,Thành tựu nghề nghiệp Hoài Phong,Hoài Phong Developer,Hoài Phong Full Stack Developer,Hoài Phong Projects,Full Stack Developer,Hoài Phong Frontend Engineer,Frontend Engineer"
     },
     "projects": {
       "title": "Portfolio dự án - Hoài Phong",

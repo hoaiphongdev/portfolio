@@ -50,9 +50,17 @@ tools:
 
   Blog liên quan: [Tại sao chúng tôi dịch Lumin sang bốn ngôn ngữ mới](https://www.luminpdf.com/blog/lumin-has-4-new-languages/)
 
-- **Hệ sinh thái Gatsby**: Sử dụng **Gatsby** cho **Server-Side Rendering (SSR)**, cải thiện **SEO** và hiệu suất trang.
+- **Hệ sinh thái Gatsby**: Ban đầu được xây dựng trên **Gatsby** cho **Server-Side Rendering (SSR)**, cải thiện **SEO** và hiệu suất trang — sau đó đã **chuyển hoàn toàn sang Next.js** trong chiến dịch AI Migration (bên dưới).
 
 ## THÀNH TỰU & CỘT MỐC
+
+### 🤖 AI Migration — từ Gatsby sang Next.js hoàn toàn
+
+- Đây chính là **codebase Gatsby** trong **"AI Migration"** — chiến dịch lớn nhất lịch sử **Designveloper**, hoàn thành trong **2 tuần**. Phần việc của mình:
+  - **Chuyển Gatsby sang Next.js hoàn toàn**, thống nhất stack với phần còn lại của nền tảng
+  - Dẫn dắt việc chuyển từ **Next.js Page Router sang App Router với Server Components**
+  - Chuyển backend từ **Next.js API routes sang NestJS** để mở rộng tốt hơn
+- Ở quy mô toàn chiến dịch, nhóm cũng đã **hợp nhất repository của từng team vào một codebase duy nhất**, chuyển **Bitbucket → GitHub** và **Jira/Confluence → Linear/Notion**, đồng thời **đưa công cụ AI** vào quy trình phát triển.
 
 ### 🚀 Cho client khả năng tạo Static Page mà không phụ thuộc vào Dev
 
@@ -62,7 +70,6 @@ tools:
 ### 📄 Các Trang Công cụ PDF
 
 - Xây dựng **các trang công cụ PDF tương tác** cho tương tác trước ứng dụng, như:
-
   - [Công cụ Ghép PDF](https://www.luminpdf.com/pdf-editor/merge-pdf/)
 
     ![Công cụ Ghép PDF](/images/projects/lumin-merge-tool.png)
@@ -95,4 +102,4 @@ tools:
 
 ## TÓM TẮT
 
-Trang Tĩnh Lumin là một nền tảng **được tối ưu hóa cao**, đa ngôn ngữ và thân thiện với SEO, giúp hợp lý hóa **quản lý nội dung**, **tăng cường tương tác người dùng** và **thúc đẩy chuyển đổi** cho Lumin PDF. Bằng cách tận dụng **Gatsby, Prismic CMS và GTM Server-Side Tracking**, dự án đã đạt được những **cải thiện hiệu suất** và **tác động kinh doanh** đáng kể.
+Trang Tĩnh Lumin là một nền tảng **được tối ưu hóa cao**, đa ngôn ngữ và thân thiện với SEO, giúp hợp lý hóa **quản lý nội dung**, **tăng cường tương tác người dùng** và **thúc đẩy chuyển đổi** cho Lumin PDF. Bằng cách tận dụng **Next.js (App Router), Prismic CMS và GTM Server-Side Tracking** — cùng việc chuyển khỏi Gatsby trong chiến dịch AI Migration — dự án đã đạt được những **cải thiện hiệu suất** và **tác động kinh doanh** đáng kể.

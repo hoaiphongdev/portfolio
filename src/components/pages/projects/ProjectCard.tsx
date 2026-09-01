@@ -17,10 +17,12 @@ const ProjectCard = memo(({ project }: { project: IProject }) => {
     = project.previewLink === '/' ? ROOT_SITE_URL : project.previewLink;
 
   return (
-    <article className="group p-6 rounded-2xl border border-gray-500 transition-all duration-300 bg-card shadow-sm h-full">
+    <article className="group h-full rounded-xl border border-border bg-card p-6 shadow-sm transition-all duration-300 hover:border-primary/40 hover:shadow-md">
       <div className="space-y-4 h-full flex flex-col">
         <div className="flex items-center justify-between">
-          <span className="text-sm text-gray-600 font-medium">{date}</span>
+          <span className="font-mono text-xs text-muted-foreground">
+            {date}
+          </span>
           <div className="flex gap-2">
             <TypeBadge type={type} />
           </div>
@@ -31,17 +33,23 @@ const ProjectCard = memo(({ project }: { project: IProject }) => {
           url={previewLink}
           target="_blank"
         >
-          <h3 className="text-xl font-bold text-primary">{title}</h3>
+          <h3 className="text-xl font-semibold tracking-tight text-card-foreground transition-colors group-hover:text-primary">
+            {title}
+          </h3>
         </LinkPreview>
-        <p className="text-gray-700 leading-relaxed flex-1">{description}</p>
+        <p className="text-muted-foreground leading-relaxed flex-1">
+          {description}
+        </p>
         <div className="flex flex-wrap gap-2">
           {tech.map(tech => (
             <TechChip key={tech} tech={tech} />
           ))}
         </div>
         {tools && (
-          <div className="pt-4 border-t border-gray-100">
-            <h4 className="text-sm font-medium mb-2 text-gray-500">Tools</h4>
+          <div className="pt-4 border-t border-border">
+            <h4 className="text-sm font-medium mb-2 text-muted-foreground">
+              Tools
+            </h4>
             <div className="flex flex-wrap gap-2">
               {tools.map(tool => (
                 <TechChip key={tool} tech={tool} variant="tool" />

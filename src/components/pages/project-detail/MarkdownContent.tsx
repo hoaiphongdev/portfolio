@@ -12,7 +12,10 @@ export function MarkdownContent({ content }: { content: string }) {
       components={{
         h1: ({ className, children, ...props }) => (
           <h1
-            className={cn('mt-8 mb-4 text-3xl font-bold text-title', className)}
+            className={cn(
+              'mt-8 mb-4 text-3xl font-bold tracking-tight text-foreground',
+              className,
+            )}
             {...props}
           >
             {children}
@@ -21,7 +24,7 @@ export function MarkdownContent({ content }: { content: string }) {
         h2: ({ className, children, ...props }) => (
           <h2
             className={cn(
-              'mt-6 mb-3 text-2xl font-semibold text-title',
+              'mt-6 mb-3 text-2xl font-semibold tracking-tight text-foreground',
               className,
             )}
             {...props}
@@ -32,7 +35,7 @@ export function MarkdownContent({ content }: { content: string }) {
         h3: ({ className, children, ...props }) => (
           <h3
             className={cn(
-              'mt-4 mb-2 text-xl font-medium text-title',
+              'mt-4 mb-2 text-xl font-medium text-foreground',
               className,
             )}
             {...props}
@@ -42,19 +45,25 @@ export function MarkdownContent({ content }: { content: string }) {
         ),
         p: ({ className, ...props }) => (
           <p
-            className={cn('mb-4 leading-7 text-gray-dark', className)}
+            className={cn('mb-4 leading-7 text-muted-foreground', className)}
             {...props}
           />
         ),
         ul: ({ className, ...props }) => (
           <ul
-            className={cn('mb-4 ml-6 list-disc text-gray-dark', className)}
+            className={cn(
+              'mb-4 ml-6 list-disc text-muted-foreground marker:text-primary',
+              className,
+            )}
             {...props}
           />
         ),
         ol: ({ className, ...props }) => (
           <ol
-            className={cn('mb-4 ml-6 list-decimal text-gray-dark', className)}
+            className={cn(
+              'mb-4 ml-6 list-decimal text-muted-foreground',
+              className,
+            )}
             {...props}
           />
         ),
@@ -63,7 +72,10 @@ export function MarkdownContent({ content }: { content: string }) {
         ),
         a: ({ className, children, ...props }) => (
           <a
-            className={cn('text-blue-dark hover:underline', className)}
+            className={cn(
+              'text-primary underline-offset-4 hover:underline',
+              className,
+            )}
             {...props}
           >
             {children}
@@ -72,7 +84,7 @@ export function MarkdownContent({ content }: { content: string }) {
         code: ({ className, ...props }) => (
           <code
             className={cn(
-              'rounded bg-gray-light px-1.5 py-0.5 text-gray-dark',
+              'rounded-md bg-muted px-1.5 py-0.5 font-mono text-sm text-foreground',
               className,
             )}
             {...props}

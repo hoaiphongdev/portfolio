@@ -50,9 +50,17 @@ tools:
 
   Related Blog: [Why we translated Lumin into four new languages](https://www.luminpdf.com/blog/lumin-has-4-new-languages/)
 
-- **Gatsby Ecosystem**: Utilized **Gatsby** for **Server-Side Rendering (SSR)**, improving **SEO** and page performance.
+- **Gatsby Ecosystem**: Originally built on **Gatsby** for **Server-Side Rendering (SSR)**, improving **SEO** and page performance — since **fully migrated to Next.js** as part of the AI Migration campaign (below).
 
 ## ACHIEVEMENTS & MILESTONES
+
+### 🤖 AI Migration — Gatsby to Full Next.js
+
+- This was **the Gatsby codebase** in the **"AI Migration"**, the largest campaign in **Designveloper's** history, delivered in **2 weeks**. My part of it:
+  - **Moved Gatsby to full Next.js**, unifying the stack with the rest of the platform
+  - Led the migration from **Next.js Page Router to App Router with Server Components**
+  - Moved the backend from **Next.js API routes to NestJS** for scalability
+- Campaign-wide, the effort also **consolidated per-team repositories into a single codebase**, moved **Bitbucket → GitHub** and **Jira/Confluence → Linear/Notion**, and **embedded AI tooling** into the development workflow.
 
 ### 🚀 Empowered Non-Technical Content Updates
 
@@ -62,7 +70,6 @@ tools:
 ### 📄 Functional PDF Tool Pages
 
 - Built **interactive PDF tool pages** for pre-app engagement, such as:
-
   - [Merge PDF Tool](https://www.luminpdf.com/pdf-editor/merge-pdf/)
 
     ![Merge PDF Tool](/images/projects/lumin-merge-tool.png)
@@ -95,4 +102,4 @@ tools:
 
 ## SUMMARY
 
-Lumin Static Page is a **highly optimized**, multilingual, and SEO-friendly platform that streamlines **content management**, **enhances user engagement**, and **drives conversions** for Lumin PDF. By leveraging **Gatsby, Prismic CMS, and GTM Server-Side Tracking**, the project achieved remarkable **performance gains** and **business impact**.
+Lumin Static Page is a **highly optimized**, multilingual, and SEO-friendly platform that streamlines **content management**, **enhances user engagement**, and **drives conversions** for Lumin PDF. By leveraging **Next.js (App Router), Prismic CMS, and GTM Server-Side Tracking** — and migrating off Gatsby during the AI Migration — the project achieved remarkable **performance gains** and **business impact**.

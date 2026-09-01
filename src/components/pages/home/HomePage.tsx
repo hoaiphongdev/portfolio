@@ -1,70 +1,79 @@
 'use client';
 
 import { useTranslations } from 'next-intl';
+import type { ReactNode } from 'react';
 
-import type { LANGUAGE_CODE } from '@/constants/languages';
-import { STATIC_PAGE_ORIGIN_URL } from '@/constants/paths';
-import { useCurrentLocale } from '@/hooks/useCurrentLocale';
-import Image from '@/lib/next/image';
-import { getBasePathWithPresetLocale } from '@/utils/url';
+import CodeLaptop from '@/components/animations/CodeLaptop';
+import Typography from '@/components/common/Typography';
+import cn from '@/lib/cn';
 
-import InfoCard from './InfoCard';
+function SloganWord({
+  className,
+  accent = false,
+  children,
+}: {
+  className?: string;
+  accent?: boolean;
+  children: ReactNode;
+}) {
+  return (
+    <span
+      aria-hidden
+      className={cn(
+        'pointer-events-none absolute select-none whitespace-nowrap font-mono text-base font-medium uppercase tracking-[0.3em] md:text-2xl',
+        accent ? 'text-primary' : 'text-foreground/80',
+        className,
+      )}
+    >
+      {children}
+    </span>
+  );
+}
 
 export default function HomePage() {
   const t = useTranslations('page.home');
-  const locale = useCurrentLocale() as keyof typeof LANGUAGE_CODE;
 
-  const experiencesPath = getBasePathWithPresetLocale({
-    path: STATIC_PAGE_ORIGIN_URL.EXPERIENCES,
-    locale,
-    isHomePage: true,
-  });
-
-  const projectsPath = getBasePathWithPresetLocale({
-    path: STATIC_PAGE_ORIGIN_URL.PROJECTS,
-    locale,
-    isHomePage: true,
-  });
+  const slogan = [
+    t('slogan.w1'),
+    t('slogan.w2'),
+    t('slogan.w3'),
+    t('slogan.w4'),
+  ];
 
   return (
-    <main className="min-h-[70vh] flex flex-col items-center justify-center container mx-auto px-4 sm:px-6 lg:px-8">
-      <div className="grid lg:grid-cols-2 gap-8 items-center py-8 sm:py-12 md:py-20">
-        <div className="order-2 lg:order-1">
-          <div className="max-w-2xl">
-            <div className="mb-12 flex flex-col gap-2">
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-800">
-                {t('title')}
-              </h1>
-              <p className="text-gray-600 text-lg sm:text-xl max-w-2xl">
-                {t('summary')}
-              </p>
-            </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
-              <InfoCard
-                path={projectsPath}
-                title={t('projects')}
-                bgColor="bg-red-dark"
-              />
-              <InfoCard
-                path={experiencesPath}
-                title={t('experience')}
-                bgColor="bg-green-dark"
-              />
-            </div>
-          </div>
-        </div>
-        <div className="order-1 lg:order-2 hidden lg:block">
-          <div className="relative w-full h-full min-h-[500px]">
-            <Image
-              src="/images/home-office.svg"
-              alt="home-page"
-              fill
-              className="object-contain"
-              priority
-            />
-          </div>
-        </div>
+    <section className="relative flex h-[calc(100dvh_-_7.5rem)] flex-col items-center justify-center overflow-hidden md:h-[calc(100dvh_-_8.5rem)]">
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-x-0 top-0 h-[420px] bg-[radial-gradient(ellipse_60%_50%_at_50%_0%,hsl(var(--primary)/0.08),transparent_70%)]"
+      />
+      <p className="sr-only">{slogan.join(' ')}</p>
+      <div className="relative">
+        <CodeLaptop
+          className="size-[min(90vw,calc(100dvh_-_11.5rem))] md:size-[min(70vw,calc(100dvh_-_14rem))] md:max-h-[880px] md:max-w-[880px]"
+          aria-label={t('canvasAlt')}
+        />
+        <SloganWord className="left-[2%] top-[6%] md:-left-[14%] md:top-[10%]">
+          {slogan[0]}
+        </SloganWord>
+        <SloganWord accent className="right-0 top-[42%] md:-right-[16%]">
+          {slogan[1]}
+        </SloganWord>
+        <SloganWord className="bottom-[26%] left-[4%] md:-left-[10%] md:bottom-[30%]">
+          {slogan[2]}
+        </SloganWord>
+        <SloganWord className="bottom-[4%] right-[6%] md:-right-[12%] md:bottom-[8%]">
+          {slogan[3]}
+        </SloganWord>
       </div>
-    </main>
+      <div className="mt-3 flex flex-col items-center gap-y-1 text-center md:mt-4">
+        <Typography
+          as="h1"
+          variant="eyebrow"
+          text="NGUYỄN HOÀI PHONG"
+          className="text-sm md:text-base"
+        />
+        <p className="text-xs text-muted-foreground md:text-sm">{t('title')}</p>
+      </div>
+    </section>
   );
 }

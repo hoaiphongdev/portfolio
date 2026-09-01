@@ -18,47 +18,19 @@ export default function SocialSideBar() {
 
   const socialLinks: ILinkType[] = [
     {
-      label: t('fb'),
-      url: MY_SOCIAL_LINK.FB,
-      icon: () => <Icon name="facebook" className="text-white" />,
-    },
-    {
       label: t('github'),
       url: MY_SOCIAL_LINK.GITHUB,
-      icon: () => <Icon name="github" className="text-white" />,
+      icon: () => <Icon name="github" className="text-current" />,
     },
     {
       label: t('linkedin'),
       url: MY_SOCIAL_LINK.LINKEDIN,
-      icon: () => <Icon name="linkedin" className="text-white" />,
+      icon: () => <Icon name="linkedin" className="text-current" />,
     },
   ];
 
   return (
     <aside className="hidden md:fixed md:left-6 md:top-1/2 md:flex md:-translate-y-1/2 md:flex-col md:gap-y-4">
-      <p className="text-center text-sm font-medium text-title xl:text-base">
-        H
-        <br />
-        O
-        <br />
-        À
-        <br />
-        i
-        <br />
-        .
-        <br />
-        P
-        <br />
-        H
-        <br />
-        O
-        <br />
-        N
-        <br />
-        G
-        <br />
-        ...
-      </p>
       {socialLinks.map((item, index) => (
         <TooltipProvider key={`${item.url}_${index}`} delayDuration={300}>
           <Tooltip>
@@ -70,8 +42,7 @@ export default function SocialSideBar() {
                 href={item.url}
                 aria-label={`Go to ${item.label}`}
                 className={cn(
-                  'group rounded-[10px] border border-[#ccc] bg-title p-2 outline-none transition-all hover:bg-primary hover:shadow-md',
-                  index === 0 && 'bg-primary',
+                  'group rounded-lg border border-border bg-card p-2 text-muted-foreground outline-none transition-colors hover:border-primary/40 hover:text-primary focus-visible:ring-1 focus-visible:ring-ring',
                 )}
               >
                 {item.icon()}
@@ -82,7 +53,7 @@ export default function SocialSideBar() {
               </a>
             </TooltipTrigger>
             <TooltipContent>
-              <p className="text-base lg:text-lg">{item.label}</p>
+              <p>{item.label}</p>
             </TooltipContent>
           </Tooltip>
         </TooltipProvider>

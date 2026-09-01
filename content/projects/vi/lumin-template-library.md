@@ -80,10 +80,22 @@ tools:
   - Đề xuất PDF template theo thị trường
 - Đóng góp vào việc đạt **10,000+ người dùng đăng ký mới hàng tháng**
 
+### 🤖 Một phần của chiến dịch AI Migration
+
+- Thư viện template là một trong các codebase được hợp nhất trong **"AI Migration"** — chiến dịch lớn nhất lịch sử **Designveloper**, hoàn thành trong **2 tuần**:
+  - **Hợp nhất vào codebase chung của toàn công ty** cùng các sản phẩm Lumin khác
+  - Chuyển sang **GitHub** và **Linear/Notion** trong đợt thay đổi công cụ
+  - **Đưa công cụ AI** vào quy trình làm việc hằng ngày, rút ngắn rõ rệt chu kỳ phát hành
+
+### 🌐 PDF Localization
+
+- Phát hành tính năng **PDF Localization** — nội dung PDF theo từng quốc gia trong thư viện.
+- Lượt click tăng từ **15.9K (Tháng 1–5/2024)** lên **36.8K (Tháng 5–12/2024)**.
+
 ### 🔄 Cải Tiến Kỹ Thuật
 
-- **ĐANG THỰC HIỆN**: Mình đang dẫn dắt việc chuyển đổi sang Next.js App Router
-- **ĐANG THỰC HIỆN**: Mình cũng đang dẫn dắt việc chuyển đổi backend trong Next.js sang NestJs
+- **Đã hoàn thành** việc chuyển đổi sang **Next.js App Router với Server Components**
+- **Đã hoàn thành** việc chuyển backend từ Next.js sang **NestJS**
 - Hoàn thành chuyển đổi tracking GA4 sang GTM:
   - Giảm **8-9%** tải JavaScript bên thứ ba
   - Cải thiện các chỉ số hiệu suất trang

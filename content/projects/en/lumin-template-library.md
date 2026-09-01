@@ -83,9 +83,22 @@ tools:
   - Regional pricing and promotions support
 - Contributed to achieving **10,000+ new signups monthly**
 
+### 🤖 Part of the AI Migration Campaign
+
+- The template library was one of the codebases folded into the **"AI Migration"** — the largest campaign in **Designveloper's** history, delivered in **2 weeks**:
+  - **Consolidated into the single company-wide codebase** alongside the other Lumin products
+  - Moved to **GitHub** and **Linear/Notion** as part of the tooling overhaul
+  - **AI tooling embedded** into the day-to-day workflow, noticeably shortening delivery cycles
+
+### 🌐 PDF Localization
+
+- Shipped the **PDF Localization** feature — country-specific PDF content in the library.
+- Clicks grew from **15.9K (Jan–May 2024)** to **36.8K (May–Dec 2024)**.
+
 ### 🔄 Technical Improvements
 
-- **IN PROGRESS**: I'm leading the migration to Next.js App Router
+- **Completed** the migration to **Next.js App Router with Server Components**
+- **Completed** moving the backend from Next.js to **NestJS**
 - Completed GA4 to GTM tracking migration:
   - Reduced third-party JavaScript load by **8-9%**
   - Improved page performance metrics

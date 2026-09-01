@@ -9,7 +9,10 @@ export interface ExperienceItem {
   subTitle: string;
   description: string;
   time: string;
+  /** Where the title links to. Never used as an image source. */
   previewLink: string;
+  /** Company/school image shown in the hover preview, served from /public. */
+  imageSrc: string;
 }
 
 export interface ExperienceSection {
@@ -25,8 +28,8 @@ export default async function WorkExperienceComponent() {
     <div className="mt-8 w-full md:mt-12 md:max-w-2xl lg:max-w-4xl">
       <div className="flex w-full flex-col gap-y-8 md:gap-y-14">
         <div className="flex flex-col gap-y-2">
-          <Typography text={t('overview.title')} className="uppercase" />
-          <ul className="flex list-disc flex-col gap-y-3 px-4 text-sm font-medium text-secondary sm:gap-2 md:gap-3 md:gap-y-4 md:px-0 md:text-base lg:gap-4">
+          <Typography variant="eyebrow" text={t('overview.title')} />
+          <ul className="mt-2 flex list-disc flex-col gap-y-3 px-4 text-sm text-muted-foreground marker:text-primary sm:gap-2 md:gap-3 md:gap-y-4 md:px-4 md:text-base lg:gap-4">
             {t.raw('overview.items').map((item: string, index: number) => (
               <li key={index}>
                 <p>{item}</p>

@@ -23,7 +23,7 @@ interface Props {
 export default function WorkExperienceComponentItem({ items, title }: Props) {
   return (
     <div className="flex flex-col gap-y-4 sm:gap-y-6">
-      <Typography text={title} className="uppercase" />
+      <Typography variant="eyebrow" text={title} />
       <Timeline className="mt-6 px-0 lg:mt-8 lg:pl-20">
         {items?.map((item, index) => (
           <BaseAnimation key={item.time + index}>
@@ -38,18 +38,21 @@ export default function WorkExperienceComponentItem({ items, title }: Props) {
                   <div className="flex flex-col gap-2 md:gap-4">
                     <p className="flex items-center gap-x-2 text-base md:text-lg">
                       <LinkPreview
+                        isStatic
+                        imageSrc={item.imageSrc}
                         url={item.previewLink}
+                        target="_blank"
                         className="text-primary h-fit"
                       >
                         <span className="text-primary">{item.title}</span>
                       </LinkPreview>
-                      <span> | </span>
-                      <span className="text-xs text-secondary md:text-sm">
+                      <span className="text-muted-foreground"> | </span>
+                      <span className="text-xs text-muted-foreground md:text-sm">
                         {item.subTitle}
                       </span>
                     </p>
 
-                    <span className="whitespace-normal text-nowrap text-xs font-semibold leading-none text-secondary md:text-sm lg:hidden">
+                    <span className="whitespace-normal text-nowrap font-mono text-xs font-medium leading-none text-muted-foreground lg:hidden">
                       {item.time}
                     </span>
                   </div>

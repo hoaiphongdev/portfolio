@@ -29,10 +29,10 @@ export function ProjectDetailComponent({ project }: ProjectDetailProps) {
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
-      className="container max-w-4xl py-12"
+      className="mx-auto max-w-4xl py-12"
     >
       {/* Hero Section */}
-      <div className="relative aspect-video w-full overflow-hidden rounded-lg border border-border">
+      <div className="relative aspect-video w-full overflow-hidden rounded-xl border border-border">
         <Image
           src={frontmatter.imageSrc}
           alt={frontmatter.title}
@@ -45,29 +45,30 @@ export function ProjectDetailComponent({ project }: ProjectDetailProps) {
       {/* Project Header */}
       <div className="mt-8">
         <div className="flex flex-wrap items-center justify-between gap-4">
-          <span className="text-sm text-gray-dark">{frontmatter.date}</span>
+          <span className="font-mono text-xs text-muted-foreground">
+            {frontmatter.date}
+          </span>
           <TypeBadge type={frontmatter.type} />
         </div>
 
         <a href={previewLink} target="_blank" rel="noopener noreferrer">
-          <Button
-            variant="outline"
-            className="border-blue-dark text-blue-dark hover:bg-blue-light"
-          >
+          <Button variant="outline" size="sm" className="mt-4">
             <ExternalLink className="mr-2 h-4 w-4" />
             Preview Project
           </Button>
         </a>
 
-        <h1 className="mt-4 text-4xl font-bold text-title">
+        <h1 className="mt-4 text-4xl font-bold tracking-tight text-foreground">
           {frontmatter.title}
         </h1>
-        <p className="mt-4 text-lg text-gray-dark">{frontmatter.description}</p>
+        <p className="mt-4 text-lg text-muted-foreground">
+          {frontmatter.description}
+        </p>
       </div>
 
       {/* Tech Stack */}
       <div className="mt-8">
-        <h2 className="text-xl font-semibold text-title">Technologies</h2>
+        <h2 className="text-xl font-semibold text-foreground">Technologies</h2>
         <div className="mt-4 flex flex-wrap gap-2">
           {frontmatter.tech.map(tech => (
             <TechChip key={tech} tech={tech} />
@@ -77,7 +78,7 @@ export function ProjectDetailComponent({ project }: ProjectDetailProps) {
 
       {/* Tools */}
       <div className="mt-8">
-        <h2 className="text-xl font-semibold text-title">Tools</h2>
+        <h2 className="text-xl font-semibold text-foreground">Tools</h2>
         <div className="mt-4 flex flex-wrap gap-2">
           {frontmatter.tools?.map(tool => (
             <TechChip key={tool} tech={tool} variant="tool" />

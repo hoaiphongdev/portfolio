@@ -1,51 +1,35 @@
 import '@/styles/globals.css';
 
 import type { Metadata } from 'next';
-import localFont from 'next/font/local';
+import { Inter, JetBrains_Mono } from 'next/font/google';
 import { notFound } from 'next/navigation';
 import { NextIntlClientProvider } from 'next-intl';
 import { getMessages, setRequestLocale } from 'next-intl/server';
 
-import FluidMotionCursor from '@/components/animations/FluidCursorMotion';
 import DefaultLayout from '@/components/layouts/DefaultLayout';
 import { ThemeProvider } from '@/components/providers/theme';
 import { ROOT_SITE_URL } from '@/constants/url';
 import { routing } from '@/i18n/routing';
 import cn from '@/lib/cn';
 
-const Mali = localFont({
-  src: [
-    {
-      path: '../../../public/fonts/Mali/Mali-Regular.ttf',
-      weight: '400',
-      style: 'normal',
-    },
-    {
-      path: '../../../public/fonts/Mali/Mali-Italic.ttf',
-      weight: '400',
-      style: 'italic',
-    },
-    {
-      path: '../../../public/fonts/Mali/Mali-Medium.ttf',
-      weight: '500',
-      style: 'normal',
-    },
-    {
-      path: '../../../public/fonts/Mali/Mali-Bold.ttf',
-      weight: '700',
-      style: 'normal',
-    },
-  ],
-  variable: '--font-mali',
+const inter = Inter({
+  subsets: ['latin', 'vietnamese'],
+  variable: '--font-sans',
+});
+
+const jetbrainsMono = JetBrains_Mono({
+  subsets: ['latin', 'vietnamese'],
+  variable: '--font-mono',
+  weight: ['400', '500'],
 });
 
 export const metadata: Metadata = {
   metadataBase: new URL(ROOT_SITE_URL),
   title: {
     template: '%s - Hoai Phong',
-    default: 'Frontend Developer',
+    default: 'Full Stack Developer',
   },
-  description: 'Frontend Developer Portfolio',
+  description: 'Full Stack Developer Portfolio',
   icons: {
     icon: [
       { url: '/favicon/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
@@ -97,21 +81,19 @@ export default async function LocaleLayout({
         lang={locale}
         suppressHydrationWarning
         className={cn(
-          'h-screen scroll-pt-[3.5rem] overflow-x-hidden bg-background font-sans antialiased',
-          Mali.variable,
+          'overflow-x-hidden bg-background font-sans antialiased',
+          inter.variable,
+          jetbrainsMono.variable,
         )}
       >
         <body suppressHydrationWarning>
           <ThemeProvider
             attribute="class"
-            defaultTheme="light"
+            defaultTheme="system"
             enableSystem
             disableTransitionOnChange
           >
-            <DefaultLayout>
-              {children}
-              <FluidMotionCursor />
-            </DefaultLayout>
+            <DefaultLayout>{children}</DefaultLayout>
           </ThemeProvider>
         </body>
       </html>

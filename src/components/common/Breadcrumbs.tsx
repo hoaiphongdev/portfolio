@@ -1,5 +1,4 @@
 import Link from 'next/link';
-import { getTranslations } from 'next-intl/server';
 import { Fragment } from 'react';
 
 import {
@@ -12,8 +11,6 @@ import {
 import cn from '@/lib/cn';
 import type { IBreadcrumbType } from '@/types/common';
 
-import Typography from './Typography';
-
 interface Props {
   breadcrumbs: IBreadcrumbType[];
   containerClassName?: string;
@@ -23,39 +20,25 @@ export default async function Breadcrumbs({
   breadcrumbs,
   containerClassName = '',
 }: Props) {
-  const t = await getTranslations('common');
-
   return (
-    <div
-      className={cn(
-        'flex flex-col items-center justify-center gap-y-1',
-        containerClassName,
-      )}
-    >
-      <Typography
-        text={t('breadcrumbs')}
-        className="text-lg text-secondary md:text-xl"
-      />
+    <div className={cn('flex items-center', containerClassName)}>
       <Breadcrumb>
-        <BreadcrumbList className="flex items-center justify-center">
+        <BreadcrumbList className="flex items-center">
           {breadcrumbs.map((item, index) => {
             const isLastItem = index === breadcrumbs.length - 1;
             return (
               <Fragment key={`${item.label}_${index}`}>
                 <BreadcrumbItem
-                  className={cn(
-                    'group',
-                    isLastItem ? 'pointer-events-none' : 'underline',
-                  )}
+                  className={cn(isLastItem && 'pointer-events-none')}
                 >
                   <Link href={item.url} legacyBehavior title="breadcrumbs">
                     <BreadcrumbLink>
                       <span
                         className={cn(
-                          'inline-block text-center text-base font-medium italic text-title',
+                          'inline-block text-sm transition-colors',
                           isLastItem
-                            ? 'text-secondary'
-                            : 'italic underline group-hover:font-medium',
+                            ? 'font-medium text-foreground'
+                            : 'text-muted-foreground hover:text-foreground',
                         )}
                       >
                         {item.label}

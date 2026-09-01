@@ -23,24 +23,40 @@
       "github": "This is my Github",
       "linkedin": "I also have LinkedIn"
     },
-    "breadcrumbs": "You watching"
+    "breadcrumbs": "You watching",
+    "certifications": {
+      "heading": "Certifications",
+      "verifyLabel": "Verify credential",
+      "aws": {
+        "name": "AWS Developer Associate",
+        "issuer": "Amazon Web Services",
+        "badgeAlt": "AWS Certified Developer – Associate badge"
+      }
+    }
   },
   "page": {
     "home": {
-      "title": "SOFTWARE DEVELOPER",
-      "summary": "Software Developer specializing in modern web technologies. Focused on building high-performance and user-friendly web applications.",
+      "title": "FULL STACK DEVELOPER",
+      "summary": "Full Stack Developer with 5+ years building and scaling SaaS products, owning features end to end across Next.js, NestJS and AWS — with a consistent focus on performance, scalability and cost efficiency.",
       "projects": "Notable Projects & Case Studies",
-      "experience": "Career Experience, Expertise & Responsibilities"
+      "experience": "Career Experience, Expertise & Responsibilities",
+      "slogan": {
+        "w1": "BRING",
+        "w2": "IDEAS",
+        "w3": "TO",
+        "w4": "LIFE"
+      },
+      "canvasAlt": "Rotating 3D laptop rendered from code characters"
     },
     "about": {
       "title": "Who am I?",
       "introduction": "Hi, I'm Hoài Phong",
-      "intro": "Currently, I am a <current>Software Developer</current> building fast, scalable web experiences driven by <aspiring>performance and purpose</aspiring>.",
+      "intro": "Currently, I am a <current>Full Stack Developer</current> building fast, scalable web experiences driven by <aspiring>performance and purpose</aspiring>.",
       "highlights": [
-        "I am a student at HCMUNRE, a university that is not particularly strong in IT, so most of my programming knowledge comes from self-learning and practice.",
-        "I always strive to learn and improve myself through each project to develop more refined applications.",
-        "My colleagues appreciate me for my teamwork skills, as I can balance humor with productivity while always ensuring that I complete my assigned tasks on time.",
-        "I also enjoy sharing new technologies with my friends so we can learn together and improve our products to better align with current market trends."
+        "I graduated from HCMUNRE, a university that is not particularly strong in IT, so most of my programming knowledge comes from self-learning and building things in practice.",
+        "I always strive to learn and improve through each project, and I care as much about performance, scalability and cost efficiency as I do about shipping features.",
+        "My colleagues appreciate my teamwork — I can balance humour with productivity while making sure my work lands on time. I host internal sharing sessions and mentor junior developers.",
+        "I adopt AI tools in day-to-day development and team workflows to shorten delivery cycles and improve code quality, and I keep exploring how they can be applied to the product itself."
       ]
     },
     "experiences": {
@@ -54,20 +70,20 @@
         "overview": {
           "title": "TECHNICAL PROFILE",
           "items": [
-            "4+ years architecting and delivering full-cycle web applications and platforms from concept through high-availability production deployments.",
-            "Deep expertise across modern frontend ecosystems: React, Next.js, Gatsby, TypeScript, Tailwind CSS, Material UI, Ant Design, SCSS — consistently deliver performant, maintainable UIs adaptable to evolving project and design requirements.",
-            "Architected micro-frontend architectures using Webpack Module Federation — enabled independent team deployments, shared dependencies to reduce bundle size, dynamic module loading at runtime, and seamless composition of remote applications into cohesive experiences.",
-            "Craft pixel-perfect, responsive, cross-browser interfaces that faithfully translate complex Figma designs into production-grade code.",
-            "Architect scalable backend systems with Node.js and NestJS: design modular, clean-architecture APIs (REST/GraphQL), enforce TypeScript patterns (DI, decorators, guards, interceptors), and ensure long-term maintainability and extensibility.",
-            "Designed and implemented event-driven microservices architectures — leveraged RabbitMQ for reliable message queuing, pub/sub patterns, asynchronous processing, and decoupled communication across services in high-throughput systems.",
-            "Model and optimize data layers using PostgreSQL, MySQL, MongoDB, and Redis — implement efficient caching strategies, session management, and query performance tuning for high-traffic scenarios.",
-            "Manage Git-based development workflows in collaborative teams, leveraging Jira, Confluence, and Bitbucket for planning, code reviews, branching strategies, and continuous integration; experienced with git submodules for managing shared libraries and monorepo-like structures in distributed codebases.",
-            "Develop automation and infrastructure-as-code solutions: author shell scripts, YAML configs for CI/CD pipelines, Docker Compose, GitHub Actions, and routine operational tooling.",
-            "Orchestrate headless CMS integrations and customizations (Prismic, Strapi) — architect complete content pipelines, build bespoke plugins, extensions, scripts, and webhook-driven flows tightly aligned with business logic and scalability needs.",
-            "Design and implement CRM & scheduling platform integrations (Chilipiper, Intercom, HubSpot) — establish reliable data synchronization, event-driven webhooks, and automated business workflows that support operational efficiency.",
-            "Lead secure payment gateway integrations for Southeast Asian providers (Xendit, MoMo, VNPay) — engineer robust checkout experiences, real-time webhook handling, idempotent processing, and compliance-focused transaction logic.",
-            "Proactively optimize personal and team productivity through workflow innovation — engineer customized terminal environments (tmux/Zellij) with tailored keybindings, persistent multi-pane layouts, and session management to accelerate development velocity and multitasking.",
-            "Author high-quality technical documentation, architecture diagrams, READMEs, and stakeholder presentations that drive alignment, reduce onboarding time, and support long-term maintainability."
+            "5+ years building and scaling SaaS products end to end — owning features from concept through high-availability production deployments used by millions of people.",
+            "Deep expertise across modern frontend ecosystems: React, Next.js (App Router, Server Components), Gatsby, TypeScript, Tailwind CSS, shadcn/ui and Material UI.",
+            "Architected micro-frontend architectures using Webpack Module Federation — enabling independent team deployments at scale.",
+            "Craft pixel-perfect, responsive, cross-browser interfaces that faithfully translate complex Figma designs into production code.",
+            "Architect scalable backend systems with NestJS, Node.js and .NET Core: modular, clean-architecture APIs across REST, GraphQL and gRPC.",
+            "Designed and implemented event-driven microservice architectures — RabbitMQ for reliable message queues and asynchronous document processing.",
+            "Model and optimise data layers with MongoDB, PostgreSQL, MySQL and Redis, applying caching strategies tuned for read-heavy production traffic.",
+            "Build and operate on AWS (Lambda, S3, SQS, Serverless) with Docker, and monitor production health with Datadog.",
+            "Drive performance and cost efficiency: server-side Google Tag Manager, bundle reduction and Core Web Vitals improvements on high-traffic pages.",
+            "Orchestrate headless CMS integrations (Prismic, Strapi, HubSpot) — complete content pipelines that let marketing ship campaigns without developer involvement.",
+            "Design and implement CRM and scheduling platform integrations (Chili Piper, Intercom, HubSpot) with reliable data flows.",
+            "Lead secure payment gateway integrations for Southeast Asian providers (MoMo, ZaloPay, VNPAY, ChargeBee, Xendit).",
+            "Apply AI-assisted development day to day — AI coding agents, MCP (Model Context Protocol), agent skills, and custom rules and prompts embedded into team workflows.",
+            "Host internal sharing sessions and mentor junior developers; author technical documentation, architecture diagrams and stakeholder presentations."
           ]
         },
         "sections": [
@@ -77,30 +93,34 @@
               {
                 "title": "Designveloper - Software Development Company",
                 "subTitle": "FULL STACK DEVELOPER",
-                "description": "- Collaborated with a New Zealand-based client in the PDF tools domain, optimizing web performance and enhancing user acquisition strategies.\n- Developed and maintained high-performance landing pages using Gatsby, Next.js, and React to maximize SEO and user engagement.\n- Led the migration from Next.js Page Router to App Router, leveraging Server Components for improved SEO and performance.\n- Transitioned the backend from Next.js to NestJS for better scalability and maintainability.\n- Integrated and optimized CMS platforms such as Prismic, HubSpot, and Strapi to enable marketing teams to create and launch static pages independently.\n- Empowered the client with a no-code approach, allowing rapid deployment of marketing campaigns and landing pages without developer intervention.\n- Optimized UX and performance for functional tool pages (e.g., Merge, Split, Compress, Annotate PDF) and static pages, contributing to 100K+ signups within a month.\n- Developed high-ranking PDF templates, securing a spot in the top 10 Google search results.\n- Contributed to the company's milestone of reaching +100 million users by improving key traffic-driving features, including localization, static tool pages, and universal CMS integration.\n- Migrated Google Tag Manager to a server-side setup, reducing client-side JavaScript load and boosting landing page performance by 2-4%.\n- \"Sharing Spark Award\" for outstanding knowledge sharing and workshop organization.",
+                "description": "- Building Lumin PDF for a New Zealand client — a SaaS PDF platform with 100M+ users — within a dedicated team of 100+ engineers organised into squads.\n- In-App PDF Editor squad: build and maintain core editor features used daily — annotate, e-sign, edit text, OCR, merge/rotate and AI-powered document tools — a Next.js front end backed by NestJS services communicating over gRPC.\n- Developer in charge of the PDF x Lumin Sign integration, creating signature fields on PDFs and handing off to Lumin Sign for signing. Positioned Lumin against DocuSign and helped win multiple deals worth an estimated $29,500.\n- Rebuilt the layout and flow of PDF actions (merge, rotate, organize) and tailored them for a financial-services customer, supporting a deal worth ~$16,000.\n- Contributed feature mapping and migration support for the move from a third-party PDF engine to Lumin's in-house PDF SDK — an initiative estimated to save the client ~$5M.\n- Core contributor to the \"AI Migration\", the largest campaign in Designveloper's history, delivered in 2 weeks: consolidated per-team repos into a single codebase, moved Gatsby to full Next.js, Bitbucket to GitHub, Jira/Confluence to Linear/Notion, and embedded AI tooling into the workflow. A feature previously estimated at ~1 year to ship was delivered in 2 weeks afterwards.\n- Growth & Landing Page squad: built and maintained high-performance, SEO-driven landing pages with Gatsby, Next.js and React; tool pages (Merge, Split, Compress, Annotate) contributed to 100K+ signups in a single month.\n- Shipped the PDF Localization feature — country-specific PDF content in the library — growing clicks from 15.9K (Jan-May 2024) to 36.8K (May-Dec 2024).\n- Led the migration from Next.js Page Router to App Router with Server Components, and moved the backend from Next.js API routes to NestJS for scalability.\n- Integrated Prismic, HubSpot and Strapi so marketing could launch campaigns and static pages without developer involvement.\n- Migrated Google Tag Manager to server-side, cutting client-side JavaScript and improving landing-page performance by 2-4%.\n- Developed PDF template pages that ranked in the top 10 of Google search results.\n- Host and speaker at internal sharing, workshop and innovation sessions, presented in English to teammates and the client — received the \"Sharing Spark Award\" for outstanding knowledge sharing.\n- Mentor in the company mentorship program; directly supervised an intern who passed the internship and now works full-time on Lumin.",
                 "time": "02/2024 - Present",
-                "previewLink": "https://www.designveloper.com/"
+                "previewLink": "https://www.designveloper.com/",
+                "imageSrc": "/images/company/dsv.png"
               },
               {
                 "title": "Saigon MIO Technology JSC",
                 "subTitle": "FULL STACK DEVELOPER",
-                "description": "- Played a key role in the end-to-end development of enterprise-grade internal systems, ensuring scalability and maintainability.\n- Worked extensively with the MVC architecture while integrating React to enhance UI development using a component-based approach.\n- Designed and structured databases aligned with business logic using MySQL, optimizing performance and data integrity.\n- Integrated and synchronized third-party payment gateways such as MoMo, ZaloPay, VNPAY, ChargeBee, and Xendit to facilitate seamless transactions.\n- Led knowledge-sharing sessions on Next.js and contributed to its implementation in future frontend projects.\n- Actively participated in the R&D team, researching and integrating emerging technologies, including AI-driven features, into internal systems to enhance automation and efficiency.",
+                "description": "- Full-time at a fast-paced agency delivering MVPs and demo products for multiple clients.\n- Owned full-stack delivery of many MVPs and demos under tight timelines — from MySQL schema design through React/Next.js front ends on an MVC backend — giving clients working products to validate and pitch.\n- Integrated and synchronised payment gateways: MoMo, ZaloPay, VNPAY, ChargeBee and Xendit.\n- Built pixel-accurate UI from Figma designs using Next.js, React and MUI.\n- Member of the R&D team researching and integrating emerging technologies, including AI-driven features, into internal systems.\n- Led Next.js knowledge-sharing sessions that shaped the frontend stack for later projects.",
                 "time": "04/2022 - 02/2024",
-                "previewLink": "https://saigonmio.com/"
+                "previewLink": "https://saigonmio.com/",
+                "imageSrc": "/images/company/mio.png"
               },
               {
                 "title": "BESSFU Solution Technology Company Limited",
                 "subTitle": "FRONTEND DEVELOPER",
-                "description": "- Developed and implemented user-friendly UI components based on Figma designs using Next.js, React.js, and MUI Material.\n- Contributed to the frontend development of an e-learning platform for VUS English learning system, ensuring seamless user experience and responsiveness.\n- Designed and built interactive English-learning mini-games using JavaScript and JQuery, enhancing student engagement.\n- Developed various educational games, including math challenges, memory card matching, word association, and pronunciation-based image selection.\n- Optimized application performance and UI responsiveness to provide an engaging learning experience across devices.",
+                "description": "- Part-time, remote frontend development for the VUS English e-learning platform, focusing on responsiveness and cross-device UX.\n- Designed and built interactive learning mini-games — math challenges, memory matching, word association and pronunciation-based image selection — with JavaScript and jQuery.\n- Worked closely with the design team to keep the learning experience consistent across devices.",
                 "time": "04/2022 - 09/2023",
-                "previewLink": "https://bessfu.com/"
+                "previewLink": "https://bessfu.com/",
+                "imageSrc": "/images/company/bessfu.png"
               },
               {
                 "title": "Saigon Newport Corporation (SNP)",
                 "subTitle": "RESEARCH & DEVELOPMENT INTERN",
                 "description": "- Gained in-depth understanding of the company's culture, operational framework, and logistics ecosystem.\n- Conducted research and analysis to tackle real-world business challenges, implementing practical solutions through technology.\n- Led a team of interns to develop a web-based container management system using ReactJS, integrating seamlessly with the company's internal API.\n- Designed and optimized application workflows to enhance operational efficiency and data management.\n- Created detailed reports and comprehensive documentation for system implementations and process improvements.",
                 "time": "04/2022 - 05/2023",
-                "previewLink": "https://saigonnewport.com.vn/"
+                "previewLink": "https://saigonnewport.com.vn/",
+                "imageSrc": "/images/company/snp.png"
               }
             ]
           },
@@ -112,7 +132,8 @@
                 "subTitle": "HCMC University of Natural Resources and Environment",
                 "description": "- Majored in Information Technology with a focus on web application development and system design.\n- Studied website and application system analysis and design principles.\n- Gained practical experience in Unity game development fundamentals.\n- Completed internships at three different companies during the COVID-19 pandemic, gaining diverse industry exposure.\n- Applied theoretical knowledge through hands-on projects and real-world applications.",
                 "time": "09/2018 - 09/2022",
-                "previewLink": "https://hcmunre.edu.vn/"
+                "previewLink": "https://hcmunre.edu.vn/",
+                "imageSrc": "/images/edu/hcmunre-website.png"
               }
             ]
           }
@@ -149,7 +170,7 @@
         "title": "Phong's Work Experience",
         "description": "The experience I've accumulated will be shared here."
       },
-      "keywords": "Nguyen Hoai Phong's Experience,Hoai Phong's Work Experience,Projects Hoai Phong Has Worked On,Hoai Phong's Professional Skills,Hoai Phong's Career Achievements,Hoai Phong Developer,Hoai Phong Frontend Developer,Hoai Phong Projects,Frontend Developer,Hoai Phong Frontend Engineer,Frontend Engineer"
+      "keywords": "Nguyen Hoai Phong's Experience,Hoai Phong's Work Experience,Projects Hoai Phong Has Worked On,Hoai Phong's Professional Skills,Hoai Phong's Career Achievements,Hoai Phong Developer,Hoai Phong Full Stack Developer,Hoai Phong Projects,Full Stack Developer,Hoai Phong Frontend Engineer,Frontend Engineer"
     },
     "projects": {
       "title": "Projects Portfolio - Hoai Phong",

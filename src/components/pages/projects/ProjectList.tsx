@@ -26,7 +26,7 @@ export function ProjectList({ projects }: ProjectListProps) {
       {projects.map(project => (
         <div
           key={project.title}
-          className="mb-5 transition-all duration-500 ease-in-out hover:scale-105"
+          className="mb-5 transition-transform duration-300 ease-out motion-safe:hover:-translate-y-1"
         >
           <ProjectCard project={project} />
         </div>

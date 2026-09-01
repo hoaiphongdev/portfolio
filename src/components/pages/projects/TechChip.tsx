@@ -1,20 +1,26 @@
-export default function TechChip({
-  tech,
-  variant = 'tech',
-}: {
-  tech: string;
-  variant?: 'tech' | 'tool';
-}) {
-  const styles = {
-    tech: 'bg-blue-light text-blue-dark',
-    tool: 'bg-gray-100',
-  };
+import { cva, type VariantProps } from 'class-variance-authority';
 
-  return (
-    <span
-      className={`px-2.5 py-1 text-sm rounded-full font-medium ${styles[variant]}`}
-    >
-      {tech}
-    </span>
-  );
+import cn from '@/lib/cn';
+
+const techChipVariants = cva(
+  'inline-flex items-center rounded-full px-2.5 py-1 font-mono text-xs font-medium',
+  {
+    variants: {
+      variant: {
+        tech: 'bg-primary/10 text-primary',
+        tool: 'bg-muted text-muted-foreground',
+      },
+    },
+    defaultVariants: {
+      variant: 'tech',
+    },
+  },
+);
+
+interface Props extends VariantProps<typeof techChipVariants> {
+  tech: string;
+}
+
+export default function TechChip({ tech, variant }: Props) {
+  return <span className={cn(techChipVariants({ variant }))}>{tech}</span>;
 }

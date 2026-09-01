@@ -1,6 +1,7 @@
 import { getLocale, getTranslations } from 'next-intl/server';
 
 import Breadcrumbs from '@/components/common/Breadcrumbs';
+import Certification from '@/components/common/Certification';
 import type { LANGUAGE_CODE } from '@/constants/languages';
 import { STATIC_PAGE_ORIGIN_URL } from '@/constants/paths';
 import type { IBreadcrumbType } from '@/types/common';
@@ -33,9 +34,16 @@ export default async function ExperiencesPage() {
   return (
     <section className="relative mt-4 min-h-screen lg:mt-8">
       <div className="flex flex-col items-center justify-center pb-10 md:pb-20">
-        <Breadcrumbs breadcrumbs={breadcrumbs} containerClassName="pb-28" />
+        <Breadcrumbs
+          breadcrumbs={breadcrumbs}
+          containerClassName="self-start pb-6 md:pb-10"
+        />
         <ExperienceInfo />
         <WorkExperienceComponent />
+        <Certification
+          variant="card"
+          className="mt-8 md:mt-12 md:max-w-2xl lg:max-w-4xl"
+        />
       </div>
     </section>
   );

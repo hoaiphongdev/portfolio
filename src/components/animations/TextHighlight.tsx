@@ -31,7 +31,7 @@ export const TextHighlight = ({
         display: 'inline',
       }}
       className={cn(
-        `to-primary/70 relative inline-block rounded-lg bg-gradient-to-r from-indigo-300 px-1 pb-1 `,
+        'relative inline-block rounded-md bg-gradient-to-r from-primary/25 to-primary/10 px-1 pb-1',
         className,
       )}
     >

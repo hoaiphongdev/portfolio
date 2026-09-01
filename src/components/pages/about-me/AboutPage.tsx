@@ -1,12 +1,12 @@
-import Image from 'next/image';
 import { getLocale, getTranslations } from 'next-intl/server';
 
 import { TextHighlight } from '@/components/animations/TextHighlight';
 import Breadcrumbs from '@/components/common/Breadcrumbs';
+import Certification from '@/components/common/Certification';
 import IntroductionFrame from '@/components/common/IntroductionFrame';
+import Typography from '@/components/common/Typography';
 import type { LANGUAGE_CODE } from '@/constants/languages';
 import { STATIC_PAGE_ORIGIN_URL } from '@/constants/paths';
-import cn from '@/lib/cn';
 import type { IBreadcrumbType } from '@/types/common';
 import { getBasePathWithPresetLocale } from '@/utils/url';
 
@@ -36,31 +36,20 @@ export default async function AboutPageComponents() {
       <div className="grid grid-cols-1 lg:grid-cols-2 lg:gap-x-12 xl:gap-x-20">
         <Breadcrumbs
           breadcrumbs={breadcrumbs}
-          containerClassName="pb-28 md:pb-0 md:mb-10 lg:col-span-2 lg:mb-40"
+          containerClassName="pb-6 md:pb-0 md:mb-10 lg:col-span-2"
         />
-        <div className="relative">
+        <div className="flex flex-col items-center justify-start gap-y-8 pt-6 lg:gap-y-10 lg:pt-10">
           <IntroductionFrame>{t('page.about.introduction')}</IntroductionFrame>
-          <div className="relative hidden h-[350px] w-full md:block lg:w-[80%]">
-            <Image
-              title="about-image"
-              src="/images/chill.png"
-              alt="chill"
-              width={1000}
-              height={500}
-              className="sm:object-contain lg:object-cover"
-            />
-          </div>
+          <Certification variant="compact" />
         </div>
         <div>
-          <div
-            className={cn(
-              'text-center text-xs font-bold sm:text-base md:text-xl lg:text-3xl xl:text-5xl',
-              'mb:my-12 my-6 pt-6 md:mt-0 md:pt-6 lg:pt-0',
-            )}
-          >
-            {t('page.about.title')}
-          </div>
-          <ul className="my-6 flex list-disc flex-col gap-y-4 px-4 font-medium text-secondary sm:gap-y-8 md:my-12 md:px-14 md:text-lg">
+          <Typography
+            as="h1"
+            variant="page"
+            text={t('page.about.title')}
+            className="my-6 text-center"
+          />
+          <ul className="my-6 flex list-disc flex-col gap-y-4 px-4 text-foreground/85 marker:text-primary sm:gap-y-8 md:my-12 md:px-14 md:text-lg">
             <li className="leading-8">
               <p>
                 {t.rich('page.about.intro', {
@@ -68,9 +57,7 @@ export default async function AboutPageComponents() {
                     <TextHighlight className="mx-1">{chunks}</TextHighlight>
                   ),
                   aspiring: chunks => (
-                    <TextHighlight className="mx-1 from-red-500 to-red-300/20">
-                      {chunks}
-                    </TextHighlight>
+                    <TextHighlight className="mx-1">{chunks}</TextHighlight>
                   ),
                 })}
               </p>

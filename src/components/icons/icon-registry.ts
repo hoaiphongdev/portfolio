@@ -1,4 +1,3 @@
-import ArrowHeader from './icon-bundles/arrow-header';
 import Docs from './icon-bundles/docs';
 import Facebook from './icon-bundles/facebook';
 import Github from './icon-bundles/github';
@@ -17,7 +16,6 @@ import Typescript from './icon-bundles/typescript';
 import Vite from './icon-bundles/vite';
 
 export const IconRegistry = {
-  'arrow-header': ArrowHeader,
   'docs': Docs,
   'facebook': Facebook,
   'github': Github,

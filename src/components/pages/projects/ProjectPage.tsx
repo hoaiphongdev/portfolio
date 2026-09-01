@@ -1,6 +1,7 @@
 import { getLocale, getTranslations } from 'next-intl/server';
 
 import Breadcrumbs from '@/components/common/Breadcrumbs';
+import Typography from '@/components/common/Typography';
 import type { LANGUAGE_CODE } from '@/constants/languages';
 import { STATIC_PAGE_ORIGIN_URL } from '@/constants/paths';
 import type { IBreadcrumbType } from '@/types/common';
@@ -40,11 +41,14 @@ export default async function ProjectPageComponent({
       <div className="flex flex-col items-center justify-center pb-10 md:pb-20">
         <Breadcrumbs
           breadcrumbs={breadcrumbs}
-          containerClassName="pb-28 md:pb-0 md:mb-10 lg:col-span-2"
+          containerClassName="pb-6 md:pb-0 md:mb-10 lg:col-span-2"
         />
-        <div className="text-center text-xs font-bold sm:text-base md:text-xl lg:text-3xl xl:text-5xl">
-          {t('page.projects.title')}
-        </div>
+        <Typography
+          as="h1"
+          variant="page"
+          text={t('page.projects.title')}
+          className="mb-10 text-center"
+        />
         <ProjectList projects={projects} />
       </div>
     </section>

@@ -1,17 +1,22 @@
-import Image from 'next/image';
+import Link from 'next/link';
+import { getTranslations } from 'next-intl/server';
 
-export default function NotFound() {
+import { Button } from '@/components/ui/button';
+
+export default async function NotFound() {
+  const t = await getTranslations('common.navigation');
+
   return (
-    <section className="h-[75vh] w-full gap-y-4 sm:gap-y-6 md:gap-y-10">
-      <div className="relative flex justify-center h-auto w-full">
-        <Image
-          title="not-found"
-          src="/images/notfound.png"
-          alt="not-found-image"
-          width={1000}
-          height={500}
-        />
-      </div>
+    <section className="flex min-h-[70vh] w-full flex-col items-center justify-center gap-y-6 text-center">
+      <p className="font-mono text-8xl font-medium text-primary/20 sm:text-9xl">
+        404
+      </p>
+      <p className="text-lg text-muted-foreground">
+        This page could not be found.
+      </p>
+      <Button asChild>
+        <Link href="/">{t('home')}</Link>
+      </Button>
     </section>
   );
 }
